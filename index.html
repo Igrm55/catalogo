@@ -130,8 +130,32 @@
         .funcionalidade-item h4 { font-size: 1.1rem; color: var(--cor-branco-puro); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.7rem; }
         .funcionalidade-item h4 i { width: 20px; text-align: center; }
         .funcionalidade-item p { font-size: 0.9rem; color: var(--cor-cinza-claro); flex-grow: 1; padding-left: 27px; }
-        .demo-button { background: rgba(255,255,255,0.08); border: 1px solid var(--cor-cinza-claro); color: var(--cor-cinza-claro); padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; transition: all 0.3s ease; margin-top: 1rem; align-self: flex-start; margin-left: 27px; }
+        .demo-button { background: rgba(255,255,255,0.08); border: 1px solid var(--cor-cinza-claro); color: var(--cor-cinza-claro); padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; transition: all 0.3s ease; margin-top: 1rem; align-self: flex-start; margin-left: 27px; text-decoration: none; display: inline-block; }
         .demo-button:hover { background: var(--cor-branco-suave); color: var(--cor-fundo); border-color: var(--cor-branco-suave); transform: scale(1.05); }
+
+        /* SEÇÃO DE EXEMPLO */
+        .bloco-exemplo { margin-top: 2.5rem; background: linear-gradient(145deg, #181030, #20153d); border: 1px solid var(--cor-lilas-grad-2); border-radius: var(--borda-raio); padding: 2rem; box-shadow: 0 0 40px rgba(160, 0, 255, 0.15); text-align: center; }
+        .bloco-exemplo h3 { font-size: 1.5rem; color: var(--cor-lilas-grad-2); margin-bottom: 0.5rem; animation: aura-roxa 3s ease-in-out infinite; }
+        .bloco-exemplo p { color: var(--cor-cinza-claro); margin-bottom: 1.5rem; max-width: 600px; margin-left:auto; margin-right:auto;}
+        .exemplo-btn {
+            background: linear-gradient(90deg, var(--cor-rosa-grad-1), var(--cor-lilas-grad-2));
+            color: var(--cor-branco-puro);
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            box-shadow: 0 5px 20px rgba(160, 0, 255, 0.3);
+        }
+        .exemplo-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 0, 128, 0.4);
+        }
 
         .opcionais-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
         .card-opcional { background: linear-gradient(145deg, #181030, #20153d); border: 1px solid rgba(160, 0, 255, 0.2); border-radius: var(--borda-raio); padding: 1.5rem; display: flex; flex-direction: column; text-align: center; box-shadow: var(--sombra-card); transition: transform 0.3s ease, box-shadow 0.3s ease; }
@@ -349,6 +373,15 @@
                     <div class="funcionalidade-item" data-aos="fade-up" data-aos-delay="250" style="border-color: #333;"><h4 style="color: #ccc;"><i class="fas fa-qrcode"></i> QR Code para Acesso</h4><p>Acesso fácil e charmoso para entregar a surpresa.</p><button class="demo-button" data-modal-target="modalQrCodeDemo"><i class="fas fa-eye"></i> Ver Demonstração</button></div>
                     <div class="funcionalidade-item" data-aos="fade-up" data-aos-delay="300" style="border-color: #4169E1; grid-column: 1 / -1;"><h4 style="color: #4169E1;"><i class="fas fa-infinity"></i> Site Vitalício</h4><p>Fica no ar para sempre. Mesmo daqui a 10 anos, o amor de vocês ainda vai poder acessar esse presente!</p></div>
                 </div>
+                <!-- NOVA SEÇÃO DE EXEMPLO -->
+                <div class="bloco-exemplo" data-aos="zoom-in-up">
+                    <h3>Veja um Exemplo Real</h3>
+                    <p>Clique no botão abaixo para ver um site de exemplo completo, com todas as funcionalidades, e se apaixonar ainda mais pela ideia.</p>
+                    <a href="https://igrm55.github.io/exemplo/" target="_blank" class="exemplo-btn">
+                        <i class="fas fa-gift"></i> Ver Site de Exemplo
+                    </a>
+                </div>
+                <!-- FIM DA NOVA SEÇÃO -->
             </div>
         </section>
 
