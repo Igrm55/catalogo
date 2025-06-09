@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presente Eterno - Eternize seus sentimentos de forma inesquecível</title>
+    <title>Presente Eterno - A Experiência que Marca a Alma</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,16 +24,15 @@
             --cor-verde-acao: #00FF99;
             --cor-verde-wpp: #25D366;
             --cor-vermelho-dor: #FF4D4D;
-            --cor-laranja-alerta: #FFA500;
+            --cor-dourado-premium: #FFD700;
             --cor-branco-puro: #ffffff;
             --cor-branco-suave: #e0e7ef;
             --cor-cinza-claro: #b0bac9;
-            --cor-fundo-card: rgba(255, 255, 255, 0.03);
-            --cor-fundo-modal: #10182b; /* Azul mais escuro para modais */
+            --cor-fundo-card: rgba(30, 41, 59, 0.5);
+            --cor-fundo-modal: #10182b;
             --cor-borda-modal: rgba(255, 0, 128, 0.3);
             --cor-rosa-vibrante-icones: #FF69B4;
             --cor-roxo-aura: #8A2BE2;
-
 
             --sombra-card: 0 8px 30px rgba(0, 0, 0, 0.3);
             --borda-raio: 16px;
@@ -54,7 +53,7 @@
         .section-titulo { text-align: center; font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 1rem; }
         .section-subtitulo { text-align: center; font-size: clamp(1rem, 2.5vw, 1.1rem); color: var(--cor-cinza-claro); max-width: 700px; margin: 0 auto 3rem auto; font-weight: 400; }
         .section-wrapper { padding: 50px 0; }
-        .section-divider { height: 1px; width: 40%; max-width: 150px; background: linear-gradient(to right, transparent, rgba(160, 0, 255, 0.2), transparent); margin: 50px auto; }
+        .section-divider { height: 1px; width: 40%; max-width: 150px; background: linear-gradient(to right, transparent, rgba(160, 0, 255, 0.2), transparent); margin: 60px auto; }
 
         /* AURA ANIMATIONS */
         @keyframes aura-rosa-vibrante {
@@ -65,25 +64,12 @@
             0%, 100% { text-shadow: 0 0 5px rgba(138, 43, 226, 0.4), 0 0 10px rgba(138, 43, 226, 0.3), 0 0 15px rgba(138, 43, 226, 0.2); }
             50% { text-shadow: 0 0 10px rgba(138, 43, 226, 0.8), 0 0 20px rgba(138, 43, 226, 0.6), 0 0 30px rgba(138, 43, 226, 0.4); }
         }
-        @keyframes aura-suave-verde {
-            0%, 100% { text-shadow: 0 0 4px rgba(0, 255, 153, 0.2), 0 0 8px rgba(0, 255, 153, 0.1); }
-            50% { text-shadow: 0 0 8px rgba(0, 255, 153, 0.4), 0 0 16px rgba(0, 255, 153, 0.2); }
-        }
-        @keyframes aura-suave-vermelha {
-            0%, 100% { text-shadow: 0 0 4px rgba(255, 77, 77, 0.3), 0 0 8px rgba(255, 77, 77, 0.2); }
-            50% { text-shadow: 0 0 8px rgba(255, 77, 77, 0.5), 0 0 16px rgba(255, 77, 77, 0.3); }
-        }
-        
-        #opcionais .section-titulo, #pacote-basico .section-titulo {
-            animation: aura-rosa-vibrante 3s ease-in-out infinite;
-        }
 
-        #checklist-section .section-titulo {
-            animation: aura-roxa 3s ease-in-out infinite;
-        }
-        
+        #planos-section .section-titulo, #historia-section .section-titulo, #portal-section .section-titulo, #social-proof-section .section-titulo { animation: aura-rosa-vibrante 3s ease-in-out infinite; }
+        #jornada-section .section-titulo, #faq-section .section-titulo { animation: aura-roxa 3s ease-in-out infinite; }
+
         /* HERO TITLE */
-        #hero { min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem; position: relative; background-color: var(--cor-fundo); overflow: hidden; }
+        #hero { min-height: 60vh; display: flex; flex-direction:column; align-items: center; justify-content: center; text-align: center; padding: 2rem; position: relative; background-color: var(--cor-fundo); overflow: hidden; }
         #hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 52.5 L12.5 35 Q12.5 17.5 30 25 Q47.5 17.5 47.5 35 Z' fill='rgba(160,0,255,0.03)'/%3E%3C/svg%3E"); animation: girarCoracoes 180s linear infinite; pointer-events: none; }
         @keyframes girarCoracoes { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         #hero-titulo {
@@ -99,657 +85,478 @@
             z-index: 2;
             filter: drop-shadow(0 0 5px rgba(255,255,255,0.3));
         }
+        #hero-subtitulo {
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            color: var(--cor-cinza-claro);
+            max-width: 700px;
+            margin-top: 1.5rem;
+            font-weight: 400;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
         @keyframes gradienteAnimado { to { background-position: 200% center; } }
         @keyframes auraPulsante {
             0% { filter: drop-shadow(0 0 3px rgba(255,255,255,0.2)) drop-shadow(0 0 8px var(--cor-lilas-grad-2)); }
             100% { filter: drop-shadow(0 0 6px rgba(255,255,255,0.4)) drop-shadow(0 0 15px var(--cor-rosa-grad-1)); }
         }
         
-        /* PROBLEMAS E BENEFÍCIOS */
-        .bloco-problema-solucao { display: grid; grid-template-columns: 1fr; gap: 1.2rem; max-width: 900px; margin: 0 auto; }
-        .item-problema, .item-solucao { display: flex; align-items: center; gap: 1rem; padding: 1.2rem; border-radius: 12px; animation: pulsoSuaveItem 3s infinite ease-in-out; text-shadow: 0 0 5px rgba(0,0,0,0.5); }
-        .item-problema span, .item-solucao span { font-size: clamp(1.1rem, 3vw, 1.25rem); font-weight: 600; }
-        .item-problema { background-color: rgba(255, 77, 77, 0.08); border: 1px solid rgba(255, 77, 77, 0.15); }
-        .item-problema .icon { color: var(--cor-vermelho-dor); font-size: 2.2rem; font-weight: bold; filter: drop-shadow(0 0 3px var(--cor-vermelho-dor)); }
-        .item-problema span { color: var(--cor-branco-suave); }
-        .item-solucao { background-color: rgba(0, 255, 153, 0.08); border: 1px solid rgba(0, 255, 153, 0.15); }
-        .item-solucao .icon { color: var(--cor-verde-acao); font-size: 2.2rem; font-weight: bold; filter: drop-shadow(0 0 3px var(--cor-verde-acao)); }
-        .item-solucao span { color: var(--cor-branco-suave); }
-        @keyframes pulsoSuaveItem { 0%, 100% { transform: scale(1); box-shadow: 0 4px 10px rgba(0,0,0,0.1); } 50% { transform: scale(1.015); box-shadow: 0 6px 15px rgba(0,0,0,0.15); } }
+        /* JORNADA DO PRESENTE */
+        .jornada-container { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: stretch; max-width: 1000px; margin: 2rem auto 0 auto;}
+        .jornada-coluna { padding: 2rem; border-radius: var(--borda-raio); display: flex; flex-direction: column; }
+        .jornada-coluna.comum { background: rgba(255, 77, 77, 0.05); border: 1px solid rgba(255, 77, 77, 0.15); }
+        .jornada-coluna.inesquecivel { background: rgba(0, 255, 153, 0.05); border: 1px solid rgba(0, 255, 153, 0.2); }
+        .jornada-coluna h3 { font-size: 1.5rem; text-align: center; margin-bottom: 2rem; }
+        .jornada-coluna.comum h3 { color: var(--cor-vermelho-dor); }
+        .jornada-coluna.inesquecivel h3 { color: var(--cor-verde-acao); }
+        .jornada-item { display: flex; gap: 1rem; align-items: center; margin-bottom: 1.5rem; }
+        .jornada-item .icon { font-size: 2rem; width: 40px; text-align: center; }
+        .jornada-item.comum .icon { color: var(--cor-vermelho-dor); }
+        .jornada-item.inesquecivel .icon { color: var(--cor-verde-acao); }
+        .jornada-item .texto strong { display: block; font-size: 1.1rem; color: var(--cor-branco-puro); margin-bottom: 0.2rem; }
+        .jornada-item .texto span { font-size: 0.95rem; color: var(--cor-cinza-claro); }
 
-        /* PACOTE BÁSICO E OPCIONAIS */
-        .bloco-pacote { background: linear-gradient(145deg, #0f1738, #1a102c); border: 1px solid var(--cor-verde-acao); border-radius: var(--borda-raio); padding: 2.5rem; box-shadow: 0 0 60px rgba(0, 255, 153, 0.1); text-align: center; }
-        .precos { margin: 1rem 0; display: flex; justify-content: center; align-items: baseline; gap: 1rem; }
-        .preco-antigo { font-size: 1.8rem; color: var(--cor-vermelho-dor); text-decoration: line-through; font-weight: 500; animation: aura-suave-vermelha 2.5s ease-in-out infinite; }
-        .preco-atual { font-size: 3.5rem; font-weight: 800; color: var(--cor-verde-acao); animation: aura-suave-verde 2.5s ease-in-out infinite; }
-        .texto-urgencia { font-size: 1.2rem; font-weight: 600; color: var(--cor-laranja-alerta); margin-bottom: 2.5rem; }
-        .texto-urgencia i { margin-right: 0.5rem; }
-        .funcionalidades-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; text-align: left; }
-        .funcionalidade-item { background: var(--cor-fundo-card); padding: 1.2rem; border-radius: 12px; border-left: 4px solid; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .funcionalidade-item:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-        .funcionalidade-item h4 { font-size: 1.1rem; color: var(--cor-branco-puro); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.7rem; }
-        .funcionalidade-item h4 i { width: 20px; text-align: center; }
-        .funcionalidade-item p { font-size: 0.9rem; color: var(--cor-cinza-claro); flex-grow: 1; padding-left: 27px; }
-        .demo-button { background: rgba(255,255,255,0.08); border: 1px solid var(--cor-cinza-claro); color: var(--cor-cinza-claro); padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; transition: all 0.3s ease; margin-top: 1rem; align-self: flex-start; margin-left: 27px; text-decoration: none; display: inline-block; }
-        .demo-button:hover { background: var(--cor-branco-suave); color: var(--cor-fundo); border-color: var(--cor-branco-suave); transform: scale(1.05); }
-
-        /* SEÇÃO DE EXEMPLO */
-        .bloco-exemplo { margin-top: 2.5rem; background: linear-gradient(145deg, #181030, #20153d); border: 1px solid var(--cor-lilas-grad-2); border-radius: var(--borda-raio); padding: 2rem; box-shadow: 0 0 40px rgba(160, 0, 255, 0.15); text-align: center; }
-        .bloco-exemplo h3 { font-size: 1.5rem; color: var(--cor-lilas-grad-2); margin-bottom: 0.5rem; animation: aura-roxa 3s ease-in-out infinite; }
-        .bloco-exemplo p { color: var(--cor-cinza-claro); margin-bottom: 1.5rem; max-width: 600px; margin-left:auto; margin-right:auto;}
-        .exemplo-btn {
-            background: linear-gradient(90deg, var(--cor-rosa-grad-1), var(--cor-lilas-grad-2));
-            color: var(--cor-branco-puro);
-            padding: 12px 25px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.7rem;
-            box-shadow: 0 5px 20px rgba(160, 0, 255, 0.3);
-        }
-        .exemplo-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 30px rgba(255, 0, 128, 0.4);
-        }
-
-        .opcionais-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .card-opcional { background: linear-gradient(145deg, #181030, #20153d); border: 1px solid rgba(160, 0, 255, 0.2); border-radius: var(--borda-raio); padding: 1.5rem; display: flex; flex-direction: column; text-align: center; box-shadow: var(--sombra-card); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .card-opcional:hover { transform: translateY(-8px); box-shadow: 0 12px 40px rgba(160,0,255,0.2); border-color: rgba(160,0,255,0.4); }
-        .card-opcional .icone { font-size: 2.5rem; margin-bottom: 1rem; height: 40px; line-height: 40px; }
-        .card-opcional h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
-        .card-opcional .preco { font-size: 1rem; font-weight: 600; color: var(--cor-branco-suave); margin-bottom: 1rem; }
-        .card-opcional p { font-size: 0.9rem; color: var(--cor-cinza-claro); flex-grow: 1; margin-bottom: 1.5rem; }
-
-        /* CHECKLIST */
-        #checklist-section { background: linear-gradient(145deg, #1a0f38, #2c104a); border-radius: var(--borda-raio); padding: 2.5rem; border: 1px solid var(--cor-lilas-grad-2); }
-        .checklist-item { display: flex; align-items: center; background: var(--cor-fundo-card); padding: 1.2rem; border-radius: 12px; margin-bottom: 1rem; cursor: pointer; transition: background 0.3s ease; border-left: 4px solid transparent; }
-        .checklist-item:hover { background: rgba(0,0,0,0.2); }
-        .checklist-item.checked { border-left-color: var(--cor-verde-acao); }
-        .checklist-item input[type="checkbox"] { appearance: none; -webkit-appearance: none; width: 25px; height: 25px; border: 2px solid var(--cor-cinza-claro); border-radius: 5px; margin-right: 1.2rem; cursor: pointer; position: relative; transition: all 0.2s ease; }
-        .checklist-item input[type="checkbox"]:checked { background-color: var(--cor-verde-acao); border-color: var(--cor-verde-acao); }
-        .checklist-item input[type="checkbox"]:checked::after { content: '✔'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: var(--cor-fundo); font-size: 16px; font-weight: bold; }
-        .checklist-item.disabled { cursor: not-allowed; opacity: 0.8; }
-        .checklist-item.disabled input[type="checkbox"] { cursor: not-allowed; }
-        .checklist-item .item-info .nome { font-size: 1.1rem; font-weight: 500; }
-        .checklist-item .item-preco { font-size: 1.1rem; font-weight: 600; margin-left: auto; color: var(--cor-branco-suave); }
-        .total-container { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: right; display: flex; justify-content: flex-end; align-items: baseline; gap: 1rem; }
-        .total-container .total-texto { font-size: 1.5rem; font-weight: 500; }
-        .total-container #total-price { font-size: 2.2rem; font-weight: 700; color: var(--cor-verde-acao); animation: aura-suave-verde 2.5s ease-in-out infinite; }
-        #finalizar-wpp-btn { display: flex; align-items: center; justify-content: center; gap: 1rem; width: 100%; max-width: 500px; margin: 2rem auto 0 auto; padding: 1rem; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; color: var(--cor-branco-puro); background: var(--cor-verde-wpp); border: none; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); }
-        #finalizar-wpp-btn:hover { transform: scale(1.03); box-shadow: 0 0 30px rgba(37, 211, 102, 0.6); }
-
-        /* MODAIS */
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(10, 16, 31, 0.9); backdrop-filter: blur(8px); display: flex; justify-content: center; align-items: center; z-index: 1000; opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s ease; padding: 1rem; }
-        .modal-overlay.active { opacity: 1; visibility: visible; }
-        .modal-content-wrapper { background: var(--cor-fundo-modal); padding: 2rem; border-radius: var(--borda-raio); box-shadow: 0 15px 50px rgba(0,0,0,0.5); width: 95%; max-width: 700px; max-height: 90vh; overflow-y: auto; position: relative; border: 1px solid var(--cor-borda-modal); transform: scale(0.8); transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28); }
-        .modal-overlay.active .modal-content-wrapper { transform: scale(1); }
-        .modal-close-button { position: absolute; top: 15px; right: 15px; font-size: 2rem; color: var(--cor-cinza-claro); background: none; border: none; cursor: pointer; transition: color 0.3s ease, transform 0.3s ease; z-index: 1001; }
-        .modal-close-button:hover { color: var(--cor-rosa-emocao-original); transform: rotate(90deg); }
-        .modal-titulo { font-size: 1.8rem; color: var(--cor-rosa-emocao-original); text-align: center; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--cor-borda-modal); }
-        .modal-descricao { text-align: center; color: var(--cor-cinza-claro); margin-bottom: 2rem; }
-
-        /* MODAL CONTEÚDO ESPECÍFICO */
-        #modalCartaDemo .carta-conteudo { background: var(--cor-fundo-card); padding: 1.5rem; border-radius: 12px; line-height: 1.8; font-style: italic; animation: fadeInLetter 1s ease-out; }
-        @keyframes fadeInLetter { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .galeria-container { position: relative; }
-        .galeria-imagem { min-height: 350px; background-color: #000; border-radius: 12px; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 1rem;}
-        .galeria-imagem img { max-width: 100%; max-height: 65vh; object-fit: contain; animation: zoomIn 0.5s ease; }
-        @keyframes zoomIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-        .galeria-nav { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: #fff; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 1.5rem; cursor: pointer; transition: background-color 0.3s; }
-        .galeria-nav:hover { background-color: var(--cor-rosa-emocao-original); }
-        .galeria-nav.prev { left: 10px; }
-        .galeria-nav.next { right: 10px; }
-        .galeria-contador { text-align: center; color: var(--cor-cinza-claro); }
-        
-        /* CONTADOR TEMPO JUNTOS - LAYOUT HORIZONTAL */
-        #modalContadorTempoJuntosDemo .contador-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 1rem;
-            background: linear-gradient(135deg, #0a0f2e, #380e4a);
-            padding: 1.5rem;
+        /* SEÇÃO DE HISTÓRIA/PERSUASÃO */
+        #historia-section {
+            background: linear-gradient(160deg, rgba(160, 0, 255, 0.05) 0%, rgba(255, 0, 128, 0.05) 100%);
             border-radius: var(--borda-raio);
-            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2.5rem 2rem;
+            border: 1px solid rgba(160, 0, 255, 0.1);
         }
-        #modalContadorTempoJuntosDemo .tempo-bloco { text-align: center; padding: 0 0.5rem; }
-        #modalContadorTempoJuntosDemo .tempo-valor { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; color: var(--cor-branco-puro); display:inline; }
-        #modalContadorTempoJuntosDemo .tempo-label { font-size: 0.8rem; color: var(--cor-cinza-claro); text-transform: lowercase; display:inline; margin-left: 0.2rem; }
+        .historia-conteudo p {
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            color: var(--cor-branco-suave);
+            max-width: 750px;
+            margin: 0 auto 1.5rem auto;
+            text-align: center;
+            line-height: 1.8;
+        }
+        .historia-conteudo p strong {
+            color: var(--cor-dourado-premium);
+            font-weight: 600;
+        }
+        .historia-icone-central {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--cor-rosa-grad-1);
+            margin: 1.5rem 0;
+            animation: aura-rosa-vibrante 2.5s ease-in-out infinite;
+        }
 
-        #modalCoresDemo .paletas-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
-        #modalCoresDemo .paleta { background: var(--cor-fundo-card); padding: 1rem; border-radius: 12px; }
-        #modalCoresDemo .paleta h4 { margin-bottom: 0.7rem; font-size: 1rem; text-align: center; }
-        #modalCoresDemo .swatches { display: flex; justify-content: center; gap: 0.5rem; }
-        #modalCoresDemo .swatch { width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); }
-        #modalQrCodeDemo img { display: block; margin: 1rem auto; border-radius: 12px; border: 3px solid var(--cor-branco-suave); }
-        #particle-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; }
+        /* PORTAL DA EMOÇÃO (EXEMPLO) */
+        #portal-section { text-align: center; }
+        .portal-btn {
+            background: linear-gradient(90deg, var(--cor-rosa-grad-1), var(--cor-lilas-grad-2));
+            color: var(--cor-branco-puro); padding: 1rem 2.5rem; border-radius: 50px; font-size: 1.3rem;
+            font-weight: 700; text-transform: uppercase; transition: all 0.3s ease; text-decoration: none;
+            display: inline-flex; align-items: center; gap: 0.7rem; box-shadow: 0 5px 20px rgba(160, 0, 255, 0.3);
+            animation: pulse-btn 2s infinite;
+        }
+        .portal-btn:hover { transform: scale(1.05); box-shadow: 0 8px 30px rgba(255, 0, 128, 0.4); animation: none; }
+        @keyframes pulse-btn {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
         
-        /* PEDIDO DE NAMORO MODAL */
-        #modalPedidoNamoro .modal-content-wrapper { transition: background-color 1s ease-in-out, box-shadow 1s ease-in-out; }
-        #modalPedidoNamoro.stage-reveal .modal-content-wrapper {
-            animation: pedidoFundoPulsante 5s ease-in-out infinite alternate, pedidoTelaTreme 0.3s ease-in-out 3;
-        }
-        @keyframes pedidoFundoPulsante {
-            0% { background: var(--cor-fundo-modal); box-shadow: 0 0 20px rgba(255,20,147,0.3); }
-            50% { background: linear-gradient(135deg, var(--cor-rosa-grad-1), #c03970); box-shadow: 0 0 50px var(--cor-rosa-grad-1); }
-            100% { background: var(--cor-fundo-modal); box-shadow: 0 0 20px rgba(255,20,147,0.3); }
-        }
-        @keyframes pedidoTelaTreme { 0%, 100% { transform: translateX(0) scale(1); } 25% { transform: translateX(-3px) scale(1.005); } 75% { transform: translateX(3px) scale(1.005); } }
-        #pedido-carta-container {
-            background: #fff; color: #333; padding: 1.5rem; border-radius: 8px; margin-bottom:1.5rem;
-            transform-origin: top center; animation: desdobrarCarta 1s ease-out forwards; max-height: 0; overflow: hidden;
-        }
-        @keyframes desdobrarCarta {
-            0% { max-height: 0; transform: rotateX(-90deg) scaleY(0.5); opacity:0; }
-            100% { max-height: 300px; transform: rotateX(0deg) scaleY(1); opacity:1; }
-        }
-        #pedido-flores { text-align: center; font-size: 3rem; margin-bottom: 1rem; }
-        .flor-pedido { display:inline-block; animation: cairFlor 2s ease-out forwards; opacity:0; }
-        @keyframes cairFlor { from{transform:translateY(-50px) rotate(-30deg); opacity:0;} to{transform:translateY(0) rotate(0deg); opacity:1;} }
-        #pedido-pergunta { font-size: 1.5rem; text-align: center; margin-bottom: 1.5rem; opacity: 0; animation: surgirTexto 1s 1s forwards; }
-        #pedido-botoes button { margin: 0.5rem; padding: 0.8rem 1.5rem; font-size: 1rem; border-radius: 25px; cursor: pointer; border:none; transition: all 0.3s; opacity: 0; animation: surgirTexto 1s 1.5s forwards; }
-        #pedido-botoes .sim { background-color: var(--cor-verde-acao); color: var(--cor-fundo); }
-        #pedido-botoes .sim:hover { background-color: #00e68a; transform: scale(1.05); }
-        #pedido-celebracao-texto { text-align: center; display: none; }
-        #pedido-celebracao-texto h2 { font-size: 2.8rem; color: var(--cor-branco-puro); animation: glowTextSuper 1.5s infinite alternate; margin-bottom: 1rem;}
-        @keyframes glowTextSuper { from { text-shadow: 0 0 15px #fff, 0 0 30px var(--cor-amarelo-destaque), 0 0 45px var(--cor-amarelo-destaque); filter: brightness(1.1); } to { text-shadow: 0 0 30px #fff, 0 0 45px var(--cor-amarelo-destaque), 0 0 60px var(--cor-amarelo-destaque); filter: brightness(1.3); } }
-        #pedido-celebracao-texto p { margin-top: 1rem; font-size: 1.1rem; animation: surgirTexto 1s forwards; }
-        @keyframes surgirTexto { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+        /* SEÇÃO DE PROVA SOCIAL */
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+        .testimonial-card { background: var(--cor-fundo-card); padding: 2rem; border-radius: var(--borda-raio); border-left: 4px solid var(--cor-rosa-grad-1); }
+        .testimonial-card .quote { font-size: 1.1rem; font-style: italic; color: var(--cor-branco-suave); margin-bottom: 1rem; }
+        .testimonial-card .author { font-weight: 700; color: var(--cor-branco-puro); }
+        .testimonial-card .stars { color: var(--cor-dourado-premium); margin-bottom: 0.5rem; }
 
-        /* JOGO DA MEMÓRIA - CORREÇÕES */
-        .jogo-memoria-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; max-width: 320px; margin: 2rem auto; }
-        .card-jogo { 
-            width: 70px;
-            height: 70px;
-            cursor: pointer; 
-            transform-style: preserve-3d; 
-            transition: transform 0.6s, box-shadow 0.3s; 
-            position:relative; 
+        /* SEÇÃO DE PLANOS */
+        .texto-urgencia {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--cor-dourado-premium);
+            margin: 0 auto 3.5rem auto;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 50px;
+            max-width: 700px;
         }
-        .card-jogo:not(.flipped):hover {
+
+        .planos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            align-items: stretch; /* Garante que os cards tenham a mesma altura */
+        }
+
+        .plano-card {
+            background: linear-gradient(145deg, #0f1738, #1a102c);
+            border: 1px solid rgba(160, 0, 255, 0.3);
+            border-radius: var(--borda-raio);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .plano-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); }
+
+        .plano-card.popular {
             transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
+            border: 2px solid var(--cor-verde-acao);
+            box-shadow: 0 0 50px rgba(0, 255, 153, 0.2);
         }
-        .card-jogo.flipped { transform: rotateY(180deg); }
-        .card-jogo.matched { 
-            transform: rotateY(180deg);
-            animation: matchedPulse 0.5s; 
-        }
-        @keyframes matchedPulse { 
-            0%,100% {transform:rotateY(180deg) scale(1);} 
-            50% {transform:rotateY(180deg) scale(1.1);} 
-        }
-        .card-jogo .face { 
-            position: absolute; 
-            width:100%; 
-            height:100%; 
-            display:flex; 
-            justify-content:center; 
-            align-items:center; 
-            backface-visibility: hidden; 
-            -webkit-backface-visibility: hidden; 
-            border-radius: 8px;
-        }
-        .card-jogo .front { 
-            background-color: #f0f0f0;
-            border: 2px solid var(--cor-rosa-vibrante-icones);
-        }
-        .card-jogo .back { 
-            background-color: var(--cor-rosa-emocao-original); 
-            transform: rotateY(180deg); 
-            font-size: 2.8rem;
-            color: white;
-        }
-        #jogo-status { text-align:center; margin-top:1rem; font-weight:600; min-height: 1.5em; font-size: 1.1rem; }
-        #jogo-status .completed-message {
-            color: var(--cor-verde-acao);
-            text-shadow: 0 0 8px var(--cor-verde-acao);
-            animation: aura-roxa 2s infinite alternate;
-        }
-
-        /* MENSAGEM COM SENHA */
-        #modalSenhaDemo input { display: block; width: 80%; max-width: 300px; margin: 1rem auto; padding: 0.8rem; border-radius: 8px; border: 1px solid var(--cor-cinza-claro); background: var(--cor-fundo-card); color: var(--cor-branco-puro); font-size: 1rem; text-align:center; }
-        #modalSenhaDemo button { display: block; margin: 1rem auto 0 auto; background-color: var(--cor-verde-acao); color: var(--cor-fundo); }
-        #mensagem-revelada { background: rgba(0,255,153,0.1); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--cor-verde-acao); text-align: center; animation: fadeInLetter 0.5s; }
-
-        /* CORAÇÕES COM MENSAGENS */
-        .coracoes-mensagens-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; padding: 1rem 0; }
-        .coracao-msg-item { font-size: 3rem; color: var(--cor-rosa-vibrante-icones); cursor: pointer; transition: transform 0.3s ease, filter 0.3s ease; }
-        .coracao-msg-item:hover { transform: scale(1.2); filter: drop-shadow(0 0 10px var(--cor-rosa-vibrante-icones)); }
-        #mensagem-coracao-exibida { margin-top: 1.5rem; padding: 1rem; background: var(--cor-fundo-card); border-radius: 8px; text-align: center; font-style: italic; min-height: 2em; animation: fadeInLetter 0.5s; }
+        .plano-card.popular:hover { transform: scale(1.08) translateY(-10px); box-shadow: 0 0 70px rgba(0, 255, 153, 0.4); }
         
+        .popular-badge {
+            position: absolute; top: -18px; left: 50%; transform: translateX(-50%);
+            background: linear-gradient(90deg, var(--cor-rosa-grad-1), var(--cor-lilas-grad-2));
+            color: var(--cor-branco-puro); padding: 6px 20px; border-radius: 50px;
+            font-size: 0.9rem; font-weight: 700; text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(160, 0, 255, 0.4);
+        }
+
+        .plano-nome { font-size: 1.8rem; font-weight: 700; text-align: center; margin-bottom: 0.5rem; }
+        .plano-descricao { color: var(--cor-cinza-claro); font-size: 0.95rem; text-align: center; margin-bottom: 1.5rem; min-height: 40px; }
+        .plano-preco { text-align: center; margin-bottom: 2rem; }
+        .plano-preco .valor { font-size: 3.5rem; font-weight: 800; line-height: 1; }
+        .plano-preco .periodo { font-size: 1rem; color: var(--cor-cinza-claro); }
+
+        .plano-card:nth-child(1) .plano-nome, .plano-card:nth-child(1) .valor { color: var(--cor-rosa-vibrante-icones); }
+        .plano-card:nth-child(2) .plano-nome, .plano-card:nth-child(2) .valor { color: var(--cor-verde-acao); }
+        .plano-card:nth-child(3) .plano-nome, .plano-card:nth-child(3) .valor { color: var(--cor-dourado-premium); }
+        
+        .plano-features { list-style: none; padding: 0; margin-bottom: 2rem; flex-grow: 1; }
+        .plano-features li { display: flex; align-items: flex-start; gap: 0.8rem; margin-bottom: 0.9rem; font-size: 0.95rem; line-height: 1.4; }
+        .plano-features li i { color: var(--cor-verde-acao); margin-top: 5px; font-size: 0.8rem;}
+        .plano-features li span { flex: 1; } /* CORREÇÃO APLICADA AQUI */
+
+        .plano-cta-btn {
+            display: block; width: 100%; padding: 1rem; border-radius: 50px; font-size: 1.1rem; font-weight: 700;
+            text-align: center; text-decoration: none; text-transform: uppercase; border: none; cursor: pointer;
+            transition: all 0.3s ease; margin-top: auto;
+        }
+        .plano-card:nth-child(1) .plano-cta-btn { background-color: rgba(255, 105, 180, 0.2); border: 1px solid var(--cor-rosa-vibrante-icones); color: var(--cor-rosa-vibrante-icones); }
+        .plano-card:nth-child(1) .plano-cta-btn:hover { background-color: var(--cor-rosa-vibrante-icones); color: var(--cor-fundo); box-shadow: 0 0 20px rgba(255, 105, 180, 0.5); }
+        
+        .plano-card:nth-child(2) .plano-cta-btn { background-color: var(--cor-verde-acao); color: var(--cor-fundo); box-shadow: 0 0 20px rgba(0, 255, 153, 0.4); }
+        .plano-card:nth-child(2) .plano-cta-btn:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(0, 255, 153, 0.6); }
+
+        .plano-card:nth-child(3) .plano-cta-btn { background-color: var(--cor-dourado-premium); color: var(--cor-fundo); }
+        .plano-card:nth-child(3) .plano-cta-btn:hover { filter: brightness(1.1); box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+
+        /* FAQ SECTION */
+        #faq-section { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--cor-fundo-card); margin-bottom: 1rem; border-radius: 10px; border-left: 3px solid var(--cor-lilas-grad-2); }
+        .faq-question { font-size: 1.1rem; font-weight: 600; padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-question::after { content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; transition: transform 0.3s ease; }
+        .faq-item.active .faq-question::after { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, padding 0.4s ease-out; color: var(--cor-cinza-claro); }
+        .faq-answer p { padding: 0 1.5rem 0 1.5rem; margin:0; line-height: 1.6;}
+        .faq-item.active .faq-answer { padding-bottom: 1.5rem; }
+
+
+        /* GARANTIA SECTION */
+        #garantia-section { text-align: center; padding: 2.5rem; background: linear-gradient(145deg, #181030, #20153d); border-radius: var(--borda-raio); border: 1px solid var(--cor-dourado-premium); }
+        #garantia-section .garantia-icon { font-size: 3.5rem; color: var(--cor-dourado-premium); margin-bottom: 1rem; }
+        #garantia-section h2 { font-size: 2rem; color: var(--cor-dourado-premium); margin-bottom: 1rem; }
+        #garantia-section p { max-width: 600px; margin: 0 auto; color: var(--cor-cinza-claro); }
+        #garantia-section .garantia-nome { margin-top: 1.5rem; font-weight: 700; color: var(--cor-branco-suave); font-style: italic; }
+
+        @media (max-width: 992px) {
+            .plano-card.popular { transform: scale(1); }
+            .planos-container { grid-template-columns: 1fr; }
+        }
         @media (max-width: 768px) {
-            .bloco-problema-solucao, .funcionalidades-grid, .opcionais-grid, #modalCoresDemo .paletas-container { grid-template-columns: 1fr; }
-            .jogo-memoria-grid { grid-template-columns: repeat(3, 1fr); max-width: 250px; }
-            .card-jogo { width: 65px; height: 65px;}
+            .jornada-container { grid-template-columns: 1fr; }
+            .testimonial-grid { grid-template-columns: 1fr; }
         }
 
     </style>
 </head>
 <body>
 
-    <canvas id="particle-canvas"></canvas>
-
-    <section id="hero" data-aos="zoom-in-out">
-        <h1 id="hero-titulo">Eternize os seus sentimentos de forma inesquecível</h1>
-    </section>
+    <header id="hero" data-aos="zoom-in-out">
+        <h1 id="hero-titulo">Eternize seus sentimentos</h1>
+        <p id="hero-subtitulo" data-aos="fade-up" data-aos-delay="200">Mais que um presente. Uma experiência que marca a alma e dura para sempre.</p>
+    </header>
 
     <div class="container-geral">
-        <section class="section-wrapper">
-             <div class="bloco-problema-solucao">
-                 <div class="item-problema" data-aos="fade-right"><div class="icon">❌</div><span>Chega de presentes genéricos que a pessoa esquece em 2 dias</span></div>
-                 <div class="item-problema" data-aos="fade-right" data-aos-delay="100"><div class="icon">❌</div><span>Chega de gastar caro com algo que perde o valor no mesmo dia</span></div>
-                 <div class="item-problema" data-aos="fade-right" data-aos-delay="200"><div class="icon">❌</div><span>Chega de ficar perdido sem saber o que dar em datas especiais</span></div>
-                 <div class="item-problema" data-aos="fade-right" data-aos-delay="300"><div class="icon">❌</div><span>Chega de repetir flores, chocolates e perfumes todo ano</span></div>
-             </div>
-             <div class="section-divider"></div>
-             <div class="bloco-problema-solucao">
-                 <div class="item-solucao" data-aos="fade-left"><div class="icon">✅</div><span>Entregue um presente que emociona e fica para sempre</span></div>
-                 <div class="item-solucao" data-aos="fade-left" data-aos-delay="100"><div class="icon">✅</div><span>Surpreenda com um site feito sob medida para o seu amor</span></div>
-                 <div class="item-solucao" data-aos="fade-left" data-aos-delay="200"><div class="icon">✅</div><span>Gaste pouco e crie uma experiência inesquecível</span></div>
-                 <div class="item-solucao" data-aos="fade-left" data-aos-delay="300"><div class="icon">✅</div><span>Marque a vida de quem você ama com algo exclusivo, personalizado e eterno</span></div>
-             </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <section id="pacote-basico" class="section-wrapper" data-aos="fade-up">
-            <div class="bloco-pacote">
-                <h2 class="section-titulo">Pacote Básico</h2>
-                <div class="precos"><span class="preco-antigo">R$97</span><span class="preco-atual">R$67</span></div>
-                <div class="texto-urgencia"><i class="fas fa-hourglass-half"></i> Oferta termina em: <span id="countdown-timer">10:00</span></div>
-                <div class="funcionalidades-grid">
-                    <div class="funcionalidade-item" data-aos="fade-up" style="border-color: #FF69B4;"><h4 style="color: #FF69B4;"><i class="fas fa-envelope"></i> Carta Personalizada</h4><p>Uma mensagem especial escrita por você, com design romântico.</p><button class="demo-button" data-modal-target="modalCartaDemo"><i class="fas fa-eye"></i> Ver Demonstração</button></div>
-                    <div class="funcionalidade-item" data-aos="fade-up" data-aos-delay="50" style="border-color: #B19CD9;"><h4 style="color: #B19CD9;"><i class="fas fa-images"></i> Até 5 Fotos do Casal</h4><p>Galeria interativa para exibir seus melhores momentos.</p><button class="demo-button" data-modal-target="modalGaleria5FotosDemo"><i class="fas fa-eye"></i> Ver Demonstração</button></div>
-                    <div class="funcionalidade-item" data-aos="fade-up" data-aos-delay="100" style="border-color: #00BFFF;"><h4 style="color: #00BFFF;"><i class="fas fa-music"></i> Música Especial</h4><p>A trilha sonora do seu amor tocando no site.</p><button class="demo-button" data-modal-target="modalMusicaDemo"><i class="fas fa-eye"></i> Ver Demonstração</button></div>
-                    <div class="funcionalidade-item" data-aos="fade-up" data-aos-delay="150" style="border-color: #228B22;"><h4 style="color: #228B22;"><i class="fas fa-clock"></i> Contador de Tempo Juntos</h4><p>Mostra anos, meses, dias e horas desde a data especial.</p><button class="demo-button" data-modal-target="modalContadorTempoJuntosDemo"><i class="fas fa-eye"></i> Ver Demonstração</button></div>
-                    <div class="funcionalidade-item" data-aos="fade-up" data-aos-delay="200" style="border-color: #FFA500;"><h4 style="color: #FFA500;"><i class="fas fa-palette"></i> Cores Personalizadas</h4><p>O site com a identidade de vocês! Paletas para escolher.</p><button class="demo-button" data-modal-target="modalCoresDemo"><i class="fas fa-eye"></i> Ver Demonstração</button></div>
-                    <div class="funcionalidade-item" data-aos="fade-up" data-aos-delay="250" style="border-color: #333;"><h4 style="color: #ccc;"><i class="fas fa-qrcode"></i> QR Code para Acesso</h4><p>Acesso fácil e charmoso para entregar a surpresa.</p><button class="demo-button" data-modal-target="modalQrCodeDemo"><i class="fas fa-eye"></i> Ver Demonstração</button></div>
-                    <div class="funcionalidade-item" data-aos="fade-up" data-aos-delay="300" style="border-color: #4169E1; grid-column: 1 / -1;"><h4 style="color: #4169E1;"><i class="fas fa-infinity"></i> Site Vitalício</h4><p>Fica no ar para sempre. Mesmo daqui a 10 anos, o amor de vocês ainda vai poder acessar esse presente!</p></div>
+        
+        <section id="jornada-section" class="section-wrapper">
+            <h2 class="section-titulo" data-aos="fade-up">Todo grande amor merece mais que o comum</h2>
+            <div class="jornada-container">
+                <div class="jornada-coluna comum" data-aos="fade-right">
+                    <h3>O Caminho Comum</h3>
+                    <div class="jornada-item comum">
+                        <div class="icon"><i class="fa-solid fa-box"></i></div>
+                        <div class="texto">
+                            <strong>O Presente Genérico</strong>
+                            <span>A ansiedade para encontrar algo, resultando em um presente sem alma, igual a todos os outros.</span>
+                        </div>
+                    </div>
+                    <div class="jornada-item comum">
+                        <div class="icon"><i class="fa-regular fa-face-smile"></i></div>
+                        <div class="texto">
+                            <strong>O Sorriso Educado</strong>
+                            <span>Aquele "obrigado" que é sincero, mas não vem acompanhado do brilho nos olhos que você tanto queria ver.</span>
+                        </div>
+                    </div>
+                    <div class="jornada-item comum">
+                        <div class="icon"><i class="fa-solid fa-wind"></i></div>
+                        <div class="texto">
+                            <strong>A Memória que se Apaga</strong>
+                            <span>Em poucos dias, o presente se torna apenas mais um objeto, e a emoção do momento se dissipa.</span>
+                        </div>
+                    </div>
                 </div>
-                <!-- NOVA SEÇÃO DE EXEMPLO -->
-                <div class="bloco-exemplo" data-aos="zoom-in-up">
-                    <h3>Veja um Exemplo Real</h3>
-                    <p>Clique no botão abaixo para ver um site de exemplo completo, com todas as funcionalidades, e se apaixonar ainda mais pela ideia.</p>
-                    <a href="https://igrm55.github.io/exemplo/" target="_blank" class="exemplo-btn">
-                        <i class="fas fa-gift"></i> Ver Site de Exemplo
-                    </a>
+
+                <div class="jornada-coluna inesquecivel" data-aos="fade-left">
+                    <h3>O Salto para o Inesquecível</h3>
+                     <div class="jornada-item inesquecivel">
+                        <div class="icon"><i class="fa-solid fa-star-of-life"></i></div>
+                        <div class="texto">
+                            <strong>O Queixo Caído</strong>
+                            <span>A surpresa genuína ao perceber que não é um objeto, mas sim um portal para as memórias de vocês.</span>
+                        </div>
+                    </div>
+                    <div class="jornada-item inesquecivel">
+                        <div class="icon"><i class="fa-solid fa-face-grin-stars"></i></div>
+                        <div class="texto">
+                            <strong>As Lágrimas de Alegria</strong>
+                            <span>A emoção transborda quando a música de vocês toca e as fotos dos seus melhores momentos aparecem.</span>
+                        </div>
+                    </div>
+                    <div class="jornada-item inesquecivel">
+                        <div class="icon"><i class="fa-solid fa-infinity"></i></div>
+                        <div class="texto">
+                            <strong>A História de Vocês, Imortalizada</strong>
+                            <span>Um presente vivo, que pode ser revisitado para sempre, reacendendo a chama do amor a cada clique.</span>
+                        </div>
+                    </div>
                 </div>
-                <!-- FIM DA NOVA SEÇÃO -->
             </div>
         </section>
 
         <div class="section-divider"></div>
 
-        <section id="opcionais" class="section-wrapper">
-            <h2 class="section-titulo" data-aos="fade-up">Turbine seu Presente Eterno</h2>
-            <p class="section-subtitulo" data-aos="fade-up" data-aos-delay="100">Deixe o presente ainda mais mágico com esses opcionais! Cada extra aumenta a emoção de quem recebe.</p>
-            <div class="opcionais-grid">
-                <div class="card-opcional" data-aos="zoom-in-up"><div class="icone" style="color: #FFC2F5;"><i class="fas fa-camera-retro"></i></div><h3>+5 Fotos Extras</h3><span class="preco">R$5</span><p>Mostre ainda mais momentos especiais, totalizando 10 fotos na galeria.</p><button class="demo-button" data-modal-target="modalGaleria10FotosDemo"><i class="fas fa-eye"></i> Ver Demonstração</button></div>
-                <div class="card-opcional" data-aos="zoom-in-up" data-aos-delay="50"><div class="icone" style="color: #B57EDC;"><i class="fas fa-music"></i></div><h3>+4 Músicas Extras</h3><span class="preco">R$5</span><p>Crie uma playlist de até 5 músicas que contam a história de vocês.</p><button class="demo-button" data-modal-target="modalMultiplasMusicasDemo"><i class="fas fa-eye"></i> Ver Demonstração</button></div>
-                <div class="card-opcional" data-aos="zoom-in-up" data-aos-delay="100"><div class="icone" style="color: #FF4EDB;"><i class="fas fa-heartbeat"></i></div><h3>Chuva de Corações</h3><span class="preco">R$5</span><p>Corações caindo com “eu te amo”, criando um momento inesquecível.</p><button class="demo-button" id="demoChuvaCoracoesBtn"><i class="fas fa-eye"></i> Ver Demonstração</button></div>
-                <div class="card-opcional" data-aos="zoom-in-up" data-aos-delay="150"><div class="icone" style="color: #FFD700;"><i class="fas fa-magic"></i></div><h3>Confetes Animados</h3><span class="preco">R$5</span><p>Uma explosão de alegria com confetes coloridos para momentos de surpresa.</p><button class="demo-button" id="demoConfetesBtn"><i class="fas fa-eye"></i> Ver Demonstração</button></div>
-                <div class="card-opcional" data-aos="zoom-in-up" data-aos-delay="200"><div class="icone" style="color: #F03A65;"><i class="fas fa-ring"></i></div><h3>Pedido de Namoro</h3><span class="preco">R$10</span><p>Uma carta romântica especial + botão de “Sim!” com efeitos de celebração.</p><button class="demo-button" data-modal-target="modalPedidoNamoro"><i class="fas fa-eye"></i> Ver Demonstração</button></div>
-                <div class="card-opcional" data-aos="zoom-in-up" data-aos-delay="250"><div class="icone" style="color: #FFA07A;"><i class="fas fa-microphone"></i></div><h3>Áudio Romântico</h3><span class="preco">R$5</span><p>Grave uma mensagem emocionante com a sua voz e adicione ao site.</p><button class="demo-button" data-modal-target="modalAudioDemo"><i class="fas fa-eye"></i> Ver Demonstração</button></div>
-                <div class="card-opcional" data-aos="zoom-in-up" data-aos-delay="300"><div class="icone" style="color: #7DF9FF;"><i class="fas fa-puzzle-piece"></i></div><h3>Jogo da Memória</h3><span class="preco">R$5</span><p>Minigame divertido e interativo com 6 pares de emojis temáticos.</p><button class="demo-button" data-modal-target="modalJogoMemoria"><i class="fas fa-eye"></i> Ver Demonstração</button></div>
-                <div class="card-opcional" data-aos="zoom-in-up" data-aos-delay="350"><div class="icone" style="color: #DA70D6;"><i class="fas fa-lock"></i></div><h3>Mensagem com Senha</h3><span class="preco">R$5</span><p>Uma mensagem secreta que só pode ser desbloqueada com a palavra "amor2025".</p><button class="demo-button" data-modal-target="modalSenhaDemo"><i class="fas fa-eye"></i> Ver Demonstração</button></div>
-                <div class="card-opcional" data-aos="zoom-in-up" data-aos-delay="400"><div class="icone" style="color: var(--cor-rosa-vibrante-icones);"><i class="fas fa-heart-circle-check"></i></div><h3>Corações com Mensagens</h3><span class="preco">R$5</span><p>12 corações que guardam mensagens de amor só para quem merece.</p><button class="demo-button" data-modal-target="modalCoracoesMensagens"><i class="fas fa-eye"></i> Ver Demonstração</button></div>
+        <section id="historia-section" class="section-wrapper" data-aos="zoom-in-up">
+            <h2 class="section-titulo">Um presente é só um objeto... ou pode ser mais?</h2>
+            <div class="historia-conteudo">
+                 <p data-aos="fade-up" data-aos-delay="100">
+                    Você sabe como é. Uma data especial se aproxima e a busca começa. Você quer surpreender, mas acaba no "kit padrão". É um gesto de carinho, claro. Mas dias depois, a emoção do momento já passou.
+                </p>
+                <p data-aos="fade-up" data-aos-delay="200">
+                    A verdade é que <strong>não queremos apenas dar coisas, queremos provocar sentimentos</strong>. Queremos que a pessoa se sinta única, amada e compreendida em um nível profundo.
+                </p>
+                <div class="historia-icone-central" data-aos="zoom-in" data-aos-delay="250">
+                    <i class="fas fa-heart-pulse"></i>
+                </div>
+                <p data-aos="fade-up" data-aos-delay="300">
+                    Agora, imagine outra cena. Imagine entregar não uma caixa, mas um link. A pessoa abre e vê <strong>a história de vocês</strong>. A trilha sonora de vocês começa a tocar. As fotos que guardam suas melhores risadas aparecem. Uma carta, com as suas palavras, surge na tela. 
+                </p>
+                <p data-aos="fade-up" data-aos-delay="400">
+                    Naquele momento, você não deu um presente. Você entregou uma prova viva do seu amor. Uma cápsula do tempo digital que ela poderá visitar para sempre. Isso não tem preço. <strong>Isso é o que significa eternizar um sentimento.</strong>
+                </p>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+        
+        <section id="portal-section" class="section-wrapper" data-aos="fade-up">
+            <h2 class="section-titulo">Chega de Imaginar. Sinta a Emoção.</h2>
+            <p class="section-subtitulo" style="max-width: 600px;">As palavras são poderosas, mas a experiência é transformadora. Clique abaixo para ver um exemplo real e sentir exatamente o que a pessoa que você ama vai sentir.</p>
+            <a href="https://igrm55.github.io/exemplo/" target="_blank" class="portal-btn" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fas fa-eye"></i> Ver a Mágica Acontecer
+            </a>
+        </section>
+        
+        <div class="section-divider"></div>
+
+        <!-- PROVA SOCIAL -->
+        <section id="social-proof-section" class="section-wrapper">
+            <h2 class="section-titulo" data-aos="fade-up">Não somos nós que dizemos, são eles...</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="quote">"Eu nunca vi minha namorada chorar de alegria daquele jeito. Ela ficou sem palavras. Olhar o site virou o nosso passatempo preferido antes de dormir. Melhor presente da vida, sem exageros."</p>
+                    <p class="author">- Lucas M.</p>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="quote">"Estava com medo de ser complicado, mas o Igor me guiou em tudo. Foi super fácil e o resultado ficou mil vezes melhor do que eu imaginava. A reação dele não teve preço!"</p>
+                    <p class="author">- Fernanda S.</p>
+                </div>
+                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="quote">"Eu queria algo diferente para nosso aniversário de 5 anos. Achei caro no início, mas depois de ver o exemplo e a reação dela, percebi que paguei pouco pela memória que criamos."</p>
+                    <p class="author">- Ricardo P.</p>
+                </div>
             </div>
         </section>
 
         <div class="section-divider"></div>
 
-        <section id="checklist-section" class="section-wrapper" data-aos="zoom-in">
-             <h2 class="section-titulo">Monte seu Presente Perfeito</h2>
-             <p class="section-subtitulo">Selecione os opcionais que deseja adicionar. O valor total será calculado automaticamente.</p>
-             <div id="checklist-container">
-                 <label for="chk-basico" class="checklist-item checked disabled"><input type="checkbox" id="chk-basico" data-name="Pacote Básico" data-price="67" checked disabled><div class="item-info"><span class="nome">Pacote Básico</span></div><span class="item-preco">R$67</span></label>
-                 <label for="chk-fotos" class="checklist-item"><input type="checkbox" id="chk-fotos" class="optional-checkbox" data-name="+5 Fotos Extras" data-price="5"><div class="item-info"><span class="nome">+5 Fotos Extras</span></div><span class="item-preco">+ R$5</span></label>
-                 <label for="chk-musicas" class="checklist-item"><input type="checkbox" id="chk-musicas" class="optional-checkbox" data-name="+4 Músicas Extras" data-price="5"><div class="item-info"><span class="nome">+4 Músicas Extras</span></div><span class="item-preco">+ R$5</span></label>
-                 <label for="chk-chuva" class="checklist-item"><input type="checkbox" id="chk-chuva" class="optional-checkbox" data-name="Chuva de Corações" data-price="5"><div class="item-info"><span class="nome">Chuva de Corações</span></div><span class="item-preco">+ R$5</span></label>
-                 <label for="chk-confetes" class="checklist-item"><input type="checkbox" id="chk-confetes" class="optional-checkbox" data-name="Confetes Animados" data-price="5"><div class="item-info"><span class="nome">Confetes Animados</span></div><span class="item-preco">+ R$5</span></label>
-                 <label for="chk-pedido" class="checklist-item"><input type="checkbox" id="chk-pedido" class="optional-checkbox" data-name="Pedido de Namoro" data-price="10"><div class="item-info"><span class="nome">Pedido de Namoro</span></div><span class="item-preco">+ R$10</span></label>
-                 <label for="chk-audio" class="checklist-item"><input type="checkbox" id="chk-audio" class="optional-checkbox" data-name="Áudio Romântico" data-price="5"><div class="item-info"><span class="nome">Áudio Romântico</span></div><span class="item-preco">+ R$5</span></label>
-                 <label for="chk-jogo" class="checklist-item"><input type="checkbox" id="chk-jogo" class="optional-checkbox" data-name="Jogo da Memória" data-price="5"><div class="item-info"><span class="nome">Jogo da Memória</span></div><span class="item-preco">+ R$5</span></label>
-                 <label for="chk-senha" class="checklist-item"><input type="checkbox" id="chk-senha" class="optional-checkbox" data-name="Mensagem com Senha" data-price="5"><div class="item-info"><span class="nome">Mensagem com Senha</span></div><span class="item-preco">+ R$5</span></label>
-                 <label for="chk-mensagens" class="checklist-item"><input type="checkbox" id="chk-mensagens" class="optional-checkbox" data-name="Corações com Mensagens" data-price="5"><div class="item-info"><span class="nome">Corações com Mensagens</span></div><span class="item-preco">+ R$5</span></label>
-             </div>
-             <div class="total-container"><span class="total-texto">Total:</span><span id="total-price">R$67,00</span></div>
-             <button id="finalizar-wpp-btn"><i class="fab fa-whatsapp"></i>Finalizar meu Presente no WhatsApp</button>
+        <section id="planos-section" class="section-wrapper" data-aos="fade-up">
+            <h2 class="section-titulo">Como você quer emocionar hoje?</h2>
+            <p class="section-subtitulo">Agora que você sentiu e viu o poder disso, escolha o nível da emoção. Cada plano foi pensado para criar um impacto inesquecível.</p>
+            <div class="texto-urgencia" data-aos="fade-up" data-aos-delay="100">
+                ✨ <strong>Vagas limitadas para entrega antes do Dia dos Namorados!</strong>
+            </div>
+
+            <div class="planos-container">
+                <div class="plano-card" data-aos="zoom-in-up" data-aos-delay="200">
+                    <h3 class="plano-nome">Laço de Amor</h3>
+                    <p class="plano-descricao">A forma essencial e emocionante de eternizar seus sentimentos.</p>
+                    <div class="plano-preco">
+                        <span class="valor">R$67</span>
+                        <span class="periodo">Pagamento único</span>
+                    </div>
+                    <ul class="plano-features">
+                        <li><i class="fas fa-check-circle"></i><span>Carta com a sua declaração</span></li>
+                        <li><i class="fas fa-check-circle"></i><span>Galeria com 5 momentos preferidos</span></li>
+                        <li><i class="fas fa-check-circle"></i><span>A música que marcou vocês</span></li>
+                        <li><i class="fas fa-check-circle"></i><span>Contador de Tempo Juntos</span></li>
+                        <li><i class="fas fa-check-circle"></i><span>Paleta de Cores do casal</span></li>
+                        <li><i class="fas fa-check-circle"></i><span>QR Code para acesso rápido</span></li>
+                        <li><i class="fas fa-check-circle"></i><span>Site no ar para Sempre</span></li>
+                    </ul>
+                    <a href="#" class="plano-cta-btn" data-plano="Laço de Amor" data-preco="67">Criar Emoção</a>
+                </div>
+
+                <div class="plano-card popular" data-aos="zoom-in-up" data-aos-delay="300">
+                    <div class="popular-badge">Mais Popular</div>
+                    <h3 class="plano-nome">Nossa Sinfonia</h3>
+                    <p class="plano-descricao">A experiência completa para celebrar cada detalhe com mais interação e emoção.</p>
+                    <div class="plano-preco">
+                        <span class="valor">R$97</span>
+                        <span class="periodo">Pagamento único</span>
+                    </div>
+                    <ul class="plano-features">
+                        <li><i class="fas fa-check-circle"></i><span><strong>Tudo do plano Laço de Amor</strong></span></li>
+                        <li><i class="fas fa-star" style="color:var(--cor-verde-acao)"></i><span><strong>Galeria com 10 momentos</strong></span></li>
+                        <li><i class="fas fa-star" style="color:var(--cor-verde-acao)"></i><span><strong>Sua voz declarando seu amor</strong></span></li>
+                        <li><i class="fas fa-star" style="color:var(--cor-verde-acao)"></i><span>Animação de <strong>Chuva de Corações</strong></span></li>
+                        <li><i class="fas fa-star" style="color:var(--cor-verde-acao)"></i><span><strong>Corações com Mensagens</strong> secretas</span></li>
+                    </ul>
+                    <a href="#" class="plano-cta-btn" data-plano="Nossa Sinfonia" data-preco="97">Criar Sinfonia</a>
+                </div>
+
+                <div class="plano-card" data-aos="zoom-in-up" data-aos-delay="400">
+                    <h3 class="plano-nome">Universo Particular</h3>
+                    <p class="plano-descricao">A declaração definitiva. Uma experiência totalmente imersiva com todos os recursos.</p>
+                    <div class="plano-preco">
+                        <span class="valor">R$147</span>
+                        <span class="periodo">Pagamento único</span>
+                    </div>
+                    <ul class="plano-features">
+                        <li><i class="fas fa-check-circle"></i><span><strong>Tudo do plano Nossa Sinfonia</strong></span></li>
+                        <li><i class="fas fa-crown" style="color:var(--cor-dourado-premium)"></i><span><strong>O "Sim!" que muda tudo</strong> (Pedido Interativo)</span></li>
+                        <li><i class="fas fa-crown" style="color:var(--cor-dourado-premium)"></i><span><strong>Jogo da Memória</strong> do casal</span></li>
+                        <li><i class="fas fa-crown" style="color:var(--cor-dourado-premium)"></i><span><strong>Mensagem secreta com Senha</strong></span></li>
+                        <li><i class="fas fa-crown" style="color:var(--cor-dourado-premium)"></i><span><strong>Playlist com 5 músicas</strong></span></li>
+                        <li><i class="fas fa-crown" style="color:var(--cor-dourado-premium)"></i><span>Animação de <strong>Confetes</strong></span></li>
+                    </ul>
+                    <a href="#" class="plano-cta-btn" data-plano="Universo Particular" data-preco="147">Criar Universo</a>
+                </div>
+            </div>
         </section>
+        
+        <div class="section-divider"></div>
+        
+        <!-- FAQ Section -->
+        <section id="faq-section" class="section-wrapper" data-aos="fade-up">
+            <h2 class="section-titulo">Suas últimas dúvidas, respondidas.</h2>
+            <p class="section-subtitulo">É normal ter perguntas. Aqui estão as mais comuns para te dar total segurança na sua decisão.</p>
+            <div class="faq-container">
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">É muito complicado? Como funciona o processo?</div>
+                    <div class="faq-answer">
+                        <p>É o oposto de complicado! Após a confirmação, eu, Igor, te chamo no WhatsApp e te guio passo a passo. É uma conversa simples onde você me envia os textos, as fotos e a música. Eu cuido de toda a mágica e te entrego o link pronto. Zero estresse, prometo!</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">O valor parece um pouco alto. Vale a pena?</div>
+                    <div class="faq-answer">
+                        <p>Pense assim: quanto custa um bom jantar a dois? Ou um perfume importado? Esses presentes são ótimos, mas a emoção deles é passageira. O 'Presente Eterno' custa menos que a maioria deles, mas a memória, a emoção e a possibilidade de reviver aquele sentimento para sempre... isso não tem preço. É um investimento em uma memória imortal.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">E se a pessoa não for muito ligada em tecnologia?</div>
+                    <div class="faq-answer">
+                        <p>Perfeito! O site é feito para ser incrivelmente simples. É só clicar em um link ou apontar a câmera para o QR Code. Se a pessoa sabe usar o WhatsApp, ela saberá ver o presente. A tecnologia aqui é só o meio, a emoção é a linguagem universal que todos entendem.</p>
+                    </div>
+                </div>
+                 <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">O site fica no ar para sempre mesmo? Sem pegadinhas?</div>
+                    <div class="faq-answer">
+                        <p>Sem pegadinhas. "Para sempre" é o nosso compromisso. O site fica hospedado em uma plataforma global e robusta (GitHub Pages), garantindo que ele permaneça acessível por anos e anos a fio, sem custos adicionais de mensalidade ou anuidade para você. É a sua cápsula do tempo digital, segura e duradoura.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+        
+        <section id="garantia-section" class="section-wrapper" data-aos="fade-up">
+            <div class="garantia-icon"><i class="fas fa-shield-heart"></i></div>
+            <h2>Minha Garantia Pessoal de Emoção</h2>
+            <p>Eu coloco minha alma em cada "Presente Eterno" que crio. Tenho tanta confiança de que a reação será de pura emoção e felicidade que eu te ofereço uma garantia: se, ao ver o rascunho final, você não sentir que aquilo vai marcar a vida da pessoa amada, eu trabalho com você até que fique absolutamente perfeito. O seu "UAU!" é a minha meta.</p>
+            <div class="garantia-nome">- Igor, Criador do Presente Eterno</div>
+        </section>
+
     </div>
-
-    <!-- MODAIS -->
-    <div class="modal-overlay" id="modalCartaDemo"><div class="modal-content-wrapper"><button class="modal-close-button" data-modal-close>×</button><h3 class="modal-titulo">Demonstração: Carta Personalizada</h3><div class="carta-conteudo"><p>Meu amor,</p><p>De todas as estrelas do universo, de todas as canções já compostas, de todos os caminhos que se cruzam, foi o seu olhar que encontrou o meu, e desde então, eu te escolhi para viver essa história comigo. Cada dia ao seu lado é um novo capítulo, mais belo e intenso que o anterior.</p><p>Você não é apenas uma parte da minha vida; você é a poesia que dá ritmo aos meus dias, a melodia que acalma minha alma, a aventura que eu sempre sonhei em viver. Este presente é só um pequeno eco do universo de sentimentos que transborda em mim por você.</p><p>Com todo o meu amor, para sempre e além.</p></div></div></div>
-    <div class="modal-overlay" id="modalGaleria5FotosDemo"><div class="modal-content-wrapper"><button class="modal-close-button" data-modal-close>×</button><h3 class="modal-titulo">Demonstração: Galeria de 5 Fotos</h3><div class="galeria-container" id="galeria-5-fotos"><div class="galeria-imagem"><img src="https://i.postimg.cc/4NJrnT6Z/IMG-0332.jpg" alt="Foto do casal"></div><button class="galeria-nav prev"><i class="fas fa-chevron-left"></i></button><button class="galeria-nav next"><i class="fas fa-chevron-right"></i></button><p class="galeria-contador"></p></div></div></div>
-    <div class="modal-overlay" id="modalGaleria10FotosDemo"><div class="modal-content-wrapper"><button class="modal-close-button" data-modal-close>×</button><h3 class="modal-titulo">Demonstração: Galeria de 10 Fotos</h3><div class="galeria-container" id="galeria-10-fotos"><div class="galeria-imagem"><img src="https://i.postimg.cc/4NJrnT6Z/IMG-0332.jpg" alt="Foto do casal"></div><button class="galeria-nav prev"><i class="fas fa-chevron-left"></i></button><button class="galeria-nav next"><i class="fas fa-chevron-right"></i></button><p class="galeria-contador"></p></div></div></div>
-    <div class="modal-overlay" id="modalMusicaDemo"><div class="modal-content-wrapper"><button class="modal-close-button" data-modal-close>×</button><h3 class="modal-titulo">Demonstração: Música Especial</h3><p class="modal-descricao">A trilha sonora do casal tocaria aqui, criando a atmosfera perfeita.</p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6hiKXxS7pgPKnKfCU7UJ6O?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div></div>
-    <div class="modal-overlay" id="modalMultiplasMusicasDemo"><div class="modal-content-wrapper"><button class="modal-close-button" data-modal-close>×</button><h3 class="modal-titulo">Demonstração: Playlist do Amor (5 Músicas)</h3><div class="players-container"><iframe title="Exemplo 1" style="border-radius:12px" src="https://open.spotify.com/embed/track/6hiKXxS7pgPKnKfCU7UJ6O?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen></iframe><iframe title="Exemplo 2" style="border-radius:12px" src="https://open.spotify.com/embed/track/7z5m1d4eBZrMxtVjZfr0D0?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen></iframe><iframe title="Exemplo 3" style="border-radius:12px" src="https://open.spotify.com/embed/track/6P7Uodyh8g40Nyc3no6R8E?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen></iframe><iframe title="Exemplo 4" style="border-radius:12px" src="https://open.spotify.com/embed/track/4SZWKdNMIaUUFNmtJAxYdr?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen></iframe><iframe title="Exemplo 5" style="border-radius:12px" src="https://open.spotify.com/embed/track/0tgVpDi06FyKpA1z0VMD4v?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen></iframe></div></div></div>
-    <div class="modal-overlay" id="modalContadorTempoJuntosDemo"><div class="modal-content-wrapper"><button class="modal-close-button" data-modal-close>×</button><h3 class="modal-titulo">Demonstração: Contador de Tempo Juntos</h3><p class="modal-descricao">💑 Estamos juntos há:</p><div id="contador-tempo-juntos-container" class="contador-wrapper"></div></div></div>
-    <div class="modal-overlay" id="modalCoresDemo"><div class="modal-content-wrapper"><button class="modal-close-button" data-modal-close>×</button><h3 class="modal-titulo">Demonstração: Paletas de Cores</h3><div class="paletas-container"><div class="paleta"><h4>Casal Romântico</h4><div class="swatches"><div class="swatch" style="background:#FFC0CB;"></div><div class="swatch" style="background:#E6E6FA;"></div><div class="swatch" style="background:#DDA0DD;"></div></div></div><div class="paleta"><h4>Casal Moderno</h4><div class="swatches"><div class="swatch" style="background:#000000;"></div><div class="swatch" style="background:#FFD700;"></div><div class="swatch" style="background:#36454F;"></div></div></div><div class="paleta"><h4>Casal Aventureiro</h4><div class="swatches"><div class="swatch" style="background:#FFA500;"></div><div class="swatch" style="background:#228B22;"></div><div class="swatch" style="background:#D2B48C;"></div></div></div><div class="paleta"><h4>Casal Minimalista</h4><div class="swatches"><div class="swatch" style="background:#FFFFFF; border: 1px solid #ddd;"></div><div class="swatch" style="background:#F5F5F5; border: 1px solid #ddd;"></div><div class="swatch" style="background:#A9A9A9;"></div></div></div></div></div></div>
-    <div class="modal-overlay" id="modalQrCodeDemo"><div class="modal-content-wrapper"><button class="modal-close-button" data-modal-close>×</button><h3 class="modal-titulo">Demonstração: QR Code</h3><p class="modal-descricao">Um QR Code como este seria gerado para levar diretamente ao site do presente.</p><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://example.com/presente-eterno&bgcolor=0a101f&color=ffffff&qzone=1" alt="Exemplo de QR Code"></div></div>
-    <div class="modal-overlay" id="modalPedidoNamoro"><div class="modal-content-wrapper"><button class="modal-close-button" data-modal-close>×</button><div id="pedido-stage1"><div id="pedido-carta-container"><h4>Meu grande amor,</h4><p>Há tempos que meu coração bate mais forte só de pensar em você. Cada momento, cada sorriso, cada olhar trocado, construiu em mim a certeza de que é ao seu lado que quero trilhar todos os meus caminhos...</p></div><div class="buque-flores" id="buque-animado">🌹🌷🌸</div><h3 id="pedido-pergunta" class="modal-titulo" style="border-bottom:none;">Você aceita viver essa história comigo?</h3><div id="pedido-botoes" style="text-align:center;"><button class="sim" id="pedido-sim">SIM!</button><button class="sim" id="pedido-claro-sim" style="background-color: var(--cor-rosa-emocao-original); color:white;">CLARO QUE SIM!</button></div></div><div id="pedido-celebracao-texto" style="display:none;"><h2>EU TE AMO ❤️</h2><p>Prepare-se pra viver a história mais linda da sua vida.</p></div></div></div>
-    <div class="modal-overlay" id="modalAudioDemo"><div class="modal-content-wrapper"><button class="modal-close-button" data-modal-close>×</button><h3 class="modal-titulo">Demonstração: Áudio Romântico</h3><p class="modal-descricao">Sua voz, sua emoção. Imagine uma declaração gravada aqui.</p><div><iframe width="100%" height="60" src="https://vocaroo.com/embed/1hZr1ubHhf2U?autoplay=0" frameborder="0" allow="autoplay"></iframe><br><a href="https://voca.ro/1hZr1ubHhf2U" title="Gravador de Voz do Vocaroo" target="_blank" style="font-size:0.8rem; color: var(--cor-cinza-claro); text-decoration:underline;">Ver no Vocaroo &gt;&gt;</a></div></div></div>
-    <div class="modal-overlay" id="modalJogoMemoria"><div class="modal-content-wrapper"><button class="modal-close-button" data-modal-close>×</button><h3 class="modal-titulo">Demonstração: Jogo da Memória</h3><div class="jogo-memoria-grid" id="jogo-memoria-grid"></div><p id="jogo-status" class="modal-descricao"></p></div></div>
-    <div class="modal-overlay" id="modalSenhaDemo"><div class="modal-content-wrapper"><button class="modal-close-button" data-modal-close>×</button><h3 class="modal-titulo">Demonstração: Mensagem Secreta</h3><p class="modal-descricao">Digite a senha "amor2025" para ver a mensagem.</p><input type="password" id="senha-input" placeholder="Digite a senha..."><button class="demo-button" id="senha-btn" style="align-self:center; margin-left:0;">Revelar</button><p id="mensagem-revelada" style="display:none; margin-top:1rem; color: var(--cor-verde-acao);">Você sempre foi tudo que eu sonhei ❤️</p></div></div>
-    <div class="modal-overlay" id="modalCoracoesMensagens"><div class="modal-content-wrapper"><button class="modal-close-button" data-modal-close>×</button><h3 class="modal-titulo">Demonstração: Corações com Mensagens</h3><p class="modal-descricao">12 corações que guardam mensagens de amor só para quem merece. Clique para descobrir!</p><div class="coracoes-mensagens-container" id="coracoes-mensagens-container"></div><p id="mensagem-coracao-exibida"></p></div></div>
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        //<![CDATA[
         document.addEventListener('DOMContentLoaded', () => {
             AOS.init({ duration: 700, once: true, offset: 50 });
 
-            const modals = {};
-            document.querySelectorAll('[data-modal-target]').forEach(button => {
-                const modalId = button.dataset.modalTarget;
-                if (!modals[modalId]) modals[modalId] = document.getElementById(modalId);
-                button.addEventListener('click', () => openModal(modals[modalId]));
-            });
-            document.querySelectorAll('[data-modal-close]').forEach(button => {
-                button.addEventListener('click', () => closeModal(button.closest('.modal-overlay')));
-            });
-            document.querySelectorAll('.modal-overlay').forEach(overlay => {
-                overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(overlay); });
-            });
-            document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.active').forEach(closeModal); });
-
-            function openModal(modal) {
-                if (!modal) return;
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                const modalId = modal.id;
-                if (modalId === 'modalGaleria5FotosDemo') initGallery('galeria-5-fotos', 5);
-                if (modalId === 'modalGaleria10FotosDemo') initGallery('galeria-10-fotos', 10);
-                if (modalId === 'modalContadorTempoJuntosDemo') startRelationshipCounter();
-                if (modalId === 'modalPedidoNamoro') resetPedidoNamoro();
-                if (modalId === 'modalJogoMemoria') initMemoryGame();
-                if (modalId === 'modalCoracoesMensagens') initCoracoesMensagens();
-            }
-            function closeModal(modal) {
-                if (!modal) return;
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-                if (modal.id === 'modalPedidoNamoro') { // Reset specific modal states on close
-                    modal.classList.remove('stage-reveal');
-                    const pedidoModalContent = modal.querySelector('.modal-content-wrapper');
-                    pedidoModalContent.style.animation = 'none'; // Remove animation para evitar re-trigger
-                    const internalHearts = pedidoModalContent.querySelectorAll('.pedido-heart-particle');
-                    internalHearts.forEach(h => h.remove());
-                }
-            }
-
-            const countdownEl = document.getElementById("countdown-timer");
-            if (countdownEl) {
-                let duration = 60 * 10; // 10 minutos
-                const intervalId = setInterval(() => {
-                    let m = Math.floor(duration / 60).toString().padStart(2, '0');
-                    let s = (duration % 60).toString().padStart(2, '0');
-                    countdownEl.textContent = `${m}:${s}`;
-                    if (--duration < 0) { duration = 60 * 10; /* Reinicia */ }
-                }, 1000);
-            }
-
-            let relationshipInterval;
-            function startRelationshipCounter() {
-                const container = document.getElementById('contador-tempo-juntos-container');
-                if (!container) return;
-                const startDate = new Date('2022-01-15T20:30:00'); // Data de exemplo
-                clearInterval(relationshipInterval);
-                function update() {
-                    const now = new Date();
-                    let diff = now - startDate;
-                    const years = Math.floor(diff / 31536000000); diff %= 31536000000;
-                    const months = Math.floor(diff / 2628000000); diff %= 2628000000;
-                    const days = Math.floor(diff / 86400000); diff %= 86400000;
-                    const hours = Math.floor(diff / 3600000); diff %= 3600000;
-                    const minutes = Math.floor(diff / 60000); diff %= 60000;
-                    const seconds = Math.floor(diff / 1000);
-                    container.innerHTML = `
-                        <div class="tempo-bloco"><span class="tempo-valor">${String(years).padStart(2,'0')}</span><span class="tempo-label">anos</span></div>
-                        <div class="tempo-bloco"><span class="tempo-valor">${String(months).padStart(2,'0')}</span><span class="tempo-label">meses</span></div>
-                        <div class="tempo-bloco"><span class="tempo-valor">${String(days).padStart(2,'0')}</span><span class="tempo-label">dias</span></div>
-                        <div class="tempo-bloco"><span class="tempo-valor">${String(hours).padStart(2,'0')}</span><span class="tempo-label">horas</span></div>
-                        <div class="tempo-bloco"><span class="tempo-valor">${String(minutes).padStart(2,'0')}</span><span class="tempo-label">minutos</span></div>
-                        <div class="tempo-bloco"><span class="tempo-valor">${String(seconds).padStart(2,'0')}</span><span class="tempo-label">segundos</span></div>`;
-                }
-                update();
-                relationshipInterval = setInterval(update, 1000);
-            }
-
-            const photos = ["https://i.postimg.cc/4NJrnT6Z/IMG-0332.jpg", "https://i.postimg.cc/WpmB24JX/IMG-0333.jpg", "https://i.postimg.cc/4yGjzDj6/IMG-0335.jpg", "https://i.postimg.cc/QCqwS6rR/IMG-0336.jpg", "https://i.postimg.cc/MTVhf63Z/IMG-0337.jpg", "https://i.postimg.cc/1zLkznHY/IMG-0338.jpg", "https://i.postimg.cc/wjbKSbsz/IMG-0339.jpg", "https://i.postimg.cc/wjB84dMF/IMG-0340.jpg", "https://i.postimg.cc/yNgqBXFZ/IMG-0341.jpg", "https://i.postimg.cc/fTCQvbzJ/IMG-0342.jpg"];
-            function initGallery(galleryId, numPhotos) {
-                const gallery = document.getElementById(galleryId); if (!gallery) return;
-                const imgEl = gallery.querySelector('img'); const counterEl = gallery.querySelector('.galeria-contador');
-                const photosToShow = photos.slice(0, numPhotos); let currentIndex = 0;
-                const update = () => { imgEl.src = photosToShow[currentIndex]; counterEl.textContent = `${currentIndex + 1} / ${photosToShow.length}`; imgEl.style.animation = 'none'; setTimeout(() => imgEl.style.animation = 'zoomIn 0.5s ease',0); };
-                gallery.querySelector('.prev').onclick = () => { currentIndex = (currentIndex - 1 + photosToShow.length) % photosToShow.length; update(); };
-                gallery.querySelector('.next').onclick = () => { currentIndex = (currentIndex + 1) % photosToShow.length; update(); };
-                update();
-            }
-
-            const canvas = document.getElementById('particle-canvas');
-            const ctx = canvas.getContext('2d');
-            canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-            let particlesArray = []; let animationFrameId;
-
-            function Particle(type) {
-                this.x = Math.random() * canvas.width; this.y = -30;
-                this.type = type;
-                if (type === 'heart') {
-                    this.char = '❤'; this.size = Math.random() * 25 + 15;
-                    this.color = `hsl(${300 + Math.random() * 60}, 100%, ${Math.random() * 30 + 60}%)`;
-                } else { /* confetti */
-                    this.char = ['■','◆','●'][Math.floor(Math.random()*3)]; this.size = Math.random() * 10 + 8;
-                    this.color = `hsl(${Math.random() * 360}, 100%, 70%)`;
-                }
-                this.speedY = Math.random() * 2.5 + 1.5; this.speedX = Math.random() * 3 - 1.5;
-                this.rotation = Math.random() * 360; this.rotationSpeed = Math.random() * 4 - 2;
-                this.opacity = 1; this.life = 0; this.maxLife = 250 + Math.random() * 100;
-            }
-            Particle.prototype.update = function() {
-                this.y += this.speedY; this.x += this.speedX;
-                this.rotation += this.rotationSpeed; this.opacity -= 0.003; this.life++;
-                if (this.y > canvas.height + this.size || this.opacity <= 0 || this.life >= this.maxLife) {
-                    const index = particlesArray.indexOf(this);
-                    if (index > -1) particlesArray.splice(index, 1);
-                }
-            }
-            Particle.prototype.draw = function() {
-                ctx.save();
-                ctx.globalAlpha = this.opacity;
-                ctx.fillStyle = this.color;
-                ctx.font = `${this.size}px Arial`;
-                ctx.translate(this.x + this.size / 2, this.y + this.size / 2);
-                ctx.rotate(this.rotation * Math.PI / 180);
-                ctx.fillText(this.char, -this.size / 2, this.size / 2);
-                ctx.restore();
-            }
-            function animateParticles() {
-                ctx.clearRect(0,0,canvas.width, canvas.height);
-                particlesArray.forEach(p => { p.update(); p.draw(); });
-                if (particlesArray.length > 0) animationFrameId = requestAnimationFrame(animateParticles);
-                else cancelAnimationFrame(animationFrameId);
-            }
-            function startParticleAnimation(type, count, totalDurationMs) {
-                cancelAnimationFrame(animationFrameId); particlesArray = [];
-                let createdCount = 0; const creationIntervalTime = totalDurationMs / count;
-                const intervalId = setInterval(() => {
-                    if (createdCount < count) { particlesArray.push(new Particle(type)); createdCount++; }
-                    else clearInterval(intervalId);
-                }, creationIntervalTime);
-                if (particlesArray.length === 0 && count > 0) {
-                     particlesArray.push(new Particle(type)); createdCount++;
-                }
-                animateParticles();
-            }
-            document.getElementById('demoChuvaCoracoesBtn').onclick = () => startParticleAnimation('heart', 120, 5000);
-            document.getElementById('demoConfetesBtn').onclick = () => startParticleAnimation('confetti', 200, 5000);
-            window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
-
-            const pedidoModal = document.getElementById('modalPedidoNamoro');
-            const pedidoStage1 = document.getElementById('pedido-stage1');
-            const pedidoCartaContainer = document.getElementById('pedido-carta-container');
-            const pedidoFloresEl = document.getElementById('buque-animado');
-            const pedidoPerguntaEl = document.getElementById('pedido-pergunta');
-            const pedidoBotoesEl = document.getElementById('pedido-botoes');
-            const pedidoCelebracao = document.getElementById('pedido-celebracao-texto');
-            
-            function resetPedidoNamoro() {
-                pedidoModal.classList.remove('stage-reveal');
-                pedidoModal.querySelector('.modal-content-wrapper').style.animation = 'none';
-                pedidoStage1.style.display = 'block';
-                pedidoCelebracao.style.display = 'none';
-                pedidoCartaContainer.style.maxHeight = '0';
-                pedidoCartaContainer.style.opacity = '0';
-                pedidoFloresEl.style.opacity = '0';
-                pedidoPerguntaEl.style.opacity = '0';
-                pedidoBotoesEl.style.opacity = '0';
-                setTimeout(() => {
-                    pedidoCartaContainer.style.transition = 'max-height 1s ease-out, opacity 0.5s 0.3s ease-out';
-                    pedidoCartaContainer.style.maxHeight = '300px';
-                    pedidoCartaContainer.style.opacity = '1';
-                }, 100);
-                setTimeout(() => { pedidoFloresEl.style.opacity = '1'; }, 800);
-                setTimeout(() => { pedidoPerguntaEl.style.opacity = '1'; }, 1300);
-                setTimeout(() => { pedidoBotoesEl.style.opacity = '1'; }, 1800);
-            }
-
-            function handlePedidoResposta() {
-                pedidoStage1.style.display = 'none';
-                pedidoModal.classList.add('stage-reveal');
-                const modalContent = pedidoModal.querySelector('.modal-content-wrapper');
-                modalContent.style.animation = 'pedidoFundoPulsante 5s ease-in-out forwards, pedidoTelaTreme 0.3s ease-in-out 3 .2s';
-                const heartsContainer = modalContent;
-                for (let i = 0; i < 30; i++) {
-                    setTimeout(() => {
-                        const heart = document.createElement('div');
-                        heart.innerHTML = '❤️';
-                        heart.className = 'pedido-heart-particle';
-                        heart.style.position = 'absolute';
-                        heart.style.fontSize = `${Math.random() * 20 + 15}px`;
-                        heart.style.color = `hsl(0, 100%, ${Math.random() * 20 + 70}%)`;
-                        heart.style.left = `${Math.random() * 90 + 5}%`;
-                        heart.style.top = `${Math.random() * 80 + 10}%`;
-                        heart.style.animation = `floatAnim ${Math.random() * 3 + 2}s ease-in-out infinite alternate, fadeInLetter 0.5s ease forwards`;
-                        heart.style.zIndex = '1002';
-                        heartsContainer.appendChild(heart);
-                        setTimeout(() => heart.remove(), 4500);
-                    }, i * 80);
-                }
-                setTimeout(() => {
-                     pedidoCelebracao.style.display = 'block';
-                }, 1000);
-            }
-            document.getElementById('pedido-sim').onclick = handlePedidoResposta;
-            document.getElementById('pedido-claro-sim').onclick = handlePedidoResposta;
-
-            function initMemoryGame() {
-                const grid = document.getElementById('jogo-memoria-grid');
-                const statusEl = document.getElementById('jogo-status');
-                if (!grid || !statusEl) return;
-                
-                const emojis = ['💖', '🎵', '💌', '🧩', '💍', '❤️', '💖', '🎵', '💌', '🧩', '💍', '❤️'].sort(() => 0.5 - Math.random());
-                
-                let flipped = [], matched = 0, canClick = true;
-                grid.innerHTML = ''; statusEl.innerHTML = 'Encontre os 6 pares!';
-                
-                emojis.forEach((emoji, index) => {
-                    const card = document.createElement('div');
-                    card.className = 'card-jogo';
-                    card.innerHTML = `<div class="face front"></div><div class="face back">${emoji}</div>`;
-                    card.dataset.emoji = emoji; card.dataset.index = index;
-                    
-                    card.onclick = () => {
-                        if (!canClick || card.classList.contains('flipped') || card.classList.contains('matched')) return;
-                        
-                        card.classList.add('flipped');
-                        flipped.push(card);
-                        
-                        if (flipped.length === 2) {
-                            canClick = false;
-                            setTimeout(() => {
-                                if (flipped[0].dataset.emoji === flipped[1].dataset.emoji && flipped[0].dataset.index !== flipped[1].dataset.index) {
-                                    flipped.forEach(c => c.classList.add('matched')); 
-                                    matched++;
-                                    statusEl.innerHTML = `Pares encontrados: ${matched}/6`;
-                                    
-                                    if (matched === 6) {
-                                        statusEl.innerHTML = `<span class="completed-message">Parabéns! Você desbloqueou uma lembrança inesquecível 💞</span>`;
-                                    }
-                                } else {
-                                    flipped.forEach(c => c.classList.remove('flipped'));
-                                }
-                                flipped = []; 
-                                canClick = true;
-                            }, 800);
-                        }
-                    };
-                    grid.appendChild(card);
-                });
-            }
-            document.getElementById('senha-btn').onclick = () => {
-                const input = document.getElementById('senha-input');
-                const msgRevelada = document.getElementById('mensagem-revelada');
-                if (input.value.toLowerCase() === 'amor2025') {
-                    msgRevelada.style.display = 'block';
-                    input.style.borderColor = 'var(--cor-verde-acao)';
-                } else { 
-                    msgRevelada.style.display = 'none'; 
-                    input.style.borderColor = 'var(--cor-vermelho-dor)'; 
-                }
-            };
-
-            function initCoracoesMensagens() {
-                const container = document.getElementById('coracoes-mensagens-container');
-                const msgExibidaEl = document.getElementById('mensagem-coracao-exibida');
-                if (!container || !msgExibidaEl) return;
-                container.innerHTML = ''; msgExibidaEl.textContent = 'Clique em um coração...';
-                const mensagens = [ "Você é meu sol particular!", "Amo cada detalhe seu.", "Nosso amor é uma canção.", "Meu porto seguro é você.", "Você me faz completo(a).", "A cada dia, te amo mais.", "Minha eterna inspiração.", "Minha alma gêmea.", "O melhor presente da vida.", "Contigo, tudo é mágico.", "Amor da minha existência.", "Para sempre e um dia!" ];
-                for (let i = 0; i < 12; i++) {
-                    const coracao = document.createElement('div');
-                    coracao.className = 'coracao-msg-item';
-                    coracao.innerHTML = '<i class="fas fa-heart"></i>';
-                    coracao.style.color = 'var(--cor-rosa-vibrante-icones)';
-                    coracao.onclick = () => {
-                        msgExibidaEl.textContent = mensagens[i % mensagens.length];
-                        msgExibidaEl.style.animation = 'none';
-                        setTimeout(() => msgExibidaEl.style.animation = 'fadeInLetter 0.5s',0);
-                    };
-                    container.appendChild(coracao);
-                }
-            }
-
-            const checklistCheckboxes = document.querySelectorAll('.optional-checkbox');
-            const totalPriceEl = document.getElementById('total-price');
-            const finalizarBtn = document.getElementById('finalizar-wpp-btn');
             const seuNumeroWhatsApp = '5571999011447';
-
-            function calculateTotal() {
-                const basePrice = 67; let total = basePrice; const selectedItems = ['✅ Pacote Básico'];
-                checklistCheckboxes.forEach(cb => {
-                    const label = cb.closest('.checklist-item');
-                    if (cb.checked) { total += parseFloat(cb.dataset.price); selectedItems.push(`✅ ${cb.dataset.name}`); label.classList.add('checked');
-                    } else label.classList.remove('checked');
+            document.querySelectorAll('.plano-cta-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const plano = button.dataset.plano;
+                    const preco = button.dataset.preco;
+                    const msg = `Olá! Quero criar o *Plano ${plano}* (R$ ${preco},00) para o meu Presente Eterno. Estou pronto(a) para começar a emocionar! ✨`;
+                    window.open(`https://wa.me/${seuNumeroWhatsApp}?text=${encodeURIComponent(msg)}`, '_blank');
                 });
-                totalPriceEl.textContent = `R$${total.toFixed(2).replace('.', ',')}`;
-                return { total, selectedItems };
-            }
-            checklistCheckboxes.forEach(cb => cb.addEventListener('change', calculateTotal));
-            finalizarBtn.addEventListener('click', () => {
-                const { total, selectedItems } = calculateTotal();
-                let msg = `Olá! Quero o meu Presente Eterno com os seguintes itens:\n\n${selectedItems.join('\n')}\n\n*Total: R$${total.toFixed(2).replace('.', ',')}*\n\nComo faço para prosseguir com a compra?`;
-                window.open(`https://wa.me/${seuNumeroWhatsApp}?text=${encodeURIComponent(msg)}`, '_blank');
             });
-            calculateTotal();
+
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const currentlyActive = document.querySelector('.faq-item.active');
+                    if (currentlyActive && currentlyActive !== item) {
+                        currentlyActive.classList.remove('active');
+                        const activeAnswer = currentlyActive.querySelector('.faq-answer');
+                        activeAnswer.style.maxHeight = 0;
+                        activeAnswer.style.paddingTop = null;
+                        activeAnswer.style.paddingBottom = null;
+
+                    }
+
+                    item.classList.toggle('active');
+                    const answer = item.querySelector('.faq-answer');
+                    if (item.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        answer.style.paddingTop = '0';
+                        answer.style.paddingBottom = '1.5rem';
+                    } else {
+                        answer.style.maxHeight = 0;
+                        answer.style.paddingTop = null;
+                        answer.style.paddingBottom = null;
+                    }
+                });
+            });
         });
-        //]]>
     </script>
 </body>
 </html>
