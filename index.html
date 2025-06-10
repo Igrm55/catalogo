@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presente Eterno - A Experiência que Marca a Alma</title>
+    <title>Presente Eterno - Uma Experiência Para Sua Alma</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,15 +14,10 @@
 
     <style>
         :root {
-            --font-principal: 'Poppins', sans-serif;
-            --font-titulo-hero: 'Montserrat', sans-serif;
-
             --cor-fundo: #0a101f;
             --cor-rosa-grad-1: #ff0080;
             --cor-lilas-grad-2: #a000ff;
-            --cor-rosa-emocao-original: #FF1493;
             --cor-verde-acao: #00FF99;
-            --cor-verde-wpp: #25D366;
             --cor-vermelho-dor: #FF4D4D;
             --cor-dourado-premium: #FFD700;
             --cor-branco-puro: #ffffff;
@@ -30,24 +25,108 @@
             --cor-cinza-claro: #b0bac9;
             --cor-fundo-card: rgba(30, 41, 59, 0.5);
             --cor-fundo-modal: #10182b;
-            --cor-borda-modal: rgba(255, 0, 128, 0.3);
             --cor-rosa-vibrante-icones: #FF69B4;
-            --cor-roxo-aura: #8A2BE2;
-
-            --sombra-card: 0 8px 30px rgba(0, 0, 0, 0.3);
             --borda-raio: 16px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
-            font-family: var(--font-principal);
+            font-family: 'Poppins', sans-serif;
             background-color: var(--cor-fundo);
             color: var(--cor-branco-suave);
             line-height: 1.7;
             overflow-x: hidden;
             position: relative;
         }
+
+        /* Esconde o conteúdo principal até o nome ser inserido */
+        #main-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        /* Modal de boas-vindas */
+        #welcome-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+        
+        .welcome-box {
+            background: var(--cor-fundo-modal);
+            padding: 2.5rem 2rem;
+            border-radius: var(--borda-raio);
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            border: 1px solid var(--cor-rosa-grad-1);
+            box-shadow: 0 0 30px rgba(255, 0, 128, 0.3);
+            transform: scale(0.9);
+            animation: popIn 0.5s forwards ease-out;
+        }
+        
+        @keyframes popIn {
+            to { transform: scale(1); }
+        }
+
+        .welcome-box h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: var(--cor-branco-puro);
+            margin-bottom: 0.5rem;
+        }
+
+        .welcome-box p {
+            color: var(--cor-cinza-claro);
+            margin-bottom: 1.5rem;
+        }
+        
+        #name-input {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 10px;
+            border: 2px solid var(--cor-lilas-grad-2);
+            background-color: var(--cor-fundo);
+            color: var(--cor-branco-puro);
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        #name-input:focus {
+            outline: none;
+            box-shadow: 0 0 15px rgba(160, 0, 255, 0.5);
+        }
+
+        #name-submit-btn {
+            background: linear-gradient(90deg, var(--cor-rosa-grad-1), var(--cor-lilas-grad-2));
+            color: var(--cor-branco-puro);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        #name-submit-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(160, 0, 255, 0.3);
+        }
+
         .container-geral { width: 92%; max-width: 1100px; margin: 0 auto; padding: 40px 0; }
         h1, h2, h3 { font-weight: 700; line-height: 1.3; color: var(--cor-branco-puro); }
         .section-titulo { text-align: center; font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 1rem; }
@@ -68,12 +147,13 @@
         #planos-section .section-titulo, #historia-section .section-titulo, #portal-section .section-titulo, #social-proof-section .section-titulo { animation: aura-rosa-vibrante 3s ease-in-out infinite; }
         #jornada-section .section-titulo, #faq-section .section-titulo { animation: aura-roxa 3s ease-in-out infinite; }
 
-        /* HERO TITLE */
+        /* HERO */
         #hero { min-height: 60vh; display: flex; flex-direction:column; align-items: center; justify-content: center; text-align: center; padding: 2rem; position: relative; background-color: var(--cor-fundo); overflow: hidden; }
         #hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 52.5 L12.5 35 Q12.5 17.5 30 25 Q47.5 17.5 47.5 35 Z' fill='rgba(160,0,255,0.03)'/%3E%3C/svg%3E"); animation: girarCoracoes 180s linear infinite; pointer-events: none; }
         @keyframes girarCoracoes { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        
         #hero-titulo {
-            font-family: var(--font-titulo-hero);
+            font-family: 'Montserrat', sans-serif;
             font-size: clamp(3rem, 8vw, 5.5rem);
             font-weight: 800;
             background: linear-gradient(90deg, var(--cor-rosa-grad-1), var(--cor-lilas-grad-2), var(--cor-rosa-grad-1));
@@ -85,6 +165,7 @@
             z-index: 2;
             filter: drop-shadow(0 0 5px rgba(255,255,255,0.3));
         }
+
         #hero-subtitulo {
             font-size: clamp(1.1rem, 3vw, 1.3rem);
             color: var(--cor-cinza-claro);
@@ -115,50 +196,19 @@
         .jornada-item .texto strong { display: block; font-size: 1.1rem; color: var(--cor-branco-puro); margin-bottom: 0.2rem; }
         .jornada-item .texto span { font-size: 0.95rem; color: var(--cor-cinza-claro); }
 
-        /* SEÇÃO DE HISTÓRIA/PERSUASÃO */
-        #historia-section {
-            background: linear-gradient(160deg, rgba(160, 0, 255, 0.05) 0%, rgba(255, 0, 128, 0.05) 100%);
-            border-radius: var(--borda-raio);
-            padding: 2.5rem 2rem;
-            border: 1px solid rgba(160, 0, 255, 0.1);
-        }
-        .historia-conteudo p {
-            font-size: clamp(1rem, 2.5vw, 1.15rem);
-            color: var(--cor-branco-suave);
-            max-width: 750px;
-            margin: 0 auto 1.5rem auto;
-            text-align: center;
-            line-height: 1.8;
-        }
-        .historia-conteudo p strong {
-            color: var(--cor-dourado-premium);
-            font-weight: 600;
-        }
-        .historia-icone-central {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--cor-rosa-grad-1);
-            margin: 1.5rem 0;
-            animation: aura-rosa-vibrante 2.5s ease-in-out infinite;
-        }
+        /* SEÇÃO DE HISTÓRIA */
+        #historia-section { background: linear-gradient(160deg, rgba(160, 0, 255, 0.05) 0%, rgba(255, 0, 128, 0.05) 100%); border-radius: var(--borda-raio); padding: 2.5rem 2rem; border: 1px solid rgba(160, 0, 255, 0.1); }
+        .historia-conteudo p { font-size: clamp(1rem, 2.5vw, 1.15rem); color: var(--cor-branco-suave); max-width: 750px; margin: 0 auto 1.5rem auto; text-align: center; line-height: 1.8; }
+        .historia-conteudo p strong { color: var(--cor-dourado-premium); font-weight: 600; }
+        .historia-icone-central { text-align: center; font-size: 2.5rem; color: var(--cor-rosa-grad-1); margin: 1.5rem 0; animation: aura-rosa-vibrante 2.5s ease-in-out infinite; }
 
-        /* PORTAL DA EMOÇÃO (EXEMPLO) */
+        /* PORTAL DA EMOÇÃO */
         #portal-section { text-align: center; }
-        .portal-btn {
-            background: linear-gradient(90deg, var(--cor-rosa-grad-1), var(--cor-lilas-grad-2));
-            color: var(--cor-branco-puro); padding: 1rem 2.5rem; border-radius: 50px; font-size: 1.3rem;
-            font-weight: 700; text-transform: uppercase; transition: all 0.3s ease; text-decoration: none;
-            display: inline-flex; align-items: center; gap: 0.7rem; box-shadow: 0 5px 20px rgba(160, 0, 255, 0.3);
-            animation: pulse-btn 2s infinite;
-        }
+        .portal-btn { background: linear-gradient(90deg, var(--cor-rosa-grad-1), var(--cor-lilas-grad-2)); color: var(--cor-branco-puro); padding: 1rem 2.5rem; border-radius: 50px; font-size: 1.3rem; font-weight: 700; text-transform: uppercase; transition: all 0.3s ease; text-decoration: none; display: inline-flex; align-items: center; gap: 0.7rem; box-shadow: 0 5px 20px rgba(160, 0, 255, 0.3); animation: pulse-btn 2s infinite; }
         .portal-btn:hover { transform: scale(1.05); box-shadow: 0 8px 30px rgba(255, 0, 128, 0.4); animation: none; }
-        @keyframes pulse-btn {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
+        @keyframes pulse-btn { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
         
-        /* SEÇÃO DE PROVA SOCIAL */
+        /* PROVA SOCIAL */
         .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
         .testimonial-card { background: var(--cor-fundo-card); padding: 2rem; border-radius: var(--borda-raio); border-left: 4px solid var(--cor-rosa-grad-1); }
         .testimonial-card .quote { font-size: 1.1rem; font-style: italic; color: var(--cor-branco-suave); margin-bottom: 1rem; }
@@ -166,84 +216,33 @@
         .testimonial-card .stars { color: var(--cor-dourado-premium); margin-bottom: 0.5rem; }
 
         /* SEÇÃO DE PLANOS */
-        .texto-urgencia {
-            text-align: center;
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--cor-dourado-premium);
-            margin: 0 auto 3.5rem auto;
-            padding: 0.8rem 1.5rem;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            background: rgba(255, 215, 0, 0.05);
-            border-radius: 50px;
-            max-width: 700px;
-        }
-
-        .planos-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            align-items: stretch; /* Garante que os cards tenham a mesma altura */
-        }
-
-        .plano-card {
-            background: linear-gradient(145deg, #0f1738, #1a102c);
-            border: 1px solid rgba(160, 0, 255, 0.3);
-            border-radius: var(--borda-raio);
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-        }
-
+        .texto-urgencia { text-align: center; font-size: 1.2rem; font-weight: 600; color: var(--cor-dourado-premium); margin: 0 auto 3.5rem auto; padding: 0.8rem 1.5rem; border: 1px solid rgba(255, 215, 0, 0.3); background: rgba(255, 215, 0, 0.05); border-radius: 50px; max-width: 700px; }
+        .planos-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: stretch; }
+        .plano-card { background: linear-gradient(145deg, #0f1738, #1a102c); border: 1px solid rgba(160, 0, 255, 0.3); border-radius: var(--borda-raio); padding: 2rem; display: flex; flex-direction: column; height: 100%; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
         .plano-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); }
-
-        .plano-card.popular {
-            transform: scale(1.05);
-            border: 2px solid var(--cor-verde-acao);
-            box-shadow: 0 0 50px rgba(0, 255, 153, 0.2);
-        }
+        .plano-card.popular { transform: scale(1.05); border: 2px solid var(--cor-verde-acao); box-shadow: 0 0 50px rgba(0, 255, 153, 0.2); }
         .plano-card.popular:hover { transform: scale(1.08) translateY(-10px); box-shadow: 0 0 70px rgba(0, 255, 153, 0.4); }
-        
-        .popular-badge {
-            position: absolute; top: -18px; left: 50%; transform: translateX(-50%);
-            background: linear-gradient(90deg, var(--cor-rosa-grad-1), var(--cor-lilas-grad-2));
-            color: var(--cor-branco-puro); padding: 6px 20px; border-radius: 50px;
-            font-size: 0.9rem; font-weight: 700; text-transform: uppercase;
-            box-shadow: 0 5px 15px rgba(160, 0, 255, 0.4);
-        }
-
+        .popular-badge { position: absolute; top: -18px; left: 50%; transform: translateX(-50%); background: linear-gradient(90deg, var(--cor-rosa-grad-1), var(--cor-lilas-grad-2)); color: var(--cor-branco-puro); padding: 6px 20px; border-radius: 50px; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; box-shadow: 0 5px 15px rgba(160, 0, 255, 0.4); }
         .plano-nome { font-size: 1.8rem; font-weight: 700; text-align: center; margin-bottom: 0.5rem; }
         .plano-descricao { color: var(--cor-cinza-claro); font-size: 0.95rem; text-align: center; margin-bottom: 1.5rem; min-height: 40px; }
         .plano-preco { text-align: center; margin-bottom: 2rem; }
         .plano-preco .valor { font-size: 3.5rem; font-weight: 800; line-height: 1; }
         .plano-preco .periodo { font-size: 1rem; color: var(--cor-cinza-claro); }
-
         .plano-card:nth-child(1) .plano-nome, .plano-card:nth-child(1) .valor { color: var(--cor-rosa-vibrante-icones); }
         .plano-card:nth-child(2) .plano-nome, .plano-card:nth-child(2) .valor { color: var(--cor-verde-acao); }
         .plano-card:nth-child(3) .plano-nome, .plano-card:nth-child(3) .valor { color: var(--cor-dourado-premium); }
-        
         .plano-features { list-style: none; padding: 0; margin-bottom: 2rem; flex-grow: 1; }
         .plano-features li { display: flex; align-items: flex-start; gap: 0.8rem; margin-bottom: 0.9rem; font-size: 0.95rem; line-height: 1.4; }
         .plano-features li i { color: var(--cor-verde-acao); margin-top: 5px; font-size: 0.8rem;}
-        .plano-features li span { flex: 1; } /* CORREÇÃO APLICADA AQUI */
-
-        .plano-cta-btn {
-            display: block; width: 100%; padding: 1rem; border-radius: 50px; font-size: 1.1rem; font-weight: 700;
-            text-align: center; text-decoration: none; text-transform: uppercase; border: none; cursor: pointer;
-            transition: all 0.3s ease; margin-top: auto;
-        }
+        .plano-features li span { flex: 1; }
+        .plano-cta-btn { display: block; width: 100%; padding: 1rem; border-radius: 50px; font-size: 1.1rem; font-weight: 700; text-align: center; text-decoration: none; text-transform: uppercase; border: none; cursor: pointer; transition: all 0.3s ease; margin-top: auto; }
         .plano-card:nth-child(1) .plano-cta-btn { background-color: rgba(255, 105, 180, 0.2); border: 1px solid var(--cor-rosa-vibrante-icones); color: var(--cor-rosa-vibrante-icones); }
         .plano-card:nth-child(1) .plano-cta-btn:hover { background-color: var(--cor-rosa-vibrante-icones); color: var(--cor-fundo); box-shadow: 0 0 20px rgba(255, 105, 180, 0.5); }
-        
         .plano-card:nth-child(2) .plano-cta-btn { background-color: var(--cor-verde-acao); color: var(--cor-fundo); box-shadow: 0 0 20px rgba(0, 255, 153, 0.4); }
         .plano-card:nth-child(2) .plano-cta-btn:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(0, 255, 153, 0.6); }
-
         .plano-card:nth-child(3) .plano-cta-btn { background-color: var(--cor-dourado-premium); color: var(--cor-fundo); }
         .plano-card:nth-child(3) .plano-cta-btn:hover { filter: brightness(1.1); box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
-
+        
         /* FAQ SECTION */
         #faq-section { max-width: 800px; margin: 0 auto; }
         .faq-item { background: var(--cor-fundo-card); margin-bottom: 1rem; border-radius: 10px; border-left: 3px solid var(--cor-lilas-grad-2); }
@@ -251,9 +250,8 @@
         .faq-question::after { content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; transition: transform 0.3s ease; }
         .faq-item.active .faq-question::after { transform: rotate(180deg); }
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, padding 0.4s ease-out; color: var(--cor-cinza-claro); }
-        .faq-answer p { padding: 0 1.5rem 0 1.5rem; margin:0; line-height: 1.6;}
-        .faq-item.active .faq-answer { padding-bottom: 1.5rem; }
-
+        .faq-answer p { padding: 0 1.5rem 1.5rem 1.5rem; margin:0; line-height: 1.6;}
+        .faq-item.active .faq-answer { /* Padding bottom is now on the p tag */ }
 
         /* GARANTIA SECTION */
         #garantia-section { text-align: center; padding: 2.5rem; background: linear-gradient(145deg, #181030, #20153d); border-radius: var(--borda-raio); border: 1px solid var(--cor-dourado-premium); }
@@ -261,6 +259,95 @@
         #garantia-section h2 { font-size: 2rem; color: var(--cor-dourado-premium); margin-bottom: 1rem; }
         #garantia-section p { max-width: 600px; margin: 0 auto; color: var(--cor-cinza-claro); }
         #garantia-section .garantia-nome { margin-top: 1.5rem; font-weight: 700; color: var(--cor-branco-suave); font-style: italic; }
+
+        /* JOGO CAÇA-CORAÇÕES MODAL */
+        #game-modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1001;
+            display: none; /* Inicia oculto */
+            justify-content: center;
+            align-items: center;
+        }
+        .game-container {
+            width: 90%;
+            max-width: 600px;
+            height: 80%;
+            max-height: 800px;
+            background: linear-gradient(160deg, #10182b, #0a101f);
+            border-radius: var(--borda-raio);
+            border: 1px solid var(--cor-lilas-grad-2);
+            box-shadow: 0 0 40px rgba(160, 0, 255, 0.4);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        #game-screen {
+            flex-grow: 1;
+            position: relative;
+            cursor: pointer;
+        }
+        .game-heart {
+            position: absolute;
+            font-size: 2rem;
+            color: var(--cor-rosa-grad-1);
+            animation: fall linear forwards;
+            user-select: none;
+            pointer-events: none; /* Clicks passam através */
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(110vh);
+                opacity: 0;
+            }
+        }
+        #game-ui {
+            padding: 1rem;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: var(--cor-branco-puro);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        #game-start-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(10, 16, 31, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 10;
+        }
+        #game-start-overlay h3 { font-size: 2.5rem; color: var(--cor-branco-puro); }
+        #game-start-overlay p { font-size: 1.1rem; color: var(--cor-cinza-claro); margin: 1rem 0 2rem 0; max-width: 80%; }
+        #start-game-btn, #restart-game-btn {
+            background: var(--cor-verde-acao);
+            color: var(--cor-fundo);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        #start-game-btn:hover, #restart-game-btn:hover { transform: scale(1.05); }
+        .close-game-btn {
+            position: absolute;
+            top: 15px; right: 15px;
+            font-size: 1.8rem;
+            color: var(--cor-branco-suave);
+            cursor: pointer;
+            z-index: 11;
+        }
+
 
         @media (max-width: 992px) {
             .plano-card.popular { transform: scale(1); }
@@ -275,287 +362,502 @@
 </head>
 <body>
 
-    <header id="hero" data-aos="zoom-in-out">
-        <h1 id="hero-titulo">Eternize seus sentimentos</h1>
-        <p id="hero-subtitulo" data-aos="fade-up" data-aos-delay="200">Mais que um presente. Uma experiência que marca a alma e dura para sempre.</p>
-    </header>
+    <!-- Modal de Boas-Vindas -->
+    <div id="welcome-modal">
+        <div class="welcome-box">
+            <h2>Antes de começarmos...</h2>
+            <p>Esta experiência foi desenhada para ser única. Para que seja inesquecível, diga-me seu nome.</p>
+            <form id="name-form">
+                <input type="text" id="name-input" placeholder="Digite seu primeiro nome" required autocomplete="off">
+                <button type="submit" id="name-submit-btn">Entrar nesse Universo</button>
+            </form>
+        </div>
+    </div>
 
-    <div class="container-geral">
-        
-        <section id="jornada-section" class="section-wrapper">
-            <h2 class="section-titulo" data-aos="fade-up">Todo grande amor merece mais que o comum</h2>
-            <div class="jornada-container">
-                <div class="jornada-coluna comum" data-aos="fade-right">
-                    <h3>O Caminho Comum</h3>
-                    <div class="jornada-item comum">
-                        <div class="icon"><i class="fa-solid fa-box"></i></div>
-                        <div class="texto">
-                            <strong>O Presente Genérico</strong>
-                            <span>A ansiedade para encontrar algo, resultando em um presente sem alma, igual a todos os outros.</span>
+    <!-- Conteúdo Principal do Site (Inicialmente Oculto) -->
+    <div id="main-content">
+        <header id="hero" data-aos="zoom-in-out">
+            <h1 id="hero-titulo">Eternize seus sentimentos</h1>
+            <p id="hero-subtitulo" data-aos="fade-up" data-aos-delay="200">
+                <span data-copy-id="hero-subtitle">Mais que um presente. Uma experiência que marca a alma e dura para sempre.</span>
+            </p>
+        </header>
+
+        <div class="container-geral">
+            
+            <section id="jornada-section" class="section-wrapper">
+                <h2 class="section-titulo" data-aos="fade-up"><span data-copy-id="jornada-title">Todo grande amor merece mais que o comum</span></h2>
+                <div class="jornada-container">
+                    <div class="jornada-coluna comum" data-aos="fade-right">
+                        <h3>O Caminho Comum</h3>
+                        <div class="jornada-item comum">
+                            <div class="icon"><i class="fa-solid fa-box"></i></div>
+                            <div class="texto">
+                                <strong>O Presente Genérico</strong>
+                                <span data-copy-id="jornada-item1-desc">A ansiedade para encontrar algo, resultando em um presente sem alma, igual a todos os outros.</span>
+                            </div>
+                        </div>
+                        <div class="jornada-item comum">
+                            <div class="icon"><i class="fa-regular fa-face-smile"></i></div>
+                            <div class="texto">
+                                <strong>O Sorriso Educado</strong>
+                                <span data-copy-id="jornada-item2-desc">Aquele "obrigado" que é sincero, mas não vem acompanhado do brilho nos olhos que você tanto queria ver.</span>
+                            </div>
+                        </div>
+                        <div class="jornada-item comum">
+                            <div class="icon"><i class="fa-solid fa-wind"></i></div>
+                            <div class="texto">
+                                <strong>A Memória que se Apaga</strong>
+                                <span>Em poucos dias, o presente se torna apenas mais um objeto, e a emoção do momento se dissipa.</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="jornada-item comum">
-                        <div class="icon"><i class="fa-regular fa-face-smile"></i></div>
-                        <div class="texto">
-                            <strong>O Sorriso Educado</strong>
-                            <span>Aquele "obrigado" que é sincero, mas não vem acompanhado do brilho nos olhos que você tanto queria ver.</span>
-                        </div>
-                    </div>
-                    <div class="jornada-item comum">
-                        <div class="icon"><i class="fa-solid fa-wind"></i></div>
-                        <div class="texto">
-                            <strong>A Memória que se Apaga</strong>
-                            <span>Em poucos dias, o presente se torna apenas mais um objeto, e a emoção do momento se dissipa.</span>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="jornada-coluna inesquecivel" data-aos="fade-left">
-                    <h3>O Salto para o Inesquecível</h3>
-                     <div class="jornada-item inesquecivel">
-                        <div class="icon"><i class="fa-solid fa-star-of-life"></i></div>
-                        <div class="texto">
-                            <strong>O Queixo Caído</strong>
-                            <span>A surpresa genuína ao perceber que não é um objeto, mas sim um portal para as memórias de vocês.</span>
+                    <div class="jornada-coluna inesquecivel" data-aos="fade-left">
+                        <h3>O Salto para o Inesquecível</h3>
+                        <div class="jornada-item inesquecivel">
+                            <div class="icon"><i class="fa-solid fa-star-of-life"></i></div>
+                            <div class="texto">
+                                <strong>O Queixo Caído</strong>
+                                <span>A surpresa genuína ao perceber que não é um objeto, mas sim um portal para as memórias de vocês.</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="jornada-item inesquecivel">
-                        <div class="icon"><i class="fa-solid fa-face-grin-stars"></i></div>
-                        <div class="texto">
-                            <strong>As Lágrimas de Alegria</strong>
-                            <span>A emoção transborda quando a música de vocês toca e as fotos dos seus melhores momentos aparecem.</span>
+                        <div class="jornada-item inesquecivel">
+                            <div class="icon"><i class="fa-solid fa-face-grin-stars"></i></div>
+                            <div class="texto">
+                                <strong>As Lágrimas de Alegria</strong>
+                                <span>A emoção transborda quando a música de vocês toca e as fotos dos seus melhores momentos aparecem.</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="jornada-item inesquecivel">
-                        <div class="icon"><i class="fa-solid fa-infinity"></i></div>
-                        <div class="texto">
-                            <strong>A História de Vocês, Imortalizada</strong>
-                            <span>Um presente vivo, que pode ser revisitado para sempre, reacendendo a chama do amor a cada clique.</span>
+                        <div class="jornada-item inesquecivel">
+                            <div class="icon"><i class="fa-solid fa-infinity"></i></div>
+                            <div class="texto">
+                                <strong>A História de Vocês, Imortalizada</strong>
+                                <span>Um presente vivo, que pode ser revisitado para sempre, reacendendo a chama do amor a cada clique.</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <section id="historia-section" class="section-wrapper" data-aos="zoom-in-up">
+                <h2 class="section-titulo" data-copy-id="historia-title">Um presente é só um objeto... ou pode ser mais?</h2>
+                <div class="historia-conteudo">
+                    <p data-aos="fade-up" data-aos-delay="100" data-copy-id="historia-p1">
+                        Você sabe como é. Uma data especial se aproxima e a busca começa. Você quer surpreender, mas acaba no "kit padrão". É um gesto de carinho, claro. Mas dias depois, a emoção do momento já passou.
+                    </p>
+                    <p data-aos="fade-up" data-aos-delay="200" data-copy-id="historia-p2">
+                        A verdade é que <strong>não queremos apenas dar coisas, queremos provocar sentimentos</strong>. Queremos que a pessoa se sinta única, amada e compreendida em um nível profundo.
+                    </p>
+                    <div class="historia-icone-central" data-aos="zoom-in" data-aos-delay="250">
+                        <i class="fas fa-heart-pulse"></i>
+                    </div>
+                    <p data-aos="fade-up" data-aos-delay="300" data-copy-id="historia-p3">
+                        Agora, imagine outra cena. Imagine entregar não uma caixa, mas um link. A pessoa abre e vê <strong>a história de vocês</strong>. A trilha sonora de vocês começa a tocar. As fotos que guardam suas melhores risadas aparecem. Uma carta, com as suas palavras, surge na tela. 
+                    </p>
+                    <p data-aos="fade-up" data-aos-delay="400" data-copy-id="historia-p4">
+                        Naquele momento, você não deu um presente. Você entregou uma prova viva do seu amor. Uma cápsula do tempo digital que ela poderá visitar para sempre. Isso não tem preço. <strong>Isso é o que significa eternizar um sentimento.</strong>
+                    </p>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+            
+            <section id="portal-section" class="section-wrapper" data-aos="fade-up">
+                <h2 class="section-titulo" data-copy-id="portal-title">Chega de Imaginar. Sinta a Emoção.</h2>
+                <p class="section-subtitulo" style="max-width: 600px;" data-copy-id="portal-subtitle">As palavras são poderosas, mas a experiência é transformadora. Clique abaixo para ver um exemplo real e sentir exatamente o que a pessoa que você ama vai sentir.</p>
+                <a href="https://igrm55.github.io/exemplo/" target="_blank" class="portal-btn" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-eye"></i> Ver a Mágica Acontecer
+                </a>
+            </section>
+            
+            <div class="section-divider"></div>
+
+            <!-- PROVA SOCIAL -->
+            <section id="social-proof-section" class="section-wrapper">
+                <h2 class="section-titulo" data-aos="fade-up">Não somos nós que dizemos, são eles...</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="quote">"Eu nunca vi minha namorada chorar de alegria daquele jeito. Ela ficou sem palavras. Olhar o site virou o nosso passatempo preferido antes de dormir. Melhor presente da vida, sem exageros."</p>
+                        <p class="author">- Lucas M.</p>
+                    </div>
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="quote">"Estava com medo de ser complicado, mas o Igor me guiou em tudo. Foi super fácil e o resultado ficou mil vezes melhor do que eu imaginava. A reação dele não teve preço!"</p>
+                        <p class="author">- Fernanda S.</p>
+                    </div>
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="quote">"Eu queria algo diferente para nosso aniversário de 5 anos. Achei caro no início, mas depois de ver o exemplo e a reação dela, percebi que paguei pouco pela memória que criamos."</p>
+                        <p class="author">- Ricardo P.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <section id="planos-section" class="section-wrapper" data-aos="fade-up">
+                <h2 class="section-titulo" data-copy-id="planos-title">Como você quer emocionar hoje?</h2>
+                <p class="section-subtitulo" data-copy-id="planos-subtitle">Agora que você sentiu o poder disso, escolha o nível da emoção que você vai criar. Cada plano foi pensado para um impacto inesquecível.</p>
+                <div class="texto-urgencia" data-aos="fade-up" data-aos-delay="100">
+                    ✨ <strong>Vagas limitadas para entrega antes do Dia dos Namorados!</strong>
+                </div>
+
+                <div class="planos-container">
+                    <div class="plano-card" data-aos="zoom-in-up" data-aos-delay="200">
+                        <h3 class="plano-nome">Laço de Amor</h3>
+                        <p class="plano-descricao">A forma essencial e emocionante de eternizar seus sentimentos.</p>
+                        <div class="plano-preco"><span class="valor">R$67</span><span class="periodo">Pagamento único</span></div>
+                        <ul class="plano-features">
+                            <li><i class="fas fa-check-circle"></i><span>Carta com a sua declaração</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>Galeria com 5 momentos preferidos</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>A música que marcou vocês</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>Contador de Tempo Juntos</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>Paleta de Cores do casal</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>QR Code para acesso rápido</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>Site no ar para Sempre</span></li>
+                        </ul>
+                        <a href="#" class="plano-cta-btn" data-plano="Laço de Amor" data-preco="67">Criar Emoção</a>
+                    </div>
+
+                    <div class="plano-card popular" data-aos="zoom-in-up" data-aos-delay="300">
+                        <div class="popular-badge">Mais Popular</div>
+                        <h3 class="plano-nome">Nossa Sinfonia</h3>
+                        <p class="plano-descricao">A experiência completa para celebrar cada detalhe com mais interação e emoção.</p>
+                        <div class="plano-preco"><span class="valor">R$97</span><span class="periodo">Pagamento único</span></div>
+                        <ul class="plano-features">
+                            <li><i class="fas fa-check-circle"></i><span><strong>Tudo do plano Laço de Amor</strong></span></li>
+                            <li><i class="fas fa-star" style="color:var(--cor-verde-acao)"></i><span><strong>Galeria com 10 momentos</strong></span></li>
+                            <li><i class="fas fa-star" style="color:var(--cor-verde-acao)"></i><span><strong>Sua voz declarando seu amor</strong></span></li>
+                            <li><i class="fas fa-star" style="color:var(--cor-verde-acao)"></i><span>Animação de <strong>Chuva de Corações</strong></span></li>
+                            <li><i class="fas fa-star" style="color:var(--cor-verde-acao)"></i><span><strong>Corações com Mensagens</strong> secretas</span></li>
+                        </ul>
+                        <a href="#" class="plano-cta-btn" data-plano="Nossa Sinfonia" data-preco="97">Criar Sinfonia</a>
+                    </div>
+
+                    <div class="plano-card" data-aos="zoom-in-up" data-aos-delay="400">
+                        <h3 class="plano-nome">Universo Particular</h3>
+                        <p class="plano-descricao">A declaração definitiva. Uma experiência totalmente imersiva e interativa.</p>
+                        <div class="plano-preco"><span class="valor">R$147</span><span class="periodo">Pagamento único</span></div>
+                        <ul class="plano-features">
+                            <li><i class="fas fa-check-circle"></i><span><strong>Tudo do plano Nossa Sinfonia</strong></span></li>
+                             <li><i class="fas fa-crown" style="color:var(--cor-dourado-premium)"></i><span><strong>Caça-Corações Interativo</strong></span></li>
+                            <li><i class="fas fa-crown" style="color:var(--cor-dourado-premium)"></i><span>O "Sim!" que muda tudo (Pedido Interativo)</span></li>
+                            <li><i class="fas fa-crown" style="color:var(--cor-dourado-premium)"></i><span><strong>Mensagem secreta com Senha</strong></span></li>
+                            <li><i class="fas fa-crown" style="color:var(--cor-dourado-premium)"></i><span><strong>Playlist com 5 músicas</strong></span></li>
+                            <li><i class="fas fa-crown" style="color:var(--cor-dourado-premium)"></i><span>Animação de <strong>Confetes</strong></span></li>
+                        </ul>
+                        <a href="#" class="plano-cta-btn game-launcher" data-plano="Universo Particular" data-preco="147">Criar Universo</a>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="section-divider"></div>
+            
+            <section id="faq-section" class="section-wrapper" data-aos="fade-up">
+                <h2 class="section-titulo">Suas últimas dúvidas, respondidas.</h2>
+                <p class="section-subtitulo">É normal ter perguntas. Aqui estão as mais comuns para te dar total segurança na sua decisão.</p>
+                <div class="faq-container">
+                    <div class="faq-item" data-aos="fade-up">
+                        <div class="faq-question">É muito complicado? Como funciona o processo?</div>
+                        <div class="faq-answer"><p>É o oposto de complicado! Após a confirmação, eu, Igor, chamo no WhatsApp e guio passo a passo. É uma conversa simples onde você me envia os textos, as fotos e a música. Eu cuido de toda a mágica e entrego o link pronto. Zero estresse!</p></div>
+                    </div>
+                    <div class="faq-item" data-aos="fade-up">
+                        <div class="faq-question" data-copy-id="faq-valor-q">O investimento parece um pouco alto. Vale a pena?</div>
+                        <div class="faq-answer"><p data-copy-id="faq-valor-a">Pense assim: quanto custa um bom jantar a dois? Ou um perfume importado? Esses presentes são ótimos, mas a emoção deles é passageira. O 'Presente Eterno' custa menos que a maioria, mas a memória, a emoção e a possibilidade de reviver aquele sentimento para sempre... isso não tem preço. É um investimento em uma memória imortal.</p></div>
+                    </div>
+                    <div class="faq-item" data-aos="fade-up">
+                        <div class="faq-question">E se a pessoa não for muito ligada em tecnologia?</div>
+                        <div class="faq-answer"><p>Perfeito! O site é feito para ser incrivelmente simples. É só clicar em um link ou apontar a câmera para o QR Code. Se a pessoa sabe usar o WhatsApp, ela saberá ver o presente. A tecnologia aqui é só o meio, a emoção é a linguagem universal que todos entendem.</p></div>
+                    </div>
+                     <div class="faq-item" data-aos="fade-up">
+                        <div class="faq-question">O site fica no ar para sempre mesmo? Sem pegadinhas?</div>
+                        <div class="faq-answer"><p>Sem pegadinhas. "Para sempre" é o nosso compromisso. O site fica hospedado em uma plataforma global e robusta (GitHub Pages), garantindo que ele permaneça acessível por anos e anos a fio, sem custos adicionais de mensalidade ou anuidade para você.</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+            
+            <section id="garantia-section" class="section-wrapper" data-aos="fade-up">
+                <div class="garantia-icon"><i class="fas fa-shield-heart"></i></div>
+                <h2>Minha Garantia Pessoal de Emoção</h2>
+                <p data-copy-id="garantia-desc">Eu coloco minha alma em cada "Presente Eterno" que crio. Tenho tanta confiança de que a reação será de pura emoção que ofereço uma garantia: se, ao ver o rascunho final, você não sentir que aquilo vai marcar a vida da pessoa amada, eu trabalho com você até que fique perfeito. O seu "UAU!" é a minha meta.</p>
+                <div class="garantia-nome">- Igor, Criador do Presente Eterno</div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Jogo Caça-Corações -->
+    <div id="game-modal">
+        <div class="game-container">
+            <i class="fas fa-times close-game-btn"></i>
+            <div id="game-start-overlay">
+                <h3>Caça-Corações</h3>
+                <p>A chuva de corações vai começar! Clique no máximo que conseguir em 30 segundos.</p>
+                <button id="start-game-btn">Começar!</button>
             </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <section id="historia-section" class="section-wrapper" data-aos="zoom-in-up">
-            <h2 class="section-titulo">Um presente é só um objeto... ou pode ser mais?</h2>
-            <div class="historia-conteudo">
-                 <p data-aos="fade-up" data-aos-delay="100">
-                    Você sabe como é. Uma data especial se aproxima e a busca começa. Você quer surpreender, mas acaba no "kit padrão". É um gesto de carinho, claro. Mas dias depois, a emoção do momento já passou.
-                </p>
-                <p data-aos="fade-up" data-aos-delay="200">
-                    A verdade é que <strong>não queremos apenas dar coisas, queremos provocar sentimentos</strong>. Queremos que a pessoa se sinta única, amada e compreendida em um nível profundo.
-                </p>
-                <div class="historia-icone-central" data-aos="zoom-in" data-aos-delay="250">
-                    <i class="fas fa-heart-pulse"></i>
-                </div>
-                <p data-aos="fade-up" data-aos-delay="300">
-                    Agora, imagine outra cena. Imagine entregar não uma caixa, mas um link. A pessoa abre e vê <strong>a história de vocês</strong>. A trilha sonora de vocês começa a tocar. As fotos que guardam suas melhores risadas aparecem. Uma carta, com as suas palavras, surge na tela. 
-                </p>
-                <p data-aos="fade-up" data-aos-delay="400">
-                    Naquele momento, você não deu um presente. Você entregou uma prova viva do seu amor. Uma cápsula do tempo digital que ela poderá visitar para sempre. Isso não tem preço. <strong>Isso é o que significa eternizar um sentimento.</strong>
-                </p>
+            <div id="game-screen"></div>
+            <div id="game-ui">
+                <div id="timer">Tempo: 30</div>
+                <div id="score">Pontos: 0</div>
             </div>
-        </section>
-
-        <div class="section-divider"></div>
-        
-        <section id="portal-section" class="section-wrapper" data-aos="fade-up">
-            <h2 class="section-titulo">Chega de Imaginar. Sinta a Emoção.</h2>
-            <p class="section-subtitulo" style="max-width: 600px;">As palavras são poderosas, mas a experiência é transformadora. Clique abaixo para ver um exemplo real e sentir exatamente o que a pessoa que você ama vai sentir.</p>
-            <a href="https://igrm55.github.io/exemplo/" target="_blank" class="portal-btn" data-aos="zoom-in" data-aos-delay="200">
-                <i class="fas fa-eye"></i> Ver a Mágica Acontecer
-            </a>
-        </section>
-        
-        <div class="section-divider"></div>
-
-        <!-- PROVA SOCIAL -->
-        <section id="social-proof-section" class="section-wrapper">
-            <h2 class="section-titulo" data-aos="fade-up">Não somos nós que dizemos, são eles...</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="quote">"Eu nunca vi minha namorada chorar de alegria daquele jeito. Ela ficou sem palavras. Olhar o site virou o nosso passatempo preferido antes de dormir. Melhor presente da vida, sem exageros."</p>
-                    <p class="author">- Lucas M.</p>
-                </div>
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="quote">"Estava com medo de ser complicado, mas o Igor me guiou em tudo. Foi super fácil e o resultado ficou mil vezes melhor do que eu imaginava. A reação dele não teve preço!"</p>
-                    <p class="author">- Fernanda S.</p>
-                </div>
-                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="quote">"Eu queria algo diferente para nosso aniversário de 5 anos. Achei caro no início, mas depois de ver o exemplo e a reação dela, percebi que paguei pouco pela memória que criamos."</p>
-                    <p class="author">- Ricardo P.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <section id="planos-section" class="section-wrapper" data-aos="fade-up">
-            <h2 class="section-titulo">Como você quer emocionar hoje?</h2>
-            <p class="section-subtitulo">Agora que você sentiu e viu o poder disso, escolha o nível da emoção. Cada plano foi pensado para criar um impacto inesquecível.</p>
-            <div class="texto-urgencia" data-aos="fade-up" data-aos-delay="100">
-                ✨ <strong>Vagas limitadas para entrega antes do Dia dos Namorados!</strong>
-            </div>
-
-            <div class="planos-container">
-                <div class="plano-card" data-aos="zoom-in-up" data-aos-delay="200">
-                    <h3 class="plano-nome">Laço de Amor</h3>
-                    <p class="plano-descricao">A forma essencial e emocionante de eternizar seus sentimentos.</p>
-                    <div class="plano-preco">
-                        <span class="valor">R$67</span>
-                        <span class="periodo">Pagamento único</span>
-                    </div>
-                    <ul class="plano-features">
-                        <li><i class="fas fa-check-circle"></i><span>Carta com a sua declaração</span></li>
-                        <li><i class="fas fa-check-circle"></i><span>Galeria com 5 momentos preferidos</span></li>
-                        <li><i class="fas fa-check-circle"></i><span>A música que marcou vocês</span></li>
-                        <li><i class="fas fa-check-circle"></i><span>Contador de Tempo Juntos</span></li>
-                        <li><i class="fas fa-check-circle"></i><span>Paleta de Cores do casal</span></li>
-                        <li><i class="fas fa-check-circle"></i><span>QR Code para acesso rápido</span></li>
-                        <li><i class="fas fa-check-circle"></i><span>Site no ar para Sempre</span></li>
-                    </ul>
-                    <a href="#" class="plano-cta-btn" data-plano="Laço de Amor" data-preco="67">Criar Emoção</a>
-                </div>
-
-                <div class="plano-card popular" data-aos="zoom-in-up" data-aos-delay="300">
-                    <div class="popular-badge">Mais Popular</div>
-                    <h3 class="plano-nome">Nossa Sinfonia</h3>
-                    <p class="plano-descricao">A experiência completa para celebrar cada detalhe com mais interação e emoção.</p>
-                    <div class="plano-preco">
-                        <span class="valor">R$97</span>
-                        <span class="periodo">Pagamento único</span>
-                    </div>
-                    <ul class="plano-features">
-                        <li><i class="fas fa-check-circle"></i><span><strong>Tudo do plano Laço de Amor</strong></span></li>
-                        <li><i class="fas fa-star" style="color:var(--cor-verde-acao)"></i><span><strong>Galeria com 10 momentos</strong></span></li>
-                        <li><i class="fas fa-star" style="color:var(--cor-verde-acao)"></i><span><strong>Sua voz declarando seu amor</strong></span></li>
-                        <li><i class="fas fa-star" style="color:var(--cor-verde-acao)"></i><span>Animação de <strong>Chuva de Corações</strong></span></li>
-                        <li><i class="fas fa-star" style="color:var(--cor-verde-acao)"></i><span><strong>Corações com Mensagens</strong> secretas</span></li>
-                    </ul>
-                    <a href="#" class="plano-cta-btn" data-plano="Nossa Sinfonia" data-preco="97">Criar Sinfonia</a>
-                </div>
-
-                <div class="plano-card" data-aos="zoom-in-up" data-aos-delay="400">
-                    <h3 class="plano-nome">Universo Particular</h3>
-                    <p class="plano-descricao">A declaração definitiva. Uma experiência totalmente imersiva com todos os recursos.</p>
-                    <div class="plano-preco">
-                        <span class="valor">R$147</span>
-                        <span class="periodo">Pagamento único</span>
-                    </div>
-                    <ul class="plano-features">
-                        <li><i class="fas fa-check-circle"></i><span><strong>Tudo do plano Nossa Sinfonia</strong></span></li>
-                        <li><i class="fas fa-crown" style="color:var(--cor-dourado-premium)"></i><span><strong>O "Sim!" que muda tudo</strong> (Pedido Interativo)</span></li>
-                        <li><i class="fas fa-crown" style="color:var(--cor-dourado-premium)"></i><span><strong>Jogo da Memória</strong> do casal</span></li>
-                        <li><i class="fas fa-crown" style="color:var(--cor-dourado-premium)"></i><span><strong>Mensagem secreta com Senha</strong></span></li>
-                        <li><i class="fas fa-crown" style="color:var(--cor-dourado-premium)"></i><span><strong>Playlist com 5 músicas</strong></span></li>
-                        <li><i class="fas fa-crown" style="color:var(--cor-dourado-premium)"></i><span>Animação de <strong>Confetes</strong></span></li>
-                    </ul>
-                    <a href="#" class="plano-cta-btn" data-plano="Universo Particular" data-preco="147">Criar Universo</a>
-                </div>
-            </div>
-        </section>
-        
-        <div class="section-divider"></div>
-        
-        <!-- FAQ Section -->
-        <section id="faq-section" class="section-wrapper" data-aos="fade-up">
-            <h2 class="section-titulo">Suas últimas dúvidas, respondidas.</h2>
-            <p class="section-subtitulo">É normal ter perguntas. Aqui estão as mais comuns para te dar total segurança na sua decisão.</p>
-            <div class="faq-container">
-                <div class="faq-item" data-aos="fade-up">
-                    <div class="faq-question">É muito complicado? Como funciona o processo?</div>
-                    <div class="faq-answer">
-                        <p>É o oposto de complicado! Após a confirmação, eu, Igor, te chamo no WhatsApp e te guio passo a passo. É uma conversa simples onde você me envia os textos, as fotos e a música. Eu cuido de toda a mágica e te entrego o link pronto. Zero estresse, prometo!</p>
-                    </div>
-                </div>
-                <div class="faq-item" data-aos="fade-up">
-                    <div class="faq-question">O valor parece um pouco alto. Vale a pena?</div>
-                    <div class="faq-answer">
-                        <p>Pense assim: quanto custa um bom jantar a dois? Ou um perfume importado? Esses presentes são ótimos, mas a emoção deles é passageira. O 'Presente Eterno' custa menos que a maioria deles, mas a memória, a emoção e a possibilidade de reviver aquele sentimento para sempre... isso não tem preço. É um investimento em uma memória imortal.</p>
-                    </div>
-                </div>
-                <div class="faq-item" data-aos="fade-up">
-                    <div class="faq-question">E se a pessoa não for muito ligada em tecnologia?</div>
-                    <div class="faq-answer">
-                        <p>Perfeito! O site é feito para ser incrivelmente simples. É só clicar em um link ou apontar a câmera para o QR Code. Se a pessoa sabe usar o WhatsApp, ela saberá ver o presente. A tecnologia aqui é só o meio, a emoção é a linguagem universal que todos entendem.</p>
-                    </div>
-                </div>
-                 <div class="faq-item" data-aos="fade-up">
-                    <div class="faq-question">O site fica no ar para sempre mesmo? Sem pegadinhas?</div>
-                    <div class="faq-answer">
-                        <p>Sem pegadinhas. "Para sempre" é o nosso compromisso. O site fica hospedado em uma plataforma global e robusta (GitHub Pages), garantindo que ele permaneça acessível por anos e anos a fio, sem custos adicionais de mensalidade ou anuidade para você. É a sua cápsula do tempo digital, segura e duradoura.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-        
-        <section id="garantia-section" class="section-wrapper" data-aos="fade-up">
-            <div class="garantia-icon"><i class="fas fa-shield-heart"></i></div>
-            <h2>Minha Garantia Pessoal de Emoção</h2>
-            <p>Eu coloco minha alma em cada "Presente Eterno" que crio. Tenho tanta confiança de que a reação será de pura emoção e felicidade que eu te ofereço uma garantia: se, ao ver o rascunho final, você não sentir que aquilo vai marcar a vida da pessoa amada, eu trabalho com você até que fique absolutamente perfeito. O seu "UAU!" é a minha meta.</p>
-            <div class="garantia-nome">- Igor, Criador do Presente Eterno</div>
-        </section>
-
+        </div>
     </div>
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            AOS.init({ duration: 700, once: true, offset: 50 });
 
+            // --- ELEMENTOS DO DOM ---
+            const welcomeModal = document.getElementById('welcome-modal');
+            const nameForm = document.getElementById('name-form');
+            const nameInput = document.getElementById('name-input');
+            const mainContent = document.getElementById('main-content');
+
+            // --- DADOS E ESTADO ---
             const seuNumeroWhatsApp = '5571999011447';
-            document.querySelectorAll('.plano-cta-btn').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const plano = button.dataset.plano;
-                    const preco = button.dataset.preco;
-                    const msg = `Olá! Quero criar o *Plano ${plano}* (R$ ${preco},00) para o meu Presente Eterno. Estou pronto(a) para começar a emocionar! ✨`;
-                    window.open(`https://wa.me/${seuNumeroWhatsApp}?text=${encodeURIComponent(msg)}`, '_blank');
+            let userName = '';
+
+            // --- LÓGICA DE PERSONALIZAÇÃO (SIMULAÇÃO DE IA) ---
+            const copyDatabase = {
+                'hero-subtitle': {
+                    male: '{name}, já sentiu que um simples presente não consegue expressar o tamanho do seu sentimento? Você está no lugar certo.',
+                    female: '{name}, já imaginou transformar suas melhores memórias em um presente que ela nunca vai esquecer? Você está prestes a descobrir como.'
+                },
+                'jornada-title': {
+                    male: '{name}, um amor como o seu merece mais que o comum.',
+                    female: '{name}, seu relacionamento é uma história única. Por que o presente seria comum?'
+                },
+                'jornada-item1-desc': {
+                    male: 'Você roda a cidade, olha a internet e tudo parece igual. A pressão para achar algo incrível só aumenta.',
+                    female: 'A busca pelo presente perfeito, que acaba em algo que não tem o toque pessoal e a alma de vocês.'
+                },
+                 'jornada-item2-desc': {
+                    male: 'Ela sorri, agradece, mas você sabe. Aquele brilho no olhar, a emoção que arrepia... não estava lá.',
+                    female: 'Aquele sorriso educado, que é sincero, mas que não reflete a explosão de alegria que você sonhava em causar.'
+                },
+                'historia-title': {
+                    male: '{name}, um presente é só um objeto... ou a prova de um sentimento?',
+                    female: '{name}, presentes vêm e vão. E se o seu durasse para sempre?'
+                },
+                 'historia-p1': {
+                    male: '{name}, você sabe como é. A data especial chegando, a pressão aumentando. Você quer ser o cara que surpreende, mas as opções parecem sempre as mesmas. O resultado? Um presente que não reflete a intensidade do que você sente.',
+                    female: '{name}, você se dedica, pensa com carinho, mas na hora de presentear, parece que as opções são sempre as mesmas, né? Um gesto de amor que, dias depois, se torna apenas mais um item na prateleira.'
+                },
+                'historia-p3': {
+                    male: 'Agora, {name}, imagine a cena: Você envia um link. Ela abre. A música de vocês começa. As fotos dos melhores momentos surgem. Uma carta, com a sua voz ou suas palavras, declara o que você sente. Pense na reação dela.',
+                    female: 'Agora, {name}, visualize a cena: Você entrega não uma caixa, mas um portal. Ele clica no link. A trilha sonora de vocês invade o ambiente. As fotos das suas melhores risadas, das viagens, dos momentos... tudo ali. É a história de vocês, viva.'
+                },
+                 'planos-title': {
+                    male: '{name}, qual o nível de impacto que você quer causar?',
+                    female: '{name}, como você vai eternizar seu amor hoje?'
+                },
+                'planos-subtitle': {
+                    male: 'Você já viu o poder disso. Agora, {name}, escolha a arma da sua declaração. Cada plano é um nível diferente de "eu te amo".',
+                    female: 'Agora que você sentiu a magia, {name}, escolha como sua história será contada. Cada plano é um capítulo especial dessa jornada.'
+                },
+                'faq-valor-q': {
+                     male: 'O investimento parece um pouco alto. Realmente vale a pena?',
+                     female: 'O investimento parece um pouco alto. Será que vale a pena?'
+                },
+                'faq-valor-a': {
+                    male: 'Pense comigo, <strong>{name}</strong>: quanto vale a emoção genuína da mulher que você ama? Um jantar caro, um perfume... são ótimos, mas a sensação passa. Isto aqui é diferente. É um investimento na história de vocês, uma memória que ela vai revisitar e se emocionar de novo e de novo. É a certeza de que você acertou em cheio.',
+                    female: '<strong>{name}</strong>, pense no seguinte: quanto custa a certeza de ter dado um presente que ele nunca, jamais, vai esquecer? Flores murcham, chocolates acabam. Esta experiência é uma âncora emocional. Toda vez que ele revisitar o site, vai sentir a mesma emoção do primeiro dia e lembrar do quão incrível você é. Isso, <strong>{name}</strong>, não tem preço.'
+                },
+                'garantia-desc': {
+                    male: '<strong>{name}</strong>, eu coloco minha alma em cada "Presente Eterno". A minha confiança na sua satisfação é tão grande que te dou minha garantia pessoal: se ao ver o resultado você não sentir um arrepio, se não tiver certeza de que a reação dela será de pura emoção, eu trabalho com você até o projeto ficar absolutamente perfeito. O seu "UAU!" é a minha meta.',
+                    female: '<strong>{name}</strong>, eu coloco minha alma em cada "Presente Eterno". A minha confiança na sua satisfação é tão grande que te dou minha garantia pessoal: se ao ver o resultado você não sentir um arrepio, se não tiver certeza de que a reação dele será de pura emoção, eu trabalho com você até o projeto ficar absolutamente perfeito. O seu "UAU!" é a minha meta.'
+                }
+            };
+            
+            // Função aprimorada para detectar gênero
+            const getGender = (name) => {
+                const lowerCaseName = name.toLowerCase();
+                // Nomes masculinos comuns que são exceções às regras de terminação
+                const maleExceptions = ['luca', 'dante', 'jose', 'josé', 'alexandre', 'vicente', 'henrique', 'felipe', 'tomé', 'guilherme', 'cauê'];
+                // Nomes femininos comuns que são exceções
+                const femaleExceptions = ['isabel', 'ester', 'íris', 'beatriz', 'raquel', 'inês', 'alice', 'jacqueline', 'taís'];
+
+                if (maleExceptions.includes(lowerCaseName)) return 'male';
+                if (femaleExceptions.includes(lowerCaseName)) return 'female';
+
+                const lastLetter = lowerCaseName.slice(-1);
+                // Regras gerais de terminação
+                if ('olrsm'.includes(lastLetter)) return 'male';
+                if ('aiey'.includes(lastLetter)) return 'female';
+                
+                // Padrão para nomes ambíguos ou não cobertos
+                return 'male'; 
+            };
+
+            const personalizePage = (name, gender) => {
+                document.querySelectorAll('[data-copy-id]').forEach(el => {
+                    const id = el.dataset.copyId;
+                    if (copyDatabase[id]) {
+                        let text = copyDatabase[id][gender] || copyDatabase[id]['male'];
+                        if(text){
+                           // A substituição agora é feita com innerHTML para permitir a tag <strong>
+                           el.innerHTML = text.replace(/{name}/g, `<strong>${name}</strong>`);
+                        }
+                    }
                 });
+            };
+
+            // --- INICIALIZAÇÃO ---
+            nameForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const rawName = nameInput.value.trim();
+                if (rawName) {
+                    userName = rawName.charAt(0).toUpperCase() + rawName.slice(1).toLowerCase().split(' ')[0];
+                    const gender = getGender(userName);
+                    
+                    personalizePage(userName, gender);
+
+                    welcomeModal.style.opacity = '0';
+                    setTimeout(() => {
+                        welcomeModal.style.display = 'none';
+                        mainContent.style.display = 'block';
+                        setTimeout(() => mainContent.style.opacity = '1', 50);
+                        AOS.init({ duration: 700, once: true, offset: 50 });
+                    }, 500);
+                }
             });
 
-            // FAQ Accordion
-            const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                question.addEventListener('click', () => {
-                    const currentlyActive = document.querySelector('.faq-item.active');
-                    if (currentlyActive && currentlyActive !== item) {
-                        currentlyActive.classList.remove('active');
-                        const activeAnswer = currentlyActive.querySelector('.faq-answer');
-                        activeAnswer.style.maxHeight = 0;
-                        activeAnswer.style.paddingTop = null;
-                        activeAnswer.style.paddingBottom = null;
-
-                    }
-
-                    item.classList.toggle('active');
-                    const answer = item.querySelector('.faq-answer');
-                    if (item.classList.contains('active')) {
-                        answer.style.maxHeight = answer.scrollHeight + 'px';
-                        answer.style.paddingTop = '0';
-                        answer.style.paddingBottom = '1.5rem';
-                    } else {
-                        answer.style.maxHeight = 0;
-                        answer.style.paddingTop = null;
-                        answer.style.paddingBottom = null;
-                    }
+            // --- LÓGICA DOS BOTÕES E FAQ ---
+            const setupEventListeners = () => {
+                document.querySelectorAll('.plano-cta-btn').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        if (button.classList.contains('game-launcher')) {
+                            gameModal.style.display = 'flex';
+                            return;
+                        }
+                        const plano = button.dataset.plano;
+                        const preco = button.dataset.preco;
+                        const msg = `Olá! Tenho interesse no *Plano ${plano}* (R$ ${preco},00) para criar um Presente Eterno. Meu nome é ${userName || 'visitante'}. Podemos começar? ✨`;
+                        window.open(`https://wa.me/${seuNumeroWhatsApp}?text=${encodeURIComponent(msg)}`, '_blank');
+                    });
                 });
+
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    const question = item.querySelector('.faq-question');
+                    question.addEventListener('click', () => {
+                        const currentlyActive = document.querySelector('.faq-item.active');
+                        if (currentlyActive && currentlyActive !== item) {
+                            currentlyActive.classList.remove('active');
+                            currentlyActive.querySelector('.faq-answer').style.maxHeight = null;
+                        }
+                        item.classList.toggle('active');
+                        const answer = item.querySelector('.faq-answer');
+                        if (item.classList.contains('active')) {
+                            answer.style.maxHeight = answer.scrollHeight + 'px';
+                        } else {
+                            answer.style.maxHeight = null;
+                        }
+                    });
+                });
+            };
+
+            setupEventListeners();
+            
+            // --- LÓGICA DO JOGO CAÇA-CORAÇÕES ---
+            const gameModal = document.getElementById('game-modal');
+            const gameScreen = document.getElementById('game-screen');
+            const scoreDisplay = document.getElementById('score');
+            const timerDisplay = document.getElementById('timer');
+            const startGameBtn = document.getElementById('start-game-btn');
+            const closeGameBtn = document.querySelector('.close-game-btn');
+            const gameStartOverlay = document.getElementById('game-start-overlay');
+            const heroSection = document.getElementById('hero');
+
+            let score = 0;
+            let timer = 30;
+            let gameInterval;
+            let timerInterval;
+
+            const createHeart = () => {
+                if (gameModal.style.display !== 'flex') return;
+                const heart = document.createElement('i');
+                heart.className = 'fas fa-heart game-heart';
+                heart.style.left = `${Math.random() * 95}%`;
+                heart.style.top = '-30px';
+                heart.style.animationDuration = `${Math.random() * 2 + 3}s`;
+                gameScreen.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 5000);
+            };
+            
+            gameScreen.addEventListener('click', (e) => {
+                const rect = gameScreen.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const clickedHeart = document.elementFromPoint(e.clientX, e.clientY);
+                if (clickedHeart && clickedHeart.classList.contains('game-heart')) {
+                    clickedHeart.remove();
+                    score++;
+                    scoreDisplay.textContent = `Pontos: ${score}`;
+                }
             });
+
+
+            const startGame = () => {
+                score = 0;
+                timer = 30;
+                scoreDisplay.textContent = `Pontos: ${score}`;
+                timerDisplay.textContent = `Tempo: ${timer}`;
+                gameStartOverlay.style.display = 'none';
+                
+                // Limpa corações antigos
+                gameScreen.innerHTML = '';
+                
+                heroSection.style.setProperty('display', 'none'); 
+                
+                gameInterval = setInterval(createHeart, 300);
+                timerInterval = setInterval(() => {
+                    timer--;
+                    timerDisplay.textContent = `Tempo: ${timer}`;
+                    if (timer <= 0) {
+                        endGame();
+                    }
+                }, 1000);
+            };
+
+            const endGame = () => {
+                clearInterval(gameInterval);
+                clearInterval(timerInterval);
+                heroSection.style.setProperty('display', 'flex'); 
+                gameStartOverlay.innerHTML = `
+                    <h3>Fim de Jogo!</h3>
+                    <p>Sua pontuação: ${score} corações!</p>
+                    <button id="restart-game-btn">Jogar Novamente</button>
+                `;
+                gameStartOverlay.style.display = 'flex';
+                document.getElementById('restart-game-btn').addEventListener('click', startGame);
+            };
+
+            const closeGame = () => {
+                 clearInterval(gameInterval);
+                 clearInterval(timerInterval);
+                 gameModal.style.display = 'none';
+                 heroSection.style.setProperty('display', 'flex');
+                 gameStartOverlay.innerHTML = `
+                    <h3>Caça-Corações</h3>
+                    <p>A chuva de corações vai começar! Clique no máximo que conseguir em 30 segundos.</p>
+                    <button id="start-game-btn">Começar!</button>
+                 `;
+                 document.getElementById('start-game-btn').addEventListener('click', startGame);
+            };
+
+            startGameBtn.addEventListener('click', startGame);
+            closeGameBtn.addEventListener('click', closeGame);
+
         });
     </script>
 </body>
