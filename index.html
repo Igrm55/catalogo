@@ -456,6 +456,7 @@
         #modal-close-btn { position: absolute; top: 0.5rem; right: 0.5rem; background: none; border: none; color: #d8cde8; font-size: 2rem; cursor: pointer; transition: color 0.3s, transform 0.3s; }
         #modal-close-btn:hover { color: var(--cor-branco-puro); transform: rotate(90deg); }
         
+        /* --- ESTILOS DO CONTRATO/PEDIDO --- */
         #proposal-content { text-align: center; }
         #proposal-question { margin-bottom: 2rem; line-height: 1.7; font-size: 1.1rem; }
         #proposal-buttons { display: flex; justify-content: center; align-items: center; gap: 1rem; flex-direction: column; }
@@ -468,7 +469,7 @@
         #doubt-btn.hidden { display: none; }
         #doubt-message { margin-top: 1.5rem; color: #e6d8ff; opacity: 0; transition: opacity 0.5s; height: 0; overflow: hidden; }
         #doubt-message.visible { opacity: 1; height: auto; }
-        
+
         #proposal-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(2, 0, 12, 0.9); backdrop-filter: blur(10px); display: flex; justify-content: center; align-items: center; z-index: 2500; opacity: 0; visibility: hidden; transition: opacity 0.5s, visibility 0.5s; }
         #proposal-modal.visible { opacity: 1; visibility: visible; }
         #treasure-chest-icon { font-size: 8rem; color: #e6d8ff; text-shadow: 0 0 20px #cba3ff; transition: transform 1s, opacity 0.5s; }
@@ -520,6 +521,7 @@
         }
 
         .mapa-astral-sign {
+            font-family: serif;
             fill: var(--cor-dourado-premium);
             filter: drop-shadow(0 0 5px var(--cor-dourado-premium));
             transition: transform 0.5s ease-in-out;
@@ -901,13 +903,11 @@
                                 <circle cx="100" cy="100" r="99" fill="url(#grad-mapa-aura)" />
                                 <circle class="mapa-astral-orbit-path" cx="100" cy="100" r="80" />
                                 <g id="orbit-group">
-                                    <!-- Capricorn: Sea-Goat -->
-                                    <g class="mapa-astral-sign" transform="translate(100, 20)">
-                                        <path transform="scale(0.08) translate(-250, -250)" d="M418.5,236.2l-64.4,64.4l-31.5-31.5c-6.2-6.2-16.4-6.2-22.6,0c-6.2,6.2-6.2,16.4,0,22.6l31.5,31.5L200,454.7 c-12.5,12.5-12.5,32.8,0,45.3s32.8,12.5,45.3,0l131.5-131.5l31.5,31.5c6.2,6.2,16.4,6.2,22.6,0c6.2-6.2,6.2-16.4,0-22.6 l-31.5-31.5l64.4-64.4c-35.8-21.6-77.3-33.8-121.5-33.8C303.4,188.2,260.6,201.2,418.5,236.2z M152.1,136.9 c-3.8-11.8-8.2-23.4-13.1-34.6c-4.9-11.2-10.3-22.2-16.2-32.9c-5.9-10.7-12.3-21-19.1-30.8C96.9,30,89.5,21.8,81.7,14.4 c-7.8-7.4-16-14.1-24.6-20.1C48.5-11.8,39.2-17.2,29.5-22c-9.7-4.8-19.8-8.9-30.2-12.3c-10.4-3.4-21-6-31.9-7.8 c-10.9-1.8-22-2.8-33.2-2.8c-11.2,0-22.3,1-33.2,2.8c-10.9,1.8-21.5,4.4-31.9,7.8c-10.4,3.4-20.5,7.5-30.2,12.3 c-9.7,4.8-18.9,10.2-27.5,16.1c-8.6,6-16.8,12.7-24.6,20.1c-7.8,7.4-15.2,15.6-21.9,24.2c-6.8,8.8-13.2,18.1-19.1,28.8 c-5.9,10.7-11.3,21.7-16.2,32.9c-4.9,11.2-9.3,22.8-13.1,34.6c-3.8,11.8-7,23.9-9.5,36.2H161.6C159.1,160.8,155.9,148.7,152.1,136.9z"/>
+                                    <g transform="translate(100, 20)">
+                                        <text class="mapa-astral-sign" x="0" y="15" font-size="40" text-anchor="middle" alignment-baseline="middle">♑</text>
                                     </g>
-                                    <!-- Taurus: Bull -->
-                                    <g class="mapa-astral-sign" transform="translate(100, 180)">
-                                        <path transform="scale(0.08) translate(-250, -250)" d="M496,240c0,8.8-7.2,16-16,16h-48c-8.8,0-16-7.2-16-16s7.2-16,16-16h48C488.8,224,496,231.2,496,240z M64,224 c8.8,0,16,7.2,16,16s-7.2,16-16,16H16c-8.8,0-16-7.2-16-16s7.2-16,16-16H64z M224,0c-44.2,0-80,35.8-80,80v80c0,26.5,21.5,48,48,48 h32v-16c0-26.5-21.5-48-48-48V80c0-35.3,28.7-64,64-64s64,28.7,64,64v64c-26.5,0-48,21.5-48,48v16h32c26.5,0,48-21.5,48-48V80 C304,35.8,268.2,0,224,0z M224,240c-70.7,0-128,57.3-128,128s57.3,128,128,128s128-57.3,128-128S294.7,240,224,240z M224,448 c-44.2,0-80-35.8-80-80s35.8-80,80-80s80,35.8,80,80S268.2,448,224,448z"/>
+                                    <g transform="translate(100, 180)">
+                                        <text class="mapa-astral-sign" x="0" y="15" font-size="40" text-anchor="middle" alignment-baseline="middle">♉</text>
                                     </g>
                                 </g>
                             </svg>
@@ -921,7 +921,7 @@
 
                 <div class="feature-showcase">
                      <div class="feature-text-content">
-                        <h3 class="feature-title">O 'Sim!' que muda tudo (Pedido Interativo)</h3>
+                        <h3 class="feature-title">Contrato de Amor Eterno (Pedido Interativo)</h3>
                         <p class="feature-description">Este não é um recurso, é um evento. Se você planeja fazer a grande pergunta, esta é a forma mais impactante de conseguir o "sim". Uma jornada que leva a um clímax inesquecível, selando o compromisso de vocês para sempre.</p>
                          <div class="package-info-box">
                             <h4>Disponível nos pacotes:</h4>
@@ -979,9 +979,9 @@
             plans: { shared: [ 
                 { popular: false, id: 1, nome: "Laço de Amor", desc: "A forma essencial e emocionante de eternizar seus sentimentos.", preco: "67", features: ["<i class='fa-solid fa-ribbon icon icon-laco'></i>Carta com a sua declaração", "<i class='fa-solid fa-ribbon icon icon-laco'></i>Galeria com 5 momentos", "<i class='fa-solid fa-ribbon icon icon-laco'></i>A música que marcou vocês", "<i class='fa-solid fa-ribbon icon icon-laco'></i>Contador de Tempo Juntos", "<i class='fa-solid fa-ribbon icon icon-laco'></i>Paleta de Cores do casal", "<i class='fa-solid fa-ribbon icon icon-laco'></i>QR Code para acesso rápido", "<i class='fa-solid fa-ribbon icon icon-laco'></i>Site no ar para Sempre"], cta_class: "secundario", cta_text: "Criar Emoção" }, 
                 { popular: true, id: 2, nome: "Nossa Sinfonia", desc: "A experiência completa para celebrar cada detalhe com mais interação e emoção.", preco: "97", features: ["<strong>Tudo do plano Laço de Amor</strong>", "<i class='fa-solid fa-music icon icon-sinfonia'></i><strong>Galeria com 10 momentos</strong>", "<i class='fa-solid fa-music icon icon-sinfonia'></i><strong>Sua voz declarando seu amor</strong>", "<i class='fa-solid fa-music icon icon-sinfonia'></i>Animação de <strong>Chuva de Corações</strong>", "<i class='fa-solid fa-music icon icon-sinfonia'></i><strong>Corações com Mensagens</strong> secretas", "<i class='fa-solid fa-music icon icon-sinfonia'></i><strong>Jogo Interativo dos Corações</strong>"], cta_class: "principal", cta_text: "Criar Sinfonia" }, 
-                { popular: false, id: 3, nome: "Universo Particular", desc: "A declaração definitiva. Uma experiência totalmente imersiva com todos os recursos.", preco: "147", features: ["<strong>Tudo do plano Nossa Sinfonia</strong>", "<i class='fa-solid fa-meteor icon icon-universo'></i><strong>O 'Sim!' que muda tudo</strong> (Pedido Interativo)", "<i class='fa-solid fa-meteor icon icon-universo'></i><strong>Mensagem secreta com Senha</strong>", "<i class='fa-solid fa-meteor icon icon-universo'></i><strong>Playlist com 5 músicas</strong>", "<i class='fa-solid fa-meteor icon icon-universo'></i><strong>Mapa Astral do Casal</strong>"], cta_class: "secundario", cta_text: "Criar Universo" } 
+                { popular: false, id: 3, nome: "Universo Particular", desc: "A declaração definitiva. Uma experiência totalmente imersiva com todos os recursos.", preco: "147", features: ["<strong>Tudo do plano Nossa Sinfonia</strong>", "<i class='fa-solid fa-meteor icon icon-universo'></i><strong>Contrato de Amor Eterno (Pedido Interativo)</strong>", "<i class='fa-solid fa-meteor icon icon-universo'></i><strong>Mensagem secreta com Senha</strong>", "<i class='fa-solid fa-meteor icon icon-universo'></i><strong>Playlist com 5 músicas</strong>", "<i class='fa-solid fa-meteor icon icon-universo'></i><strong>Mapa Astral do Casal</strong>"], cta_class: "secundario", cta_text: "Criar Universo" } 
             ] },
-            faq: { questions: [ "Como funciona o processo após eu escolher o plano?", "Em quanto tempo meu 'Presente Eterno' fica pronto?", "O valor parece um pouco alto. Vale mesmo a pena?", "A pessoa que vou presentear não entende de tecnologia. Vai funcionar?", "É seguro? Meus dados e fotos estarão protegidos?" ], answers: { male: [ "Simples e direto. Após escolher o plano, você é direcionado ao meu WhatsApp. Assim que o pagamento for confirmado, eu vou te pedir os materiais (fotos, textos, etc). Eu cuido de toda a parte técnica e te entrego o link e o QR Code. Sua única missão é executar a jogada final e surpreendê-la.", "Sua estratégia precisa do tempo certo. O prazo padrão é de até 3 dias úteis após o envio de todo o material. Se tiver uma urgência, me avise no WhatsApp que faremos o possível para acelerar e garantir sua vitória na data certa.", "Pense nisto como um Retorno Sobre Investimento Emocional. Um jantar caro, um perfume... a emoção dura uma noite. Isso aqui é um ativo. Uma prova do seu esforço que se valoriza e reforça sua posição a cada vez que ela revisita o site e mostra para as amigas. O custo é baixo, o status que gera é altíssimo.", "Foi feito para ser à prova de falhas. Se ela sabe usar o Instagram ou o WhatsApp, ela sabe ver o presente. A tecnologia aqui é só a ferramenta para você entregar o impacto. Zero chance de erro técnico da parte dela.", "Totalmente. A segurança da sua operação é minha prioridade. O site é hospedado em uma plataforma privada, e apenas quem tiver o link poderá acessar. Sua privacidade e a dela são invioláveis." ], female: [ "É super simples e eu te guio com todo carinho! Após escolher seu plano, você me chama no WhatsApp. Confirmado o pagamento, vamos conversar sobre a história de vocês e você me envia os materiais (fotos, a música, os textos). Eu cuido de toda a mágica, montando um santuário para o amor de vocês e te entrego o link e o QR Code prontinhos para emocionar.", "A mágica leva um tempinho para ser criada com perfeição. O prazo é de até 3 dias úteis depois que você me enviar todo o material. Assim, eu garanto que cada detalhe vai estar perfeito para tocar o coração dele.", "Pense no valor de um sentimento... Um presente comum, mesmo que caro, muitas vezes não consegue expressar a profundidade do que você sente. Este presente é um investimento na vossa história. É criar um monumento que dura para sempre. A emoção que ele vai sentir ao se ver homenageado assim... isso não tem preço.", "Com certeza! Foi pensado para ser incrivelmente intuitivo. É só clicar em um link ou apontar a câmera. A tecnologia é só o palco, a emoção que ele vai sentir é a verdadeira estrela do show.", "Absolutamente. A história de vocês é sagrada. O site é privado e só quem tiver o link pode ver. A segurança e a privacidade dos seus momentos mais preciosos são minha prioridade número um." ], lgbt: [ "É um processo colaborativo e super tranquilo. Após escolher seu plano, você vem para o meu WhatsApp. Depois do pagamento, vamos bater um papo sobre a história de vocês. Você me manda as fotos, textos, músicas... e eu construo esse universo com todo respeito e cuidado. Te entrego o link e QR Code prontos para celebrar!", "Para criar algo tão único, preciso de um tempinho. O prazo é de até 3 dias úteis após você me enviar tudo que precisamos. Assim, garantimos que cada cor e cada palavra represente perfeitamente o amor de vocês.", "O valor parece um pouco alto. Vale mesmo a pena? Presentes comuns raramente capturam a essência de um amor que foge aos padrões. Este é um investimento para construir um marco, um monumento para a história de vocês. É a chance de dar algo que diz: 'Eu vejo e celebro exatamente quem nós somos'.", "Sim! Foi desenhado para ser universalmente acessível. Se a pessoa sabe abrir um link, ela vai conseguir ver o presente sem nenhuma dificuldade. A tecnologia é apenas a tela onde vamos pintar a história de vocês.", "Totalmente. Este é um espaço seguro. A história, as fotos e os sentimentos de vocês são tratados com a máxima confidencialidade e respeito. O site é privado e apenas quem tiver o link de acesso poderá entrar neste universo particular." ] } }
+            faq: { questions: [ "Como funciona o processo após eu escolher o plano?", "Em quanto tempo meu 'Presente Eterno' fica pronto?", "O valor parece um pouco alto. Vale mesmo a pena?", "A pessoa que vou presentear não entende de tecnologia. Vai funcionar?", "É seguro? Meus dados e fotos estarão protegidos?" ], answers: { male: [ "Simples e direto. Após escolher o plano, você é direcionado ao meu WhatsApp. Assim que o pagamento for confirmado, eu vou te pedir os materiais (fotos, textos, etc). Eu cuido de toda a parte técnica e te entrego o link e o QR Code. Sua única missão é executar a jogada final e surpreendê-la.", "Sua estratégia precisa do tempo certo. O prazo padrão é de até 3 dias úteis após o envio de todo o material. Se tiver uma urgência, me avise no WhatsApp que faremos o possível para acelerar e garantir sua vitória na data certa.", "Pense nisto como um Retorno Sobre Investimento Emocional. Um jantar caro, um perfume... a emoção dura uma noite. Isso aqui é um ativo. Uma prova do seu esforço que se valoriza e reforça sua posição a cada vez que ela revisita o site e mostra para as amigas. O custo é baixo, o status que gera é altíssimo.", "Foi feito para ser à prova de falhas. Se ela sabe usar o Instagram ou o WhatsApp, ela sabe ver o presente. A tecnologia aqui é só a ferramenta para você entregar o impacto. Zero chance de erro técnico da parte dela.", "Totalmente. A segurança da sua operação é minha prioridade. O site é hospedado em uma plataforma privada, e apenas quem tiver o link poderá acessar. Sua privacidade e a dela são invioláveis." ], female: [ "É super simples e eu te guio com todo carinho! Após escolher seu plano, você me chama no WhatsApp. Confirmado o pagamento, vamos conversar sobre a história de vocês e você me envia os materiais (fotos, a música, os textos). Eu cuido de toda a mágica, montando um santuário para o amor de vocês e te entrego o link e o QR Code prontinhos para emocionar.", "A mágica leva um tempinho para ser criada com perfeição. O prazo é de até 3 dias úteis depois que você me enviar todo o material. Assim, eu garanto que cada detalhe vai estar perfeito para tocar o coração dele.", "Pense no valor de um sentimento... Um presente comum, mesmo que caro, muitas vezes não consegue expressar a profundidade do que você sente. Este presente é um investimento na vossa história. É criar um monumento que dura para sempre. A emoção que ele vai sentir ao se ver homenageado assim... isso não tem preço.", "Com certeza! Foi pensado para ser incrivelmente intuitivo. É só clicar em um link ou apontar a câmera. A tecnologia é só o palco, a emoção que ele vai sentir é a verdadeira estrela do show.", "Absolutamente. A história de vocês é sagrada. O site é privado e só quem tiver o link pode ver. A segurança e a privacidade dos seus momentos mais preciosos são minha prioridade número um." ], lgbt: [ "É um processo colaborativo e super tranquilo. Após escolher seu plano, você vem para o meu WhatsApp. Depois do pagamento, vamos bater um papo sobre a história de vocês. Você me manda as fotos, textos, músicas... e eu construo esse universo com todo respeito e cuidado. Te entrego o link e QR Code prontos para celebrar!", "Para criar algo tão único, preciso de um tempinho. O prazo é de até 3 dias úteis após você me enviar tudo que precisamos. Assim, garantimos que cada cor e cada palavra represente perfeitamente o amor de vocês.", "Presentes comuns raramente capturam a essência de um amor que foge aos padrões. Este é um investimento para construir um marco, um monumento para a história de vocês. É a chance de dar algo que diz: 'Eu vejo e celebro exatamente quem nós somos'.", "Sim! Foi desenhado para ser universalmente acessível. Se a pessoa sabe abrir um link, ela vai conseguir ver o presente sem nenhuma dificuldade. A tecnologia é apenas a tela onde vamos pintar a história de vocês.", "Totalmente. Este é um espaço seguro. A história, as fotos e os sentimentos de vocês são tratados com a máxima confidencialidade e respeito. O site é privado e apenas quem tiver o link de acesso poderá entrar neste universo particular." ] } }
         };
 
         function generateGiftObjections(identity) {
@@ -1141,7 +1141,7 @@
                         content_category: 'Engajamento'
                     });
                 }
-                interactiveDemoContainer.scrollTop = 0; // CORREÇÃO: Reseta o scroll ao abrir
+                interactiveDemoContainer.scrollTop = 0;
                 interactiveDemoContainer.classList.add('visible');
                 document.body.style.overflow = 'hidden';
                 iniciarDemo();
@@ -1178,7 +1178,7 @@
         }
 
         function iniciarDemo() {
-            resetarDemo(); // CORREÇÃO: Garante que a demo sempre reinicie do zero
+            resetarDemo(); 
             if (!demoIniciada) {
                 createStars(50);
                 iniciarChuvaDeCoracoes();
@@ -1211,6 +1211,7 @@
             document.getElementById('secret-form').style.opacity = '1';
             document.getElementById('secret-letter-container').classList.remove('visible');
             document.getElementById('secret-lock-icon').classList.remove('unlocked');
+            
             document.getElementById('doubt-btn').classList.remove('hidden');
             document.getElementById('doubt-message').classList.remove('visible');
             
@@ -1472,20 +1473,23 @@
         
         function iniciarPedido() {
             const yesBtn = document.getElementById('yes-btn'), doubtBtn = document.getElementById('doubt-btn'), doubtMessage = document.getElementById('doubt-message'), proposalModal = document.getElementById('proposal-modal'), treasureChest = document.getElementById('treasure-chest-icon'), scrollContainer = document.getElementById('scroll-container'), scrollPaper = document.getElementById('scroll-paper'), contractCloseBtn = document.getElementById('contract-close-btn'), finalCelebration = document.getElementById('final-celebration');
+
             doubtBtn.onclick = () => { doubtMessage.classList.add('visible'); doubtBtn.classList.add('hidden'); };
+
             yesBtn.onclick = () => {
                 proposalModal.classList.add('visible');
                 setTimeout(() => treasureChest.classList.add('open'), 500);
                 setTimeout(() => treasureChest.style.opacity = '0', 1500);
                 setTimeout(() => { treasureChest.style.display = 'none'; scrollContainer.style.display = 'block'; void scrollPaper.offsetWidth; scrollPaper.classList.add('unrolling'); }, 2000);
             };
+
             contractCloseBtn.onclick = () => {
                 proposalModal.classList.remove('visible'); 
                 finalCelebration.classList.add('visible'); 
                 lancarConfetes();
                 setTimeout(() => {
                     fecharDemo();
-                }, 4000); // CORREÇÃO: Tempo ajustado para 4 segundos
+                }, 4000); 
             };
             
             function lancarConfetes() {
