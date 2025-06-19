@@ -5,90 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presente Eterno - Uma Experiência Para Sua Alma</title>
 
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1693517144867981'); 
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1693517144867981&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Montserrat:wght@700;800&family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
     <!-- AOS for Animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-        /* --- VARIAVEIS GLOBAIS DE ESTILO --- */
+        /* --- 
+        Estilos Globais e Variáveis de Cor
+        Mantendo a identidade visual com as novas cores solicitadas.
+        --- */
         :root {
             --cor-fundo: #0a101f;
-            --cor-verde-acao: #00FF99;
-            --cor-vermelho-dor: #FF4D4D;
-            --cor-dourado-premium: #FFD700;
-            --cor-laco-amor: #cba3ff; 
+            --cor-primaria: #ff0080; /* Rosa vibrante (Sinfonia) */
+            --cor-secundaria: #ff69b4; /* Rosa suave */
+            --cor-dourado-premium: #FFD700; /* Dourado (Universo) */
+            --cor-laco-amor: #48dbfb; /* Azul Ciano Suave (Laço de Amor) */
             --cor-branco-puro: #ffffff;
             --cor-branco-suave: #e0e7ef;
             --cor-cinza-claro: #b0bac9;
             --cor-fundo-card: rgba(30, 41, 59, 0.5);
-            --cor-fundo-modal: #10182b;
             --borda-raio: 16px;
-
-            /* Cores Padrão (Tema Feminino) */
-            --cor-primaria: #ff0080; /* Rosa vibrante */
-            --cor-secundaria: #ff69b4; /* Rosa suave */
             --gradiente-principal: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
-            --gradiente-borda: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
             --cor-aura-1: rgba(255, 0, 128, 0.8);
             --cor-aura-2: rgba(255, 105, 180, 0.8);
-            --cor-sinfonia: var(--cor-primaria);
         }
         
-        /* --- TEMA MASCULINO (Azul) --- */
-        body.theme-male {
-            --cor-primaria: #00A8FF;
-            --cor-secundaria: #007BFF;
-            --gradiente-principal: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
-            --gradiente-borda: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
-            --cor-aura-1: rgba(0, 168, 255, 0.8);
-            --cor-aura-2: rgba(0, 123, 255, 0.8);
-            --cor-sinfonia: var(--cor-secundaria);
-        }
-
-        /* --- TEMA LGBT+ (Arco-Íris) --- */
-        body.theme-lgbt {
-            --cor-primaria: #E60073;
-            --cor-secundaria: #A000FF;
-            --gradiente-principal: linear-gradient(90deg, #E60073, #FF7B00, #FFD700, #00FF00, #007BFF, #A000FF);
-            --gradiente-borda: linear-gradient(90deg, #E60073, #FFD700, #007BFF, #A000FF);
-            --cor-aura-1: rgba(230, 0, 115, 0.8);
-            --cor-aura-2: rgba(0, 255, 0, 0.8);
-            --cor-sinfonia: transparent; 
-        }
-
-        /* --- ESTILOS BASE --- */
+        /* --- Estilos Base e Reset --- */
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--cor-fundo); color: var(--cor-branco-suave); line-height: 1.7; overflow-x: hidden; position: relative; }
-        #main-content { display: none; opacity: 0; transition: opacity 1s ease-in-out; }
+        html { font-size: 16px; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: var(--cor-fundo); 
+            color: var(--cor-branco-suave); 
+            line-height: 1.7; 
+            overflow-x: hidden;
+        }
+        #main-content { display: none; opacity: 0; transition: opacity 1s ease-in-out; position: relative; z-index: 2; }
+        
+        /* --- Fundo de Estrelas Animado --- */
+        #star-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--cor-fundo);
+            z-index: 0;
+            overflow: hidden;
+        }
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle 4s infinite ease-in-out;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 0.8; transform: scale(1); }
+        }
 
-        /* --- MODAL DE BOAS-VINDAS --- */
+        /* --- Modal de Boas-Vindas (Personalização) --- */
         #welcome-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); backdrop-filter: blur(10px); z-index: 1000; display: flex; justify-content: center; align-items: center; opacity: 1; transition: opacity 0.5s ease; }
-        .welcome-box { background: var(--cor-fundo-modal); padding: 2.5rem 2rem; border-radius: var(--borda-raio); text-align: center; max-width: 500px; width: 90%; border: 1px solid var(--cor-primaria); box-shadow: 0 0 30px rgba(255, 0, 128, 0.3); transform: scale(0.9); animation: popIn 0.5s forwards ease-out; }
+        .welcome-box { background: #10182b; padding: 2.5rem 2rem; border-radius: var(--borda-raio); text-align: center; max-width: 500px; width: 90%; border: 1px solid var(--cor-primaria); box-shadow: 0 0 30px rgba(255, 0, 128, 0.3); transform: scale(0.9); animation: popIn 0.5s forwards ease-out; }
         @keyframes popIn { to { transform: scale(1); } }
         .welcome-box h2 { font-family: 'Montserrat', sans-serif; font-size: 2rem; color: var(--cor-branco-puro); margin-bottom: 0.5rem; }
         .welcome-box p { color: var(--cor-cinza-claro); margin-bottom: 1.5rem; }
@@ -96,990 +81,327 @@
         #name-input:focus { outline: none; box-shadow: 0 0 15px var(--cor-secundaria); }
         #name-submit-btn { background: var(--gradiente-principal); background-size: 200% auto; color: var(--cor-branco-puro); padding: 1rem 2rem; border-radius: 50px; font-size: 1.1rem; font-weight: 700; border: none; cursor: pointer; transition: all 0.3s ease; }
         #name-submit-btn:hover { transform: scale(1.05); box-shadow: 0 5px 20px var(--cor-primaria); background-position: right center; }
-        #identity-selection { display: none; }
-        .identity-options { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-        .identity-btn { background: var(--cor-fundo-card); border: 2px solid transparent; color: var(--cor-branco-suave); padding: 1.5rem 1rem; border-radius: var(--borda-raio); font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; width: 120px; display: flex; flex-direction: column; align-items: center; gap: 0.8rem; }
-        .identity-btn i { font-size: 2.5rem; margin-bottom: 0.5rem; transition: all 0.3s ease; color: var(--cor-secundaria); }
-        .identity-btn:hover { transform: translateY(-5px); border-color: var(--cor-primaria); box-shadow: 0 5px 20px var(--cor-primaria); }
-        .identity-btn:hover i { color: var(--cor-primaria); }
-        body.theme-lgbt .identity-btn:hover i { background: var(--gradiente-principal); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-        body.theme-lgbt .identity-btn:hover { border: 2px solid var(--cor-primaria); }
 
-        /* --- ESTRUTURA GERAL DA PÁGINA --- */
-        .container-geral { width: 92%; max-width: 1100px; margin: 0 auto; padding: 40px 0; }
-        h1, h2, h3 { font-weight: 700; line-height: 1.3; color: var(--cor-branco-puro); }
-        .section-titulo { text-align: center; font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 1rem; }
-        .section-subtitulo { text-align: center; font-size: clamp(1rem, 2.5vw, 1.1rem); color: var(--cor-cinza-claro); max-width: 700px; margin: 0 auto 3rem auto; font-weight: 400; }
-        .section-wrapper { padding: 50px 0; }
-        .section-divider { height: 1px; width: 40%; max-width: 150px; background: linear-gradient(to right, transparent, var(--cor-secundaria), transparent); opacity: 0.5; margin: 60px auto; }
+        /* --- Estrutura Geral e Títulos --- */
+        .container-geral { width: 92%; max-width: 900px; margin: 0 auto; padding: 40px 0; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; line-height: 1.3; color: var(--cor-branco-puro); }
+        .section-titulo { text-align: center; font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 1rem; animation: aura-anim 4s ease-in-out infinite; }
         @keyframes aura-anim { 0%, 100% { text-shadow: 0 0 5px var(--cor-aura-1), 0 0 10px var(--cor-aura-1); } 50% { text-shadow: 0 0 10px var(--cor-aura-2), 0 0 20px var(--cor-aura-2); } }
-        .section-titulo { animation: aura-anim 4s ease-in-out infinite; }
-
-        /* --- SEÇÃO HERO --- */
-        #hero { min-height: 60vh; display: flex; flex-direction:column; align-items: center; justify-content: center; text-align: center; padding: 2rem; position: relative; background-color: var(--cor-fundo); overflow: hidden; }
-        #hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 52.5 L12.5 35 Q12.5 17.5 30 25 Q47.5 17.5 47.5 35 Z' fill='rgba(160,0,255,0.03)'/%3E%3C/svg%3E"); animation: girarCoracoes 180s linear infinite; pointer-events: none; }
-        @keyframes girarCoracoes { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        #hero-titulo { font-family: 'Montserrat', sans-serif; font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 800; background: var(--gradiente-principal); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: gradienteAnimado 5s linear infinite, auraPulsante 2.5s ease-in-out infinite alternate; z-index: 2; filter: drop-shadow(0 0 5px rgba(255,255,255,0.3)); }
-        #hero-subtitulo { font-size: clamp(1.1rem, 3vw, 1.3rem); color: var(--cor-cinza-claro); max-width: 700px; margin-top: 1.5rem; font-weight: 400; text-shadow: 0 0 10px rgba(0,0,0,0.5); }
+        .section-subtitulo { text-align: center; font-size: clamp(1.1rem, 3vw, 1.2rem); color: var(--cor-cinza-claro); max-width: 650px; margin: 0 auto 3rem auto; font-weight: 400; }
+        .section-divider { height: 1px; width: 40%; max-width: 150px; background: linear-gradient(to right, transparent, var(--cor-secundaria), transparent); opacity: 0.3; margin: 80px auto; }
+        
+        /* --- Seção Hero: A primeira impressão --- */
+        #hero { min-height: 60vh; display: flex; flex-direction:column; align-items: center; justify-content: center; text-align: center; padding: 2rem; }
+        #hero-titulo { font-size: clamp(2.8rem, 8vw, 5rem); font-weight: 800; background: var(--gradiente-principal); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: gradienteAnimado 5s linear infinite, auraPulsante 2.5s ease-in-out infinite alternate; filter: drop-shadow(0 0 5px rgba(255,255,255,0.3)); }
         @keyframes gradienteAnimado { to { background-position: 200% center; } }
         @keyframes auraPulsante { 0% { filter: drop-shadow(0 0 3px rgba(255,255,255,0.2)) drop-shadow(0 0 8px var(--cor-secundaria)); } 100% { filter: drop-shadow(0 0 6px rgba(255,255,255,0.4)) drop-shadow(0 0 15px var(--cor-primaria)); } }
+        #hero-subtitulo { font-size: clamp(1.2rem, 3vw, 1.4rem); color: var(--cor-cinza-claro); max-width: 600px; margin-top: 1.5rem; font-weight: 400; text-shadow: 0 0 10px rgba(0,0,0,0.5); }
         
-        /* --- DEMAIS SEÇÕES DO CATÁLOGO... --- */
-        .jornada-container { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: stretch; max-width: 1000px; margin: 2rem auto 0 auto;}
-        .jornada-coluna { padding: 2rem; border-radius: var(--borda-raio); display: flex; flex-direction: column; }
-        .jornada-coluna.comum { background: rgba(255, 77, 77, 0.05); border: 1px solid rgba(255, 77, 77, 0.15); }
-        .jornada-coluna.inesquecivel { background: rgba(0, 255, 153, 0.05); border: 1px solid rgba(0, 255, 153, 0.2); }
-        .jornada-coluna h3 { font-size: 1.5rem; text-align: center; margin-bottom: 2rem; }
-        .jornada-coluna.comum h3 { color: var(--cor-vermelho-dor); }
-        .jornada-coluna.inesquecivel h3 { color: var(--cor-verde-acao); }
-        .jornada-item { display: flex; gap: 1rem; align-items: center; margin-bottom: 1.5rem; }
-        .jornada-item .icon { font-size: 2rem; width: 40px; text-align: center; }
-        .jornada-item.comum .icon { color: var(--cor-vermelho-dor); }
-        .jornada-item.inesquecivel .icon { color: var(--cor-verde-acao); }
-        .jornada-item .texto strong { display: block; font-size: 1.1rem; color: var(--cor-branco-puro); margin-bottom: 0.2rem; }
-        .jornada-item .texto span { font-size: 0.95rem; color: var(--cor-cinza-claro); }
-        #historia-section { background: linear-gradient(160deg, rgba(160, 0, 255, 0.05) 0%, rgba(255, 0, 128, 0.05) 100%); border-radius: var(--borda-raio); padding: 2.5rem 2rem; border: 1px solid var(--cor-secundaria); }
-        body.theme-lgbt #historia-section { border: 2px solid transparent; background: linear-gradient(145deg, #0f1738, #1a102c) padding-box, var(--gradiente-borda) border-box; }
-        .historia-conteudo p { font-size: clamp(1rem, 2.5vw, 1.15rem); color: var(--cor-branco-suave); max-width: 750px; margin: 0 auto 1.5rem auto; text-align: center; line-height: 1.8; }
-        .historia-conteudo p strong { color: var(--cor-dourado-premium); font-weight: 600; }
-        .historia-icone-central { text-align: center; font-size: 2.5rem; color: var(--cor-primaria); margin: 1.5rem 0; animation: aura-anim 2.5s ease-in-out infinite; }
-        body.theme-lgbt .historia-icone-central { background: var(--gradiente-principal); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-        #portal-section { text-align: center; }
-        .portal-btn { background: var(--gradiente-principal); background-size: 200% auto; color: var(--cor-branco-puro); padding: 1rem 2.5rem; border-radius: 50px; font-size: 1.3rem; font-weight: 700; text-transform: uppercase; transition: all 0.3s ease; text-decoration: none; display: inline-flex; align-items: center; gap: 0.7rem; box-shadow: 0 5px 20px var(--cor-primaria); animation: pulse-btn 2s infinite; border: none; cursor: pointer; }
-        .portal-btn:hover { transform: scale(1.05); box-shadow: 0 8px 30px var(--cor-primaria); background-position: right center; animation: none; }
-        @keyframes pulse-btn { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
+        /* --- Seção "Como Funciona": As 4 Etapas --- */
+        .steps-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; align-items: stretch; }
+        .step-card { background: var(--cor-fundo-card); padding: 2rem 1.5rem; border-radius: var(--borda-raio); text-align: center; border: 1px solid rgba(255, 105, 180, 0.2); transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; height: 100%;}
+        .step-card:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(255, 0, 128, 0.2); border-color: var(--cor-primaria); }
+        .step-icon { font-size: 3rem; color: var(--cor-primaria); margin-bottom: 1rem; }
+        .step-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .step-card p { color: var(--cor-cinza-claro); font-size: 0.95rem; }
+        
+        /* --- Seção de Vídeo: A prova visual --- */
+        #video-demo-container { max-width: 380px; margin: 0 auto; border-radius: 24px; overflow: hidden; box-shadow: 0 0 60px var(--cor-aura-2); border: 2px solid var(--cor-primaria); background: var(--gradiente-principal); padding: 5px; transition: all 0.4s ease; }
+        #video-demo-container:hover { transform: scale(1.03); box-shadow: 0 0 80px var(--cor-aura-1); }
+        .video-wrapper { position: relative; padding-top: 202.53%; /* ATUALIZADO: Proporção do Novo Vídeo */ }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 20px; }
+
+        /* --- Seção de Depoimentos: A Prova Social --- */
         .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
-        .testimonial-card { background: var(--cor-fundo-card); padding: 2rem; border-radius: var(--borda-raio); border-left: 4px solid var(--cor-primaria); }
-        body.theme-lgbt .testimonial-card { position: relative; border-left: none; overflow: hidden; }
-        body.theme-lgbt .testimonial-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--gradiente-principal); }
+        .testimonial-card { background: var(--cor-fundo-card); padding: 2rem; border-radius: var(--borda-raio); border-left: 4px solid var(--cor-primaria); transition: all 0.3s ease; }
+        .testimonial-card:hover { transform: scale(1.02); box-shadow: 0 5px 20px rgba(0,0,0,0.2); }
         .testimonial-card .quote { font-size: 1.05rem; font-style: italic; color: var(--cor-branco-suave); margin-bottom: 1rem; }
         .testimonial-card .author { font-weight: 700; color: var(--cor-branco-puro); }
         .testimonial-card .stars { color: var(--cor-dourado-premium); margin-bottom: 0.5rem; }
+
+        /* --- Seção de Planos: A Oferta --- */
         .texto-urgencia { text-align: center; font-size: 1.2rem; font-weight: 600; color: var(--cor-dourado-premium); margin: 0 auto 3.5rem auto; padding: 0.8rem 1.5rem; border: 1px solid rgba(255, 215, 0, 0.3); background: rgba(255, 215, 0, 0.05); border-radius: 50px; max-width: 700px; }
-        .planos-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: stretch; }
-        .plano-card { background: linear-gradient(145deg, #0f1738, #1a102c); border: 1px solid var(--cor-secundaria); border-radius: var(--borda-raio); padding: 2rem; display: flex; flex-direction: column; height: 100%; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
+        .planos-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: stretch; }
+        .plano-card { background: linear-gradient(145deg, #0f1738, #1a102c); border: 1px solid var(--cor-secundaria); border-radius: var(--borda-raio); padding: 2rem; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
         .plano-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); }
-        .plano-card.popular { transform: scale(1.05); border: 2px solid var(--cor-primaria); box-shadow: 0 0 50px var(--cor-primaria); }
+        .plano-card.popular { transform: scale(1.05); border: 2px solid var(--cor-primaria); box-shadow: 0 0 50px var(--cor-aura-2); }
         .plano-card.popular:hover { transform: scale(1.08) translateY(-10px); }
-        body.theme-lgbt .plano-card { border: 2px solid transparent; background: linear-gradient(145deg, #0f1738, #1a102c) padding-box, var(--gradiente-principal) border-box; }
-        body.theme-lgbt .plano-card.popular { border-width: 3px; }
-        .popular-badge { position: absolute; top: -18px; left: 50%; transform: translateX(-50%); background: var(--gradiente-principal); background-size: 200%; color: var(--cor-branco-puro); padding: 6px 20px; border-radius: 50px; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; box-shadow: 0 5px 15px var(--cor-aura-2); }
-        .plano-nome { font-size: 1.8rem; font-weight: 700; text-align: center; margin-bottom: 0.5rem; }
+        .plano-card-1 { border-color: var(--cor-laco-amor);} /* Borda com a nova cor */
+        .plano-card-3 { border-color: var(--cor-dourado-premium);} /* Borda dourada */
+        .popular-badge { position: absolute; top: -18px; left: 50%; transform: translateX(-50%); background: var(--gradiente-principal); color: var(--cor-branco-puro); padding: 6px 20px; border-radius: 50px; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; }
+        .plano-nome { font-size: 1.8rem; font-weight: 700; text-align: center; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.75rem; }
+        .plano-nome .plano-icon { font-size: 1.5rem; }
         .plano-descricao { color: var(--cor-cinza-claro); font-size: 0.95rem; text-align: center; margin-bottom: 1.5rem; min-height: 40px; }
         .plano-preco { text-align: center; margin-bottom: 2rem; }
-        .plano-preco .valor { font-size: 3.5rem; font-weight: 800; line-height: 1; }
+        .plano-preco .valor { font-size: 3.5rem; font-weight: 800; line-height: 1; transition: text-shadow 0.3s ease; }
         .plano-preco .periodo { font-size: 1rem; color: var(--cor-cinza-claro); }
         .plano-preco-1 .valor { color: var(--cor-laco-amor); }
-        .plano-preco-2 .valor { color: var(--cor-primaria); }
+        .plano-preco-2 .valor { 
+            color: var(--cor-primaria); 
+            text-shadow: 0 0 6px var(--cor-primaria), 0 0 12px rgba(255, 0, 128, 0.3);
+        }
         .plano-preco-3 .valor { color: var(--cor-dourado-premium); }
-        body.theme-lgbt .plano-preco-2 .valor { background: var(--gradiente-principal); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
         .plano-features { list-style: none; padding: 0; margin-bottom: 2rem; flex-grow: 1; }
         .plano-features li { display: flex; align-items: flex-start; gap: 0.8rem; margin-bottom: 0.9rem; font-size: 0.95rem; line-height: 1.4; }
-        .plano-features li .icon { font-size: 1rem; margin-top: 5px; width: 20px; text-align: center;}
+        .plano-features li .icon { font-size: 1.1rem; margin-top: 5px; width: 20px; text-align: center;}
         .plano-features .icon-laco { color: var(--cor-laco-amor); }
-        .plano-features .icon-sinfonia { color: var(--cor-sinfonia); }
-        body.theme-lgbt .plano-features .icon-sinfonia { background: var(--gradiente-principal); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .plano-features .icon-sinfonia { color: var(--cor-primaria); }
         .plano-features .icon-universo { color: var(--cor-dourado-premium); }
-        .plano-cta-btn { display: block; width: 100%; padding: 1rem; border-radius: 50px; font-size: 1.1rem; font-weight: 700; text-align: center; text-decoration: none; text-transform: uppercase; border: none; cursor: pointer; transition: all 0.3s ease; margin-top: auto; }
+        .plano-cta-btn { display: block; width: 100%; padding: 1rem; border-radius: 50px; font-size: 1.1rem; font-family: 'Montserrat', sans-serif; font-weight: 700; text-align: center; text-decoration: none; text-transform: uppercase; border: none; cursor: pointer; transition: all 0.3s ease; margin-top: auto; }
         .plano-cta-btn.principal { background: var(--gradiente-principal); background-size: 200%; color: var(--cor-branco-puro); box-shadow: 0 0 20px var(--cor-aura-1); }
         .plano-cta-btn.principal:hover { transform: scale(1.05); background-position: right center; }
-        .plano-cta-btn.secundario { background-color: transparent; border: 2px solid; color: var(--cor-fundo-card); }
-        .plano-cta-btn.secundario:hover { color: var(--cor-fundo); }
-        .plano-card-1 .plano-cta-btn.secundario { border-color: var(--cor-laco-amor); color: var(--cor-laco-amor); }
-        .plano-card-1 .plano-cta-btn.secundario:hover { background-color: var(--cor-laco-amor); color: var(--cor-fundo); }
-        .plano-card-3 .plano-cta-btn.secundario { border-color: var(--cor-dourado-premium); color: var(--cor-dourado-premium); }
-        .plano-card-3 .plano-cta-btn.secundario:hover { background-color: var(--cor-dourado-premium); color: var(--cor-fundo); }
+        .plano-cta-btn.secundario { background-color: transparent; border: 2px solid var(--cor-laco-amor); color: var(--cor-laco-amor); }
+        .plano-cta-btn.secundario:hover { background-color: var(--cor-laco-amor); color: var(--cor-fundo); }
+        .plano-cta-btn.terciario { background-color: transparent; border: 2px solid var(--cor-dourado-premium); color: var(--cor-dourado-premium); }
+        .plano-cta-btn.terciario:hover { background-color: var(--cor-dourado-premium); color: var(--cor-fundo); }
+        
+        /* --- Seção FAQ: Quebra de objeções --- */
         #faq-section { max-width: 800px; margin: 0 auto; }
         .faq-item { background: var(--cor-fundo-card); margin-bottom: 1rem; border-radius: 10px; border-left: 3px solid var(--cor-secundaria); }
-        body.theme-lgbt .faq-item { position: relative; border-left: none; overflow: hidden; }
-        body.theme-lgbt .faq-item::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--gradiente-principal); }
         .faq-question { font-size: 1.1rem; font-weight: 600; padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
         .faq-question::after { content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; transition: transform 0.3s ease; }
         .faq-item.active .faq-question::after { transform: rotate(180deg); }
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, padding 0.4s ease-out; color: var(--cor-cinza-claro); }
         .faq-answer p { padding: 0 1.5rem 1.5rem 1.5rem; margin:0; line-height: 1.6;}
-        #garantia-section { text-align: center; padding: 2.5rem; background: linear-gradient(145deg, #181030, #20153d); border-radius: var(--borda-raio); border: 1px solid var(--cor-dourado-premium); }
+        
+        /* --- Seção Garantia: O selo de confiança --- */
+        #garantia-section { text-align: center; padding: 2.5rem; background: linear-gradient(145deg, rgba(255, 215, 0, 0.05), rgba(255, 215, 0, 0.1)); border-radius: var(--borda-raio); border: 1px solid var(--cor-dourado-premium); }
         #garantia-section .garantia-icon { font-size: 3.5rem; color: var(--cor-dourado-premium); margin-bottom: 1rem; }
         #garantia-section h2 { font-size: 2rem; color: var(--cor-dourado-premium); margin-bottom: 1rem; }
         #garantia-section p { max-width: 600px; margin: 0 auto; color: var(--cor-cinza-claro); }
         #garantia-section .garantia-nome { margin-top: 1.5rem; font-weight: 700; color: var(--cor-branco-suave); font-style: italic; }
-        
-        /* --- CONTAINER DA DEMONSTRAÇÃO INTERATIVA --- */
-        #interactive-demo-container {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #02000c;
-            z-index: 2000;
-            overflow-y: auto;
-            opacity: 0;
-            transition: opacity 0.7s ease-in-out;
-        }
-        #interactive-demo-container.visible {
-            display: block;
-            opacity: 1;
-        }
-        #galaxy-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #02000c url('https://www.transparenttextures.com/patterns/stardust.png');
-            overflow: hidden;
-            z-index: -2;
-        }
-        .star {
-            position: absolute;
-            background-color: white;
-            border-radius: 50%;
-            animation: twinkle 2s infinite ease-in-out;
-        }
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.5; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1); }
-        }
 
-        .demo-close-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            font-size: 2.5rem;
-            color: var(--cor-branco-suave);
-            background-color: rgba(0,0,0,0.3);
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-            cursor: pointer;
-            z-index: 2501;
-            transition: transform 0.2s, color 0.2s;
-        }
-        .demo-close-btn:hover {
-            transform: scale(1.2);
-            color: var(--cor-branco-puro);
-        }
-
-        /* --- LAYOUT E ESTILO DA DEMONSTRAÇÃO --- */
-        #interactive-demo-container .body-wrapper {
-            font-family: 'Poppins', sans-serif;
-            color: var(--cor-branco-suave);
-            overflow-x: hidden;
-        }
-
-        .feature-showcase {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            align-items: center;
-            margin-bottom: 6rem;
-        }
-
-        .feature-text-content {
-            flex: 1;
-            min-width: 280px;
-            text-align: left;
-        }
-
-        .feature-interactive-element {
-            flex: 1;
-            min-width: 280px;
-        }
-        
-        .feature-showcase:nth-child(even) .feature-text-content {
-            order: 2;
-        }
-
-        @media (max-width: 768px) {
-            .feature-showcase:nth-child(even) .feature-text-content {
-                order: 0;
-            }
-        }
-        
-        .feature-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(1.8rem, 5vw, 2.2rem);
-            font-weight: 700;
-            color: var(--cor-branco-puro);
-            margin-bottom: 0.5rem;
-        }
-        .feature-description {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-            color: var(--cor-cinza-claro);
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-        }
-        .package-info-box {
-            border: 1px solid var(--cor-secundaria);
-            background-color: rgba(30, 41, 59, 0.5);
-            border-radius: var(--borda-raio);
-            padding: 1rem;
-            font-size: 0.9rem;
-            color: var(--cor-cinza-claro);
-        }
-        .package-info-box h4 {
-            font-size: 1rem;
-            color: var(--cor-branco-suave);
-            margin-bottom: 0.75rem;
-            font-weight: 600;
-        }
-
-        .package-info-box ul { list-style: none; padding: 0; margin: 0; }
-        .package-info-box li { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
-        .package-info-box .pkg-color-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;}
-        .package-info-box .pkg-name { font-weight: 600; }
-        .package-info-box .pkg-price { margin-left: auto; color: var(--cor-cinza-claro); font-size: 0.9rem; white-space: nowrap; }
-        
-        .pkg-color-dot.laco { background-color: var(--cor-laco-amor); }
-        .pkg-color-dot.sinfonia { background: var(--gradiente-principal); }
-        .pkg-color-dot.universo { background-color: var(--cor-dourado-premium); }
-
-        .pkg-name.laco { color: var(--cor-laco-amor); }
-        .pkg-name.sinfonia { color: var(--cor-sinfonia); }
-        body.theme-lgbt .pkg-name.sinfonia {
-            background: var(--gradiente-principal);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .pkg-name.universo { color: var(--cor-dourado-premium); }
-        
-        /* ATUALIZAÇÃO SOLICITADA PARA A COR DO PACOTE LAÇOS DE AMOR */
-        #interactive-demo-container .pkg-color-dot.laco {
-            background-color: #48dbfb;
-        }
-        #interactive-demo-container .pkg-name.laco {
-            color: #48dbfb;
-        }
-        
-        #heart-rain-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; z-index: -1; }
-        .background-heart { position: absolute; top: -5%; font-size: 1rem; color: #ff2d75; animation: fall linear infinite; text-shadow: 0 0 8px #ff2d75, 0 0 15px #ff89b0; opacity: 0; }
-        @keyframes fall { to { transform: translateY(105vh) rotate(360deg); opacity: 0; } }
-        
-        #tela-entrada { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; display: flex; justify-content: center; align-items: center; background-color: transparent; transition: opacity 0.8s ease-out, visibility 0.8s ease-out; opacity: 1; visibility: visible; padding: 1rem; }
-        .conteudo-entrada { display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: nowrap; max-width: 95vw; z-index: 2; opacity: 0; animation: fadeInEntrada 2s forwards 0.5s; transition: opacity 0.5s ease-out; }
-        @keyframes fadeInEntrada { to { opacity: 1; } }
-
-        #cadeado-container { position: relative; width: 5rem; height: 5rem; cursor: pointer; animation: pulsarCadeado 4s infinite ease-in-out; flex-shrink: 0; }
-        #cadeado-container > i { position: absolute; top: 0; left: 0; width: 100%; height: 100%; font-size: 5rem; color: var(--cor-branco-puro); text-shadow: 0 0 10px #cba3ff, 0 0 20px #cba3ff, 0 0 40px #e6d8ff; transition: opacity 0.6s ease-in-out, transform 0.4s ease; }
-        #icone-cadeado-aberto { opacity: 0; }
-        #cadeado-container.aberto #icone-cadeado-fechado { opacity: 0; }
-        #cadeado-container.aberto #icone-cadeado-aberto { opacity: 1; }
-        @keyframes pulsarCadeado { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-        #cadeado-container:hover { transform: scale(1.1); }
-        #botao-desbloquear { font-family: 'Montserrat', serif; font-size: 1.1rem; letter-spacing: 1px; text-transform: uppercase; background: transparent; color: #d8cde8; border: 1px solid #cba3ff; padding: 1rem 2rem; border-radius: 50px; cursor: pointer; transition: all 0.4s ease; max-width: 350px; }
-        #botao-desbloquear:hover { background: rgba(203, 163, 255, 0.1); color: var(--cor-branco-puro); border-color: #e6d8ff; box-shadow: 0 0 15px rgba(203, 163, 255, 0.3); }
-
-        .efeito-flash { position: fixed; top: 50%; left: 50%; width: 20px; height: 20px; background: radial-gradient(circle, var(--cor-branco-puro), rgba(255,255,255,0)); border-radius: 50%; transform: translate(-50%, -50%) scale(0); opacity: 0; z-index: 1001; pointer-events: none; }
-        @keyframes explosaoFlash { 0% { transform: translate(-50%, -50%) scale(0); opacity: 0.8; } 90% { opacity: 1; } 100% { transform: translate(-50%, -50%) scale(200); opacity: 0; } }
-
-        #conteudo-principal-demo { opacity: 0; visibility: hidden; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 6rem 1rem; transition: opacity 1.5s ease-in-out, visibility 1.5s; }
-        #conteudo-principal-demo.visivel { opacity: 1; visibility: visible; }
-        .titulo-principal { font-family: 'Montserrat', serif; font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; color: var(--cor-branco-puro); text-shadow: 0 0 15px #cba3ff; text-align: center; }
-        .subtitulo-principal { font-family: 'Poppins', sans-serif; font-size: clamp(1rem, 4vw, 1.3rem); margin-top: 0.5rem; margin-bottom: 5rem; text-align: center; color: var(--cor-cinza-claro); }
-        
-        #carta { background-color: #fdfaf2; background-image: url('https://www.transparenttextures.com/patterns/old-paper.png'); border-radius: var(--borda-raio); box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 35px rgba(203, 163, 255, 0.4); border: 1px solid #dcd3c0; padding: clamp(1.5rem, 5vw, 3rem); color: #4a3e35; }
-        #carta h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 7vw, 2.5rem); color: #b98f58; text-align: center; margin-bottom: 1.5rem; font-weight: 700; }
-        #carta p { font-family: 'Poppins', sans-serif; font-size: clamp(1rem, 3vw, 1.1rem); line-height: 1.8; margin-bottom: 1.2rem; text-align: justify; }
-        .assinatura { font-family: 'Dancing Script', cursive; text-align: right; font-size: clamp(1.4rem, 4vw, 1.8rem); margin-top: 2.5rem; color: #a87b4f; line-height: 1.5; }
-        .separador-carta { border: 0; height: 1px; background-image: linear-gradient(to right, rgba(74, 62, 53, 0), rgba(74, 62, 53, 0.6), rgba(74, 62, 53, 0)); margin: 2rem auto; width: 80%; }
-        
-        #fotos-wrapper { position: relative; width: 100%; aspect-ratio: 3 / 4; background-color: #000; border-radius: var(--borda-raio); overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 35px rgba(203, 163, 255, 0.4); }
-        .carrossel-foto { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 1.2s ease-in-out; visibility: hidden; }
-        .carrossel-foto.ativa { opacity: 1; visibility: visible; z-index: 10; }
-        
-        #players-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
-        #players-wrapper iframe { width: 100%; height: 152px; border-radius: var(--borda-raio); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        
-        #contract-title { font-family: 'Montserrat', serif; font-size: clamp(1.5rem, 4vw, 2rem); text-align: center; border-bottom: 2px solid #b98f58; padding-bottom: 1rem; margin-bottom: 2rem; color: #4a3e35; }
-        #scroll-paper .contract-body { font-family: 'Poppins', sans-serif; line-height: 1.8; text-align: left; }
-        #scroll-paper .contract-body strong { color: #8c6b4e; }
-
-        .carrossel-botoes { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between; padding: 0 1rem; z-index: 20; pointer-events: none; }
-        .carrossel-botoes button { background: rgba(0,0,0,0.3); border: none; color: var(--cor-branco-puro); font-size: 2rem; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; transition: all 0.3s ease; pointer-events: all; }
-        .carrossel-botoes button:hover { background: rgba(0,0,0,0.6); transform: scale(1.1); }
-        #efeito-piscar { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #000; z-index: 15; opacity: 0; pointer-events: none; transition: opacity 0.2s ease-in-out; }
-        #efeito-piscar.ativo { opacity: 1; }
-        .tempo-wrapper { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
-        .tempo-wrapper > div { display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(203, 163, 255, 0.2); border-radius: var(--borda-raio); width: 120px; height: 120px; box-shadow: 0 0 15px rgba(203, 163, 255, 0.1); }
-        .tempo-wrapper span:first-child { font-size: clamp(2rem, 8vw, 3rem); font-weight: 700; color: var(--cor-branco-puro); line-height: 1; }
-        .tempo-wrapper span:last-child { font-size: clamp(0.8rem, 3vw, 1rem); text-transform: uppercase; letter-spacing: 1px; color: #d8cde8; margin-top: 0.5rem; }
-        .audio-player-custom { display: flex; align-items: center; gap: 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(203, 163, 255, 0.2); padding: 1rem; border-radius: 50px; width: 100%; max-width: 500px; margin: 0 auto; box-shadow: 0 0 15px rgba(203, 163, 255, 0.1); }
-        #audio-play-pause { background-color: #cba3ff; color: #02000c; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 1.5rem; cursor: pointer; transition: transform 0.2s ease; flex-shrink: 0; }
-        #audio-play-pause:hover { transform: scale(1.1); }
-        .audio-progress-container { flex-grow: 1; background-color: rgba(0,0,0,0.3); height: 8px; border-radius: 5px; cursor: pointer; }
-        #audio-progress-bar { width: 0%; height: 100%; background-color: #e6d8ff; border-radius: 5px; }
-        #audio-time { color: #d8cde8; font-size: 0.9rem; min-width: 90px; text-align: center; }
-        #game-area-wrapper { width: 100%; max-width: 700px; margin: 0 auto; }
-        #game-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-size: 1.2rem; color: var(--cor-branco-puro); font-family: 'Poppins', serif; }
-        #game-area { width: 100%; height: 500px; background-color: #000; border: 2px solid #cba3ff; border-radius: var(--borda-raio); position: relative; overflow: hidden; box-shadow: 0 0 25px rgba(203, 163, 255, 0.3); }
-        #game-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; z-index: 50; transition: opacity 0.5s ease; }
-        #game-overlay.hidden { opacity: 0; pointer-events: none; }
-        #game-start-btn { font-family: 'Montserrat', serif; font-size: 1.2rem; padding: 1rem 2.5rem; border-radius: 50px; border: 1px solid #cba3ff; color: #d8cde8; background: transparent; cursor: pointer; transition: all 0.3s ease; }
-        #game-start-btn:hover { background: rgba(203, 163, 255, 0.1); color: var(--cor-branco-puro); }
-        #game-instructions { margin-bottom: 2rem; font-size: 1.2rem; }
-        #game-final-score { font-size: 1.8rem; margin-bottom: 1rem; }
-        .game-heart { position: absolute; font-size: 2rem; cursor: pointer; user-select: none; text-shadow: 0 0 8px rgba(255, 255, 255, 0.5), 0 0 15px #ff2d75; animation: heart-pulse 1.5s infinite ease-in-out; will-change: transform; }
-        @keyframes heart-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
-        .game-heart.captured { animation: none; transition: transform 0.3s ease-out, opacity 0.3s ease-out; transform: scale(2.5); opacity: 0; }
-        #secret-form { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; transition: opacity 0.5s ease-out; }
-        #secret-lock-icon { font-size: 4rem; color: #e6d8ff; text-shadow: 0 0 15px #cba3ff; transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55); }
-        #secret-lock-icon.unlocked { transform: rotate(-20deg) scale(0.8); opacity: 0.5; }
-        #password-input { font-family: 'Poppins', serif; background-color: rgba(255,255,255,0.1); border: 1px solid #cba3ff; border-radius: 50px; padding: 0.8rem 1.5rem; color: var(--cor-branco-puro); font-size: 1.1rem; text-align: center; width: 100%; max-width: 300px; }
-        #password-input::placeholder { color: #d8cde8; opacity: 0.7; }
-        #password-input.shake { animation: shake 0.5s; }
-        @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-10px); } 75% { transform: translateX(10px); } }
-        #unlock-btn { font-family: 'Montserrat', serif; font-size: 1rem; padding: 0.8rem 2rem; border-radius: 50px; border: 1px solid #cba3ff; color: #d8cde8; background: transparent; cursor: pointer; transition: all 0.3s ease; }
-        #unlock-btn:hover { background: rgba(203, 163, 255, 0.1); color: var(--cor-branco-puro); }
-        #secret-letter-container { display: none; opacity: 0; transform: translateY(20px); transition: opacity 1s ease-out, transform 1s ease-out; width: 100%; max-width: 700px; position: relative; }
-        #secret-letter-container.visible { display: block; opacity: 1; transform: translateY(0); }
-        #secret-letter { background-color: #1a1426; border-radius: var(--borda-raio); box-shadow: 0 0 40px rgba(203, 163, 255, 0.4); border: 1px solid #cba3ff; padding: clamp(1.5rem, 5vw, 3rem); color: #d8cde8; }
-        #secret-letter-close-btn { position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: #d8cde8; font-size: 1.5rem; cursor: pointer; transition: color 0.3s, transform 0.3s; }
-        #secret-letter-close-btn:hover { color: var(--cor-branco-puro); transform: scale(1.2); }
-        
-        #hearts-wrapper { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; max-width: 500px; }
-        .special-heart { position: relative; font-size: 2.5rem; color: #ff4757; cursor: pointer; transition: transform 0.3s ease, text-shadow 0.3s ease; text-shadow: 0 0 10px #ff2d75; animation: float-animation 6s infinite ease-in-out; }
-        @keyframes float-animation { 0% { transform: translateY(0px) rotate(0deg) scale(1.05); } 50% { transform: translateY(-10px) rotate(5deg) scale(1); } 100% { transform: translateY(0px) rotate(0deg) scale(1.05); } }
-        .special-heart:hover { transform: scale(1.25) translateY(-5px) !important; text-shadow: 0 0 20px #ff2d75, 0 0 30px #e6d8ff; animation-play-state: paused; }
-        .special-heart:nth-child(2) { animation-delay: -0.6s; }
-        .special-heart:nth-child(3) { animation-delay: -1.2s; }
-        .special-heart:nth-child(4) { animation-delay: -1.8s; }
-        .special-heart:nth-child(5) { animation-delay: -2.4s; }
-        .special-heart:nth-child(6) { animation-delay: -3.0s; }
-        .special-heart:nth-child(7) { animation-delay: -3.6s; }
-        .special-heart:nth-child(8) { animation-delay: -4.2s; }
-        .special-heart:nth-child(9) { animation-delay: -4.8s; }
-        .special-heart:nth-child(10) { animation-delay: -5.4s; }
-        
-        #heart-message-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(2, 0, 12, 0.85); backdrop-filter: blur(8px); display: flex; justify-content: center; align-items: center; z-index: 2000; opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s ease; }
-        #heart-message-modal.visible { opacity: 1; visibility: visible; }
-        #modal-content { background: linear-gradient(145deg, #1f1533, #150e24); padding: 2.5rem; border-radius: var(--borda-raio); border: 1px solid #cba3ff; box-shadow: 0 0 50px rgba(203, 163, 255, 0.5); text-align: center; position: relative; max-width: 90%; width: 500px; transform: scale(0.9); transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28); }
-        #heart-message-modal.visible #modal-content { transform: scale(1); }
-        #modal-text { font-family: 'Poppins', sans-serif; font-size: clamp(1.5rem, 5vw, 2rem); color: #e6d8ff; text-shadow: 0 0 10px #e6d8ff; line-height: 1.6; }
-        #modal-close-btn { position: absolute; top: 0.5rem; right: 0.5rem; background: none; border: none; color: #d8cde8; font-size: 2rem; cursor: pointer; transition: color 0.3s, transform 0.3s; }
-        #modal-close-btn:hover { color: var(--cor-branco-puro); transform: rotate(90deg); }
-        
-        /* --- ESTILOS DO CONTRATO/PEDIDO --- */
-        #proposal-content { text-align: center; }
-        #proposal-question { margin-bottom: 2rem; line-height: 1.7; font-size: 1.1rem; }
-        #proposal-buttons { display: flex; justify-content: center; align-items: center; gap: 1rem; flex-direction: column; }
-        @media (min-width: 640px) { #proposal-buttons { flex-direction: row; gap: 1.5rem; } }
-        #proposal-buttons button { font-family: 'Montserrat', serif; font-size: 1.1rem; padding: 1rem 2rem; border-radius: 50px; cursor: pointer; transition: all 0.4s ease; border: 1px solid #cba3ff; width: 100%; max-width: 350px; }
-        @media (min-width: 640px) { #proposal-buttons button { width: auto; } }
-        #yes-btn { background-color: #cba3ff; color: #02000c; box-shadow: 0 0 20px #cba3ff; }
-        #yes-btn:hover { transform: scale(1.05); }
-        #doubt-btn { background: transparent; color: #d8cde8; }
-        #doubt-btn.hidden { display: none; }
-        #doubt-message { margin-top: 1.5rem; color: #e6d8ff; opacity: 0; transition: opacity 0.5s; height: 0; overflow: hidden; }
-        #doubt-message.visible { opacity: 1; height: auto; }
-
-        #proposal-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(2, 0, 12, 0.9); backdrop-filter: blur(10px); display: flex; justify-content: center; align-items: center; z-index: 2500; opacity: 0; visibility: hidden; transition: opacity 0.5s, visibility 0.5s; }
-        #proposal-modal.visible { opacity: 1; visibility: visible; }
-        #treasure-chest-icon { font-size: 8rem; color: #e6d8ff; text-shadow: 0 0 20px #cba3ff; transition: transform 1s, opacity 0.5s; }
-        #treasure-chest-icon.open { transform: scale(1.1) rotate(-5deg); }
-        #scroll-container { display: none; width: 100%; max-width: 600px; padding: 1rem; }
-        #scroll-paper { width: 100%; height: auto; max-height: 80vh; background-color: #fdfaf2; background-image: url('https://www.transparenttextures.com/patterns/old-paper.png'); color: #4a3e35; border: 4px solid #b98f58; box-shadow: 0 10px 30px rgba(0,0,0,0.5); padding: 3rem; clip-path: inset(0 0 100% 0); transition: clip-path 4s cubic-bezier(0.785, 0.135, 0.15, 0.86); overflow-y: auto; }
-        #scroll-paper.unrolling { clip-path: inset(0 0 0 0); }
-        .contract-stamp { font-family: 'Montserrat', serif; color: #c0392b; border: 3px solid #c0392b; padding: 0.5rem; font-size: 1.2rem; font-weight: bold; transform: rotate(-10deg); margin: 2rem auto; width: fit-content; }
-        #contract-close-btn { display: block; margin: 2rem auto 0; font-family: 'Montserrat', serif; font-size: 1rem; padding: 0.8rem 2rem; border-radius: 50px; border: 1px solid #b98f58; color: #b98f58; background: transparent; cursor: pointer; transition: all 0.3s ease; }
-        #contract-close-btn:hover { background: #b98f58; color: #fff; }
-        
-        /* NEW: Mapa Astral Feature */
-        #mapa-astral-visual {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            max-width: 350px;
-            margin: 0 auto;
-            position: relative;
-        }
-        #mapa-astral-svg {
-            width: 100%;
-            height: 100%;
-            overflow: visible;
-        }
-        #mapa-astral-text {
-            text-align: center;
-            margin-top: 1.5rem;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        #mapa-astral-text h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--cor-dourado-premium);
-            font-size: 1.3rem;
-            margin-bottom: 0.75rem;
-        }
-        #mapa-astral-text p {
-            font-size: 0.95rem;
-            color: var(--cor-cinza-claro);
-            line-height: 1.8;
-        }
-        
-        .mapa-astral-orbit-path {
-            fill: none;
-            stroke: var(--cor-dourado-premium);
-            stroke-width: 0.5;
-            opacity: 0.4;
-        }
-
-        .mapa-astral-sign {
-            font-family: serif;
-            fill: var(--cor-dourado-premium);
-            filter: drop-shadow(0 0 5px var(--cor-dourado-premium));
-            transition: transform 0.5s ease-in-out;
-        }
-
-        #orbit-group {
-            animation: spin-orbit 20s linear infinite;
-            transform-origin: center;
-        }
-
-        @keyframes spin-orbit {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-
-        #final-celebration { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 3000; display: flex; flex-direction: column; justify-content: center; align-items: center; pointer-events: none; opacity: 0; visibility: hidden; transition: opacity 0.5s ease-in-out; }
-        #final-celebration.visible { opacity: 1; visibility: visible; }
-        .confetti { position: absolute; width: 10px; height: 10px; background-color: red; opacity: 0; animation: fall-and-fade 4s linear forwards; }
-        @keyframes fall-and-fade { 0% { top: -10%; opacity: 1; transform: translateX(0); } 100% { top: 110%; opacity: 0; transform: translateX(100px); } }
-        #final-love-message { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(4rem, 15vw, 8rem); color: var(--cor-branco-puro); text-shadow: 0 0 10px #ff2d75, 0 0 30px #ff2d75, 0 0 60px var(--cor-branco-puro); animation: final-pulse 1.5s infinite; }
-        @keyframes final-pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: 0.8; } }
-        
+        /* --- Media Queries para Responsividade Total --- */
         @media (max-width: 992px) { .plano-card.popular { transform: scale(1); } }
-        @media (max-width: 768px) { .jornada-container, .planos-container, .testimonial-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .testimonial-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 600px) { .steps-container { grid-template-columns: 1fr; } }
+
     </style>
 </head>
 <body>
+    <div id="star-background"></div>
+
+    <!-- O Modal de Boas-vindas é o primeiro contato, criando conexão. -->
     <div id="welcome-modal">
         <div class="welcome-box">
-            <div id="name-step">
-                <h2>Antes de começarmos...</h2>
-                <p>Esta experiência foi desenhada para ser única. Para que seja inesquecível, diga-me seu nome.</p>
-                <form id="name-form">
-                    <input type="text" id="name-input" placeholder="Digite seu primeiro nome" required autocomplete="off">
-                    <button type="submit" id="name-submit-btn">Avançar</button>
-                </form>
-            </div>
-            <div id="identity-selection">
-                <h2 data-copy-id="identity-title">Olá, {name}!</h2>
-                <p>Para criar a experiência perfeita para você, como você se identifica?</p>
-                <div class="identity-options">
-                    <button class="identity-btn" data-identity="male"><i class="fa-solid fa-mars"></i>Homem</button>
-                    <button class="identity-btn" data-identity="female"><i class="fa-solid fa-venus"></i>Mulher</button>
-                    <button class="identity-btn" data-identity="lgbt"><i class="fa-solid fa-rainbow"></i>LGBT+</button>
-                </div>
-            </div>
+            <h2>Antes de começarmos...</h2>
+            <p>Esta experiência é desenhada para ser única. Para que seja inesquecível, diga-me seu nome.</p>
+            <form id="name-form">
+                <input type="text" id="name-input" placeholder="Digite seu primeiro nome" required autocomplete="off">
+                <button type="submit" id="name-submit-btn">Avançar</button>
+            </form>
         </div>
     </div>
 
+    <!-- Conteúdo principal da página, inicialmente oculto. -->
     <div id="main-content">
         <header id="hero" data-aos="zoom-in-out">
-            <h1 id="hero-titulo" data-copy-id="hero-title">Eternize Seus Sentimentos</h1>
-            <p id="hero-subtitulo" data-aos="fade-up" data-aos-delay="200" data-copy-id="hero-subtitle">Mais que um presente. Uma experiência que marca a alma e dura para sempre.</p>
+            <h1 id="hero-titulo">Eternize Seus Sentimentos</h1>
+            <p id="hero-subtitulo" data-aos="fade-up" data-aos-delay="200">
+                <span id="welcome-name-placeholder"></span>Cansou de presentes caros e demorados que geram uma reação morna? Transforme a história de vocês em uma emoção real e inesquecível.
+            </p>
         </header>
 
         <div class="container-geral">
-            <section id="jornada-section" class="section-wrapper">
-                <h2 class="section-titulo" data-aos="fade-up" data-copy-id="jornada-title">A Escolha é Sua: O Caminho Comum ou o Impacto Eterno?</h2>
-                <div class="jornada-container">
-                    <div class="jornada-coluna comum" data-aos="fade-right">
-                        <h3 data-copy-id="jornada-comum-title">O Caminho Comum</h3>
-                        <div class="jornada-item comum"><div class="icon"><i class="fa-solid fa-box-open"></i></div><div class="texto"><strong data-copy-id="jornada-comum-item1-title">A Busca Frustrante</strong><span data-copy-id="jornada-comum-item1-desc">Horas gastas procurando algo... para acabar com a mesma opção de sempre.</span></div></div>
-                        <div class="jornada-item comum"><div class="icon"><i class="fa-regular fa-face-meh"></i></div><div class="texto"><strong data-copy-id="jornada-comum-item2-title">A Reação Morna</strong><span data-copy-id="jornada-comum-item2-desc">Aquele "gostei", que você sabe que não foi um "UAU!".</span></div></div>
-                        <div class="jornada-item comum"><div class="icon"><i class="fa-solid fa-wind"></i></div><div class="texto"><strong data-copy-id="jornada-comum-item3-title">O Impacto Zero</strong><span data-copy-id="jornada-comum-item3-desc">Dias depois, o presente já é só mais um objeto.</span></div></div>
+            
+            <!-- Inicia a jornada explicando o processo de forma clara. -->
+            <section id="steps-section" data-aos="fade-up">
+                <h2 class="section-titulo">Como Criamos sua Surpresa</h2>
+                <p class="section-subtitulo">Em 4 passos simples, transformamos suas memórias em uma experiência inesquecível.</p>
+                <div class="steps-container">
+                    <div class="step-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-star-and-crescent step-icon"></i>
+                        <h3>1. Escolha o Pacote</h3>
+                        <p>Selecione o plano ideal. Ao clicar em "Quero Este", você será redirecionado(a) para o nosso WhatsApp.</p>
                     </div>
-                    <div class="jornada-coluna inesquecivel" data-aos="fade-left">
-                        <h3 data-copy-id="jornada-inesquecivel-title">O Salto para a Emoção Eterna</h3>
-                        <div class="jornada-item inesquecivel"><div class="icon" data-copy-id="jornada-inesquecivel-item1-icon"><i class="fa-solid fa-rocket"></i></div><div class="texto"><strong data-copy-id="jornada-inesquecivel-item1-title">O Golpe de Gênio</strong><span data-copy-id="jornada-inesquecivel-item1-desc">A surpresa total de uma experiência imersiva e única.</span></div></div>
-                        <div class="jornada-item inesquecivel"><div class="icon" data-copy-id="jornada-inesquecivel-item2-icon"><i class="fa-solid fa-face-grin-stars"></i></div><div class="texto"><strong data-copy-id="jornada-inesquecivel-item2-title">A Emoção Incontrolável</strong><span data-copy-id="jornada-inesquecivel-item2-desc">Lágrimas de pura felicidade. A prova de que você acertou no coração.</span></div></div>
-                        <div class="jornada-item inesquecivel"><div class="icon" data-copy-id="jornada-inesquecivel-item3-icon"><i class="fa-solid fa-crown"></i></div><div class="texto"><strong data-copy-id="jornada-inesquecivel-item3-title">O Legado da Memória</strong><span data-copy-id="jornada-inesquecivel-item3-desc">Um monumento para a história de vocês, que fortalece a conexão.</span></div></div>
+                    <div class="step-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-photo-film step-icon"></i>
+                        <h3>2. Envie os Detalhes</h3>
+                        <p>Após o contato inicial, te enviarei o acesso ao nosso <strong>Portal de Criação</strong>. Lá, você personaliza tudo.</p>
+                    </div>
+                     <div class="step-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-credit-card step-icon"></i>
+                        <h3>3. Confirme o Pagamento</h3>
+                        <p>Após a confirmação, sua vaga na agenda é garantida e a criação começa imediatamente!</p>
+                    </div>
+                    <div class="step-card" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-qrcode step-icon"></i>
+                        <h3>4. Receba e Emocione</h3>
+                        <p>Em até 3 dias, seu site e QR Code ficam prontos para surpreender quem você ama!</p>
                     </div>
                 </div>
             </section>
             
             <div class="section-divider"></div>
-            
-            <section id="historia-section" class="section-wrapper" data-aos="zoom-in-up">
-                <div class="historia-conteudo">
-                    <p data-aos="fade-up" data-aos-delay="100" data-copy-id="historia-p1">Uma data especial se aproxima e a busca começa...</p>
-                    <div id="gift-objections-container" class="jornada-container" style="grid-template-columns: 1fr; max-width: 750px; gap: 1rem; margin-top:0; margin-bottom: 2rem;"></div>
-                    <p data-aos="fade-up" data-aos-delay="200" data-copy-id="historia-p2">A verdade é que... queremos que a pessoa amada se sinta única.</p>
-                    <div class="historia-icone-central" data-aos="zoom-in" data-aos-delay="250"><i class="fas fa-key"></i></div>
-                    <p data-aos="fade-up" data-aos-delay="300" data-copy-id="historia-p3">Agora, imagine uma cena completamente diferente.</p>
-                    <p data-aos="fade-up" data-aos-delay="400" data-copy-id="historia-p4">Ao abrir, a música de vocês toca... as fotos... uma carta... você entregou uma prova viva do seu amor.</p>
+
+            <!-- Apresenta o vídeo como prova visual do produto. -->
+            <section id="video-section" data-aos="fade-up">
+                <h2 class="section-titulo">Veja a Emoção em Ação</h2>
+                 <p class="section-subtitulo">Palavras não descrevem o impacto. Assista ao vídeo e sinta um pouco da experiência que você pode criar.</p>
+                <div id="video-demo-container">
+                    <div class="video-wrapper">
+                        <!-- VÍDEO ATUALIZADO -->
+                        <iframe src="https://player.vimeo.com/video/1094582372?h=9b97b68f03&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" title="Vídeo Demonstrativo"></iframe>
+                    </div>
                 </div>
             </section>
-            
+
             <div class="section-divider"></div>
-            
-            <section id="portal-section" class="section-wrapper" data-aos="fade-up">
-                <h2 class="section-titulo" data-copy-id="portal-title">Chega de Imaginar. Sinta a Emoção.</h2>
-                <p class="section-subtitulo" style="max-width: 600px;" data-copy-id="portal-subtitle">As palavras são poderosas, mas a experiência é transformadora. Clique abaixo para entrar em nosso universo de demonstração e sentir exatamente o que a pessoa que você ama vai sentir.</p>
-                <button id="open-example-btn" class="portal-btn" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-dungeon"></i><span data-copy-id="portal-btn-text">Veja um exemplo prático</span></button>
+
+            <!-- Gera confiança com depoimentos reais. -->
+            <section id="social-proof-section" data-aos="fade-up">
+                <h2 class="section-titulo">Quem já emocionou, aprova</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="quote">"Eu nunca vi meu namorado chorar de alegria daquele jeito. Ele ficou sem palavras. Olhar o site virou o nosso passatempo preferido. Melhor presente da vida."</p>
+                        <p class="author">- Juliana M.</p>
+                    </div>
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="quote">"Aniversário de 5 anos de casado. Eu já tinha dado de tudo. Isso aqui salvou a data. Minha esposa chorou vendo nossas fotos e ouvindo a música. Reconquistada com sucesso."</p>
+                        <p class="author">- Roberto P.</p>
+                    </div>
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="quote">"Fiz para o pedido de namoro e foi a melhor decisão! A reação dela ao ver a nossa história contada daquele jeito... Inesquecível! Ela disse SIM, claro."</p>
+                        <p class="author">- Lucas V.</p>
+                    </div>
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="quote">"O atendimento do Igor é impecável e o resultado final superou todas as minhas expectativas. O site ficou lindo, emocionante e muito profissional. Vale cada centavo."</p>
+                        <p class="author">- Carolina F.</p>
+                    </div>
+                </div>
             </section>
-            
+
             <div class="section-divider"></div>
-            
-            <section id="social-proof-section" class="section-wrapper">
-                <h2 class="section-titulo" data-copy-id="social-proof-title">Não sou eu que digo. São eles...</h2>
-                 <div class="testimonial-grid"></div>
+
+            <!-- Apresenta os planos e preços, a oferta principal. -->
+            <section id="planos-section" data-aos="fade-up">
+                <h2 class="section-titulo">Escolha o Tamanho da Sua Emoção</h2>
+                <p class="section-subtitulo">Cada plano é um nível diferente de impacto. Escolha o arsenal para a sua declaração.</p>
+                <div class="texto-urgencia" data-aos="fade-up" data-aos-delay="100">✨ <strong>Vagas na agenda criativa são limitadas!</strong> Garanta a atenção exclusiva que sua história merece.</div>
+                <div class="planos-container">
+                    <div class="plano-card plano-card-1" data-aos="zoom-in-up" data-aos-delay="100">
+                        <h3 class="plano-nome">Laço de Amor <i class="fas fa-ribbon plano-icon" style="color: var(--cor-laco-amor);"></i></h3>
+                        <p class="plano-descricao">Essencial e emocionante para marcar a data.</p>
+                        <div class="plano-preco plano-preco-1"><span class="valor">R$47</span><span class="periodo">Pagamento único</span></div>
+                        <ul class="plano-features">
+                            <li><i class="fa-solid fa-ribbon icon icon-laco"></i>Carta com a sua declaração</li>
+                            <li><i class="fa-solid fa-images icon icon-laco"></i>Galeria com 5 momentos</li>
+                            <li><i class="fa-solid fa-music icon icon-laco"></i>A música que marcou vocês</li>
+                            <li><i class="fa-solid fa-hourglass-half icon icon-laco"></i>Contador de Tempo Juntos</li>
+                            <li><i class="fa-solid fa-qrcode icon icon-laco"></i>QR Code para Acesso Rápido</li>
+                            <li><i class="fa-solid fa-infinity icon icon-laco"></i>Site no ar para Sempre</li>
+                        </ul>
+                        <button class="plano-cta-btn secundario" data-plano="Laço de Amor" data-preco="47">Quero Este</button>
+                    </div>
+                    <div class="plano-card plano-card-2 popular" data-aos="zoom-in-up" data-aos-delay="200">
+                        <div class="popular-badge">Mais Popular</div>
+                        <h3 class="plano-nome">Nossa Sinfonia <i class="fas fa-music plano-icon" style="color: var(--cor-primaria);"></i></h3>
+                        <p class="plano-descricao">A experiência completa com mais interação e emoção.</p>
+                        <div class="plano-preco plano-preco-2"><span class="valor">R$67</span><span class="periodo">Pagamento único</span></div>
+                        <ul class="plano-features">
+                            <li><i class="fa-solid fa-star icon icon-sinfonia"></i>Tudo do plano Laço de Amor</li>
+                             <li><i class="fa-solid fa-images icon icon-sinfonia"></i>Galeria com 10 momentos</li>
+                            <li><i class="fa-solid fa-volume-high icon icon-sinfonia"></i>Sua voz declarando seu amor</li>
+                            <li><i class="fa-solid fa-heart icon icon-sinfonia"></i>Corações com Mensagens secretas</li>
+                            <li><i class="fa-solid fa-gamepad icon icon-sinfonia"></i>Jogo Interativo dos Corações</li>
+                        </ul>
+                        <button class="plano-cta-btn principal" data-plano="Nossa Sinfonia" data-preco="67">Quero Este</button>
+                    </div>
+                    <div class="plano-card plano-card-3" data-aos="zoom-in-up" data-aos-delay="300">
+                        <h3 class="plano-nome">Universo Particular <i class="fas fa-meteor plano-icon" style="color: var(--cor-dourado-premium);"></i></h3>
+                        <p class="plano-descricao">A declaração definitiva com todos os recursos imersivos.</p>
+                        <div class="plano-preco plano-preco-3"><span class="valor">R$97</span><span class="periodo">Pagamento único</span></div>
+                        <ul class="plano-features">
+                            <li><i class="fa-solid fa-crown icon icon-universo"></i>Tudo do plano Sinfonia</li>
+                            <li><i class="fa-solid fa-lock icon icon-universo"></i>Mensagem secreta com Senha</li>
+                            <li><i class="fa-solid fa-star-of-david icon icon-universo"></i>Mapa Astral do Casal</li>
+                            <li><i class="fa-solid fa-file-signature icon icon-universo"></i>Contrato de Amor Eterno</li>
+                        </ul>
+                        <button class="plano-cta-btn terciario" data-plano="Universo Particular" data-preco="97">Quero Este</button>
+                    </div>
+                </div>
             </section>
-            
+
             <div class="section-divider"></div>
-            
-            <section id="planos-section" class="section-wrapper" data-aos="fade-up">
-                <h2 class="section-titulo" data-copy-id="planos-title">A Escolha é Sua: Qual o Tamanho da Emoção?</h2>
-                <p class="section-subtitulo" data-copy-id="planos-subtitle">Você já entendeu o poder disso. Agora, escolha o arsenal para a sua declaração. Cada plano é um nível diferente de impacto.</p>
-                <div class="texto-urgencia" data-aos="fade-up" data-aos-delay="100" data-copy-id="urgency-text">✨ <strong>Vagas na agenda criativa são limitadas!</strong> Garanta a atenção exclusiva que sua história merece.</div>
-                <div class="planos-container"></div>
-            </section>
-            
-            <div class="section-divider"></div>
-            
-            <section id="faq-section" class="section-wrapper" data-aos="fade-up">
-                <h2 class="section-titulo" data-copy-id="faq-title">Suas últimas dúvidas, respondidas.</h2>
-                <div class="faq-container"></div>
-            </section>
-            
-            <div class="section-divider"></div>
-            
-            <section id="garantia-section" class="section-wrapper" data-aos="fade-up">
+
+            <!-- Remove as últimas objeções com a garantia. -->
+            <section id="garantia-section" data-aos="fade-up">
                 <div class="garantia-icon"><i class="fas fa-shield-heart"></i></div>
-                <h2 data-copy-id="garantia-title">Minha Garantia Pessoal de Emoção</h2>
-                <p data-copy-id="garantia-desc">Eu coloco minha alma em cada "Presente Eterno". Tenho tanta confiança de que a reação será de pura emoção que ofereço uma garantia...</p>
+                <h2 class="section-titulo">Sua Emoção é a Minha Garantia</h2>
+                <p>Coloco minha alma em cada "Presente Eterno". Tenho tanta confiança de que a reação será de pura emoção que, se você não ficar 100% satisfeito(a) com o resultado, devolvo todo o seu dinheiro. Simples assim.</p>
                 <div class="garantia-nome">- Igor, Criador do Presente Eterno</div>
             </section>
-        </div>
-    </div>
 
-    <div id="interactive-demo-container">
-        <span class="demo-close-btn">&times;</span>
-        <div id="galaxy-background"></div>
-        <div class="body-wrapper">
-            <div id="heart-rain-container"></div>
-            <div id="tela-entrada">
-                <div class="conteudo-entrada">
-                    <div id="cadeado-container">
-                        <i id="icone-cadeado-fechado" class="fa-solid fa-lock"></i>
-                        <i id="icone-cadeado-aberto" class="fa-solid fa-unlock"></i>
+            <div class="section-divider"></div>
+            
+            <!-- Responde às dúvidas mais comuns. -->
+            <section id="faq-section" data-aos="fade-up">
+                <h2 class="section-titulo">Ainda tem dúvidas? A gente responde.</h2>
+                <div class="faq-container">
+                    <div class="faq-item" data-aos="fade-up">
+                        <div class="faq-question">Em quanto tempo meu 'Presente Eterno' fica pronto?</div>
+                        <div class="faq-answer"><p>A criação leva um tempinho para ser perfeita. O prazo é de até 3 dias úteis após a confirmação do pagamento e o envio de todo o material. Assim, garanto que cada detalhe vai estar impecável para emocionar.</p></div>
                     </div>
-                    <button id="botao-desbloquear">Clique para acessar nosso universo particular</button>
-                </div>
-                <div class="efeito-flash"></div>
-            </div>
-
-            <main id="conteudo-principal-demo">
-                <h1 class="titulo-principal">Um Desvendar de Sentimentos</h1>
-                <p class="subtitulo-principal">Explore as emoções que você pode criar.</p>
-                
-                <div class="feature-showcase">
-                    <div class="feature-text-content">
-                        <h3 class="feature-title">Carta com a sua declaração</h3>
-                        <p class="feature-description">Esqueça o texto genérico. Aqui, suas palavras se transformam no coração da experiência. É a sua chance de dizer tudo aquilo que fica guardado, criando um momento de pura conexão que pode ser lido e relido para sempre.</p>
-                        <div class="package-info-box">
-                            <h4>Disponível nos pacotes:</h4>
-                            <ul>
-                                <li><span class="pkg-color-dot laco"></span><span class="pkg-name laco">Laço de Amor</span><span class="pkg-price">R$47,00</span></li>
-                                <li><span class="pkg-color-dot sinfonia"></span><span class="pkg-name sinfonia">Nossa Sinfonia</span><span class="pkg-price">R$67,00</span></li>
-                                <li><span class="pkg-color-dot universo"></span><span class="pkg-name universo">Universo Particular</span><span class="pkg-price">R$97,00</span></li>
-                            </ul>
-                        </div>
+                    <div class="faq-item" data-aos="fade-up">
+                        <div class="faq-question">A pessoa que vou presentear não entende de tecnologia. Vai funcionar?</div>
+                        <div class="faq-answer"><p>Com certeza! Foi pensado para ser incrivelmente intuitivo. É só apontar a câmera do celular para o QR Code ou clicar no link. A tecnologia é só o palco, a emoção que a pessoa vai sentir é a verdadeira estrela do show.</p></div>
                     </div>
-                    <div id="carta-container" class="feature-interactive-element">
-                        <div id="carta">
-                            <h2>Meu Universo Particular</h2>
-                            <p>Meu bem,</p>
-                            <p>Se você abriu este cadeado, significa que um pedaço da minha alma encontrou o caminho até você. Existem galáxias inteiras de sentimentos que as palavras comuns não conseguem descrever, e é por isso que criei este nosso pequeno refúgio digital.</p>
-                            <p>Cada pixel, cada cor e cada palavra aqui foram pensados com o seu sorriso em mente. Isto é mais que uma página; é um eco do meu coração, um espelho do mundo maravilhoso que você me ajudou a enxergar.</p>
-                            <hr class="separador-carta">
-                            <div class="assinatura">
-                                <p>Com todo o meu amor,</p>
-                                <p>Sempre seu/sua...</p>
-                            </div>
-                        </div>
+                    <div class="faq-item" data-aos="fade-up">
+                        <div class="faq-question">É seguro? Meus dados e fotos estarão protegidos?</div>
+                        <div class="faq-answer"><p>Absolutamente. A história de vocês é sagrada. O site é privado e só quem tiver o link pode ver. A segurança e a privacidade dos seus momentos mais preciosos são minha prioridade número um.</p></div>
                     </div>
                 </div>
-
-                <div class="feature-showcase">
-                    <div class="feature-text-content">
-                        <h3 class="feature-title">Galeria de momentos</h3>
-                        <p class="feature-description">Transforme as melhores lembranças em uma obra de arte. Cada foto é um portal para um sorriso, uma viagem, um olhar. É a prova de que os melhores momentos da vida são aqueles compartilhados com quem amamos.</p>
-                        <div class="package-info-box">
-                           <h4>Disponível nos pacotes:</h4>
-                           <ul>
-                                <li><span class="pkg-color-dot laco"></span><span class="pkg-name laco">Laço de Amor (até 5 fotos)</span><span class="pkg-price">R$47,00</span></li>
-                                <li><span class="pkg-color-dot sinfonia"></span><span class="pkg-name sinfonia">Nossa Sinfonia (até 10 fotos)</span><span class="pkg-price">R$67,00</span></li>
-                                <li><span class="pkg-color-dot universo"></span><span class="pkg-name universo">Universo Particular (até 10 fotos)</span><span class="pkg-price">R$97,00</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div id="carrossel-container" class="feature-interactive-element">
-                        <div id="fotos-wrapper">
-                            <div id="efeito-piscar"></div>
-                            <img src="https://i.postimg.cc/4NJrnT6Z/IMG-0332.jpg" class="carrossel-foto" alt="Memória 1" onerror="this.src='https://placehold.co/600x800/000000/FFFFFF?text=Mem%C3%B3ria+1'">
-                            <img src="https://i.postimg.cc/WpmB24JX/IMG-0333.jpg" class="carrossel-foto" alt="Memória 2" onerror="this.src='https://placehold.co/600x800/000000/FFFFFF?text=Mem%C3%B3ria+2'">
-                            <img src="https://i.postimg.cc/4yGjzDj6/IMG-0335.jpg" class="carrossel-foto" alt="Memória 3" onerror="this.src='https://placehold.co/600x800/000000/FFFFFF?text=Mem%C3%B3ria+3'">
-                            <img src="https://i.postimg.cc/QCqwS6rR/IMG-0336.jpg" class="carrossel-foto" alt="Memória 4" onerror="this.src='https://placehold.co/600x800/000000/FFFFFF?text=Mem%C3%B3ria+4'">
-                            <img src="https://i.postimg.cc/MTVhf63Z/IMG-0337.jpg" class="carrossel-foto" alt="Memória 5" onerror="this.src='https://placehold.co/600x800/000000/FFFFFF?text=Mem%C3%B3ria+5'">
-                            <img src="https://i.postimg.cc/1zLkznHY/IMG-0338.jpg" class="carrossel-foto" alt="Memória 6" onerror="this.src='https://placehold.co/600x800/000000/FFFFFF?text=Mem%C3%B3ria+6'">
-                            <img src="https://i.postimg.cc/wjbKSbsz/IMG-0339.jpg" class="carrossel-foto" alt="Memória 7" onerror="this.src='https://placehold.co/600x800/000000/FFFFFF?text=Mem%C3%B3ria+7'">
-                            <img src="https://i.postimg.cc/wjB84dMF/IMG-0340.jpg" class="carrossel-foto" alt="Memória 8" onerror="this.src='https://placehold.co/600x800/000000/FFFFFF?text=Mem%C3%B3ria+8'">
-                            <img src="https://i.postimg.cc/yNgqBXFZ/IMG-0341.jpg" class="carrossel-foto" alt="Memória 9" onerror="this.src='https://placehold.co/600x800/000000/FFFFFF?text=Mem%C3%B3ria+9'">
-                            <img src="https://i.postimg.cc/fTCQvbzJ/IMG-0342.jpg" class="carrossel-foto" alt="Memória 10" onerror="this.src='https://placehold.co/600x800/000000/FFFFFF?text=Mem%C3%B3ria+10'">
-                            <div class="carrossel-botoes">
-                                <button id="botao-anterior"><i class="fa-solid fa-chevron-left"></i></button>
-                                <button id="botao-proximo"><i class="fa-solid fa-chevron-right"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="feature-showcase">
-                    <div class="feature-text-content">
-                         <h3 class="feature-title">Contador de Tempo Juntos</h3>
-                        <p class="feature-description">Veja o amor de vocês crescer a cada segundo. Este contador transforma o tempo em um troféu, celebrando cada dia, hora e minuto da jornada que estão construindo. É um lembrete constante de que cada momento importa.</p>
-                        <div class="package-info-box">
-                            <h4>Disponível nos pacotes:</h4>
-                            <ul>
-                                <li><span class="pkg-color-dot laco"></span><span class="pkg-name laco">Laço de Amor</span><span class="pkg-price">R$47,00</span></li>
-                                <li><span class="pkg-color-dot sinfonia"></span><span class="pkg-name sinfonia">Nossa Sinfonia</span><span class="pkg-price">R$67,00</span></li>
-                                <li><span class="pkg-color-dot universo"></span><span class="pkg-name universo">Universo Particular</span><span class="pkg-price">R$97,00</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div id="contador-container" class="feature-interactive-element">
-                        <div class="tempo-wrapper">
-                            <div><span id="dias">00</span><span>Dias</span></div>
-                            <div><span id="horas">00</span><span>Horas</span></div>
-                            <div><span id="minutos">00</span><span>Minutos</span></div>
-                            <div><span id="segundos">00</span><span>Segundos</span></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="feature-showcase">
-                     <div class="feature-text-content">
-                        <h3 class="feature-title">A música que marcou vocês</h3>
-                        <p class="feature-description">Existe uma trilha sonora para cada grande amor. Adicione a música que faz o coração de vocês bater mais forte ou uma playlist inteira que conta a vossa história, transformando a tela em uma verdadeira pista de dança de emoções.</p>
-                         <div class="package-info-box">
-                            <h4>Disponível nos pacotes:</h4>
-                            <ul>
-                                <li><span class="pkg-color-dot laco"></span><span class="pkg-name laco">Laço de Amor (1 Música)</span><span class="pkg-price">R$47,00</span></li>
-                                <li><span class="pkg-color-dot sinfonia"></span><span class="pkg-name sinfonia">Nossa Sinfonia (Playlist 5 músicas)</span><span class="pkg-price">R$67,00</span></li>
-                                <li><span class="pkg-color-dot universo"></span><span class="pkg-name universo">Universo Particular (Playlist 5 músicas)</span><span class="pkg-price">R$97,00</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div id="musica-container" class="feature-interactive-element">
-                        <div id="players-wrapper">
-                             <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5B4611SCn4puXahrf7rqkj?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                             <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/70maGr0lQYDj0tcpcA2ORM?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                             <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2plbrEY59IikOBgBGLjaoe?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                             <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6hiKXxS7pgPKnKfCU7UJ6O?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                             <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7dAbpCdKHAPNONpwGTmGzC?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="feature-showcase">
-                    <div class="feature-text-content">
-                        <h3 class="feature-title">Sua voz declarando seu amor</h3>
-                        <p class="feature-description">Uma carta é poderosa. Mas ouvir a sua voz? É inesquecível. Grave uma mensagem de áudio e surpreenda com a emoção e a intimidade que só a sua voz pode transmitir. É o toque pessoal que ele(a) não espera.</p>
-                         <div class="package-info-box">
-                            <h4>Disponível nos pacotes:</h4>
-                            <ul>
-                                <li><span class="pkg-color-dot sinfonia"></span><span class="pkg-name sinfonia">Nossa Sinfonia</span><span class="pkg-price">R$67,00</span></li>
-                                <li><span class="pkg-color-dot universo"></span><span class="pkg-name universo">Universo Particular</span><span class="pkg-price">R$97,00</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div id="audio-container" class="feature-interactive-element">
-                        <audio id="player-audio-principal" src="https://raw.githubusercontent.com/igrm55/meu_audio/main/Rua%20e%20Mussurunga%20II%20St%20J%203.m4a" style="display: none;"></audio>
-                        <div class="audio-player-custom">
-                            <button id="audio-play-pause"><i class="fas fa-play"></i></button>
-                            <div id="audio-time">00:00 / 00:00</div>
-                            <div class="audio-progress-container">
-                                <div id="audio-progress-bar"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                 <div class="feature-showcase">
-                    <div class="feature-text-content">
-                        <h3 class="feature-title">Corações com Mensagens secretas</h3>
-                        <p class="feature-description">Transforme a tela em um campo de mistérios. Cada coração flutuante esconde uma pequena mensagem, um elogio, uma lembrança. Uma forma divertida e carinhosa de espalhar pequenas doses de amor e criar um sorriso a cada clique.</p>
-                        <div class="package-info-box">
-                            <h4>Disponível nos pacotes:</h4>
-                            <ul>
-                                <li><span class="pkg-color-dot sinfonia"></span><span class="pkg-name sinfonia">Nossa Sinfonia</span><span class="pkg-price">R$67,00</span></li>
-                                <li><span class="pkg-color-dot universo"></span><span class="pkg-name universo">Universo Particular</span><span class="pkg-price">R$97,00</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div id="special-hearts-container" class="feature-interactive-element">
-                        <div id="hearts-wrapper">
-                            <i class="fas fa-heart special-heart" data-message="Eu te amo, hoje e sempre."></i><i class="fas fa-heart special-heart" data-message="Você é o meu porto seguro."></i><i class="fas fa-heart special-heart" data-message="Cada dia com você é um presente."></i><i class="fas fa-heart special-heart" data-message="O seu sorriso ilumina meu universo."></i><i class="fas fa-heart special-heart" data-message="Penso em você a cada segundo."></i><i class="fas fa-heart special-heart" data-message="Minha saudade tem seu nome."></i><i class="fas fa-heart special-heart" data-message="Você me faz uma pessoa melhor."></i><i class="fas fa-heart special-heart" data-message="Nossa história é a minha favorita."></i><i class="fas fa-heart special-heart" data-message="Com você, tudo é mais bonito."></i><i class="fas fa-heart special-heart" data-message="Para sempre nós."></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="feature-showcase">
-                    <div class="feature-text-content">
-                        <h3 class="feature-title">Jogo Interativo dos Corações</h3>
-                        <p class="feature-description">Quem disse que o romance não pode ser divertido? Desafie a pessoa amada em um jogo leve e viciante, mostrando que o amor de vocês também é feito de risadas e parceria. Uma quebra de expectativa que encanta!</p>
-                         <div class="package-info-box">
-                            <h4>Disponível nos pacotes:</h4>
-                            <ul>
-                                <li><span class="pkg-color-dot sinfonia"></span><span class="pkg-name sinfonia">Nossa Sinfonia</span><span class="pkg-price">R$67,00</span></li>
-                                <li><span class="pkg-color-dot universo"></span><span class="pkg-name universo">Universo Particular</span><span class="pkg-price">R$97,00</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div id="game-container" class="feature-interactive-element">
-                        <div id="game-area-wrapper">
-                            <div id="game-info">
-                                <div id="game-timer">Tempo: 30s</div>
-                                <div id="game-score">Corações: 0</div>
-                            </div>
-                            <div id="game-area">
-                                <div id="game-overlay">
-                                    <p id="game-instructions">Capture os corações antes que eles sumam!</p>
-                                    <button id="game-start-btn">Começar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="feature-showcase">
-                    <div class="feature-text-content">
-                        <h3 class="feature-title">Mensagem secreta com Senha</h3>
-                        <p class="feature-description">O segredo final, a revelação mais íntima. Crie uma mensagem protegida por uma senha que só vocês dois conhecem — pode ser um apelido ou uma data especial. A senha para este exemplo é "<b>amor</b>".</p>
-                         <div class="package-info-box">
-                            <h4>Disponível nos pacotes:</h4>
-                            <ul>
-                                <li><span class="pkg-color-dot universo"></span><span class="pkg-name universo">Universo Particular</span><span class="pkg-price">R$97,00</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div id="secret-message-container" class="feature-interactive-element">
-                        <form id="secret-form">
-                            <i id="secret-lock-icon" class="fas fa-lock"></i>
-                            <input type="password" id="password-input" placeholder="Digite a senha secreta">
-                            <button type="submit" id="unlock-btn">Desvendar</button>
-                        </form>
-                        <div id="secret-letter-container">
-                            <div id="secret-letter">
-                                <button id="secret-letter-close-btn">&times;</button>
-                                <h2>Para Sempre</h2>
-                                <p>E aqui, no final desta jornada, a verdade é simples: tudo isso foi feito para te mostrar que o meu mundo é imensamente mais bonito porque você existe nele. Este não é um ponto final, mas uma promessa.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- UPDATED FEATURE: MAPA ASTRAL -->
-                <div class="feature-showcase">
-                    <div class="feature-text-content">
-                        <h3 class="feature-title">Mapa Astral do Casal</h3>
-                        <p class="feature-description">Uma representação artística e mística da conexão de vocês. Com base nos seus signos, criamos um mapa estelar único que simboliza como seus destinos se alinharam. Um toque de magia para celebrar a união cósmica de vocês.</p>
-                        <div class="package-info-box">
-                            <h4>Disponível nos pacotes:</h4>
-                            <ul>
-                                <li><span class="pkg-color-dot universo"></span><span class="pkg-name universo">Universo Particular</span><span class="pkg-price">R$97,00</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="feature-interactive-element">
-                         <div id="mapa-astral-visual">
-                            <svg id="mapa-astral-svg" viewBox="0 0 200 200">
-                                <defs>
-                                    <radialGradient id="grad-mapa-aura" cx="50%" cy="50%" r="50%">
-                                        <stop offset="0%" stop-color="var(--cor-dourado-premium)" stop-opacity="0.2" />
-                                        <stop offset="100%" stop-color="var(--cor-dourado-premium)" stop-opacity="0" />
-                                    </radialGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="99" fill="url(#grad-mapa-aura)" />
-                                <circle class="mapa-astral-orbit-path" cx="100" cy="100" r="80" />
-                                <g id="orbit-group">
-                                    <g transform="translate(100, 20)">
-                                        <text class="mapa-astral-sign" x="0" y="15" font-size="40" text-anchor="middle" alignment-baseline="middle">♑</text>
-                                    </g>
-                                    <g transform="translate(100, 180)">
-                                        <text class="mapa-astral-sign" x="0" y="15" font-size="40" text-anchor="middle" alignment-baseline="middle">♉</text>
-                                    </g>
-                                </g>
-                            </svg>
-                         </div>
-                         <div id="mapa-astral-text">
-                            <h3>Capricórnio & Touro: A Construção de um Amor Sólido</h3>
-                            <p>Quando a determinação de Capricórnio encontra a lealdade de Touro, nasce uma conexão de terra, forte e segura. Ambos práticos e realistas, vocês constroem um universo de confiança mútua, onde a estabilidade não é rotina, mas sim a base para um amor que floresce com o tempo. Uma união destinada a durar, com raízes profundas e um futuro próspero.</p>
-                         </div>
-                    </div>
-                </div>
-
-                <div class="feature-showcase">
-                     <div class="feature-text-content">
-                        <h3 class="feature-title">Contrato de Amor Eterno (Pedido Interativo)</h3>
-                        <p class="feature-description">Este não é um recurso, é um evento. Se você planeja fazer a grande pergunta, esta é a forma mais impactante de conseguir o "sim". Uma jornada que leva a um clímax inesquecível, selando o compromisso de vocês para sempre.</p>
-                         <div class="package-info-box">
-                            <h4>Disponível nos pacotes:</h4>
-                            <ul>
-                                <li><span class="pkg-color-dot universo"></span><span class="pkg-name universo">Universo Particular</span><span class="pkg-price">R$97,00</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div id="proposal-container" class="feature-interactive-element">
-                        <div id="proposal-content">
-                            <p id="proposal-question">Nossa história foi escrita nas estrelas... Você aceita continuar compondo essa poesia comigo, para sempre?</p>
-                            <div id="proposal-buttons">
-                                <button id="yes-btn">Sim, claro que sim!</button>
-                                <button id="doubt-btn">Não sei...</button>
-                            </div>
-                            <p id="doubt-message">No nosso universo, não há espaço para dúvidas, apenas para o amor.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MODAIS E CELEBRAÇÃO FINAL (da demo) -->
-                <div id="heart-message-modal"><div id="modal-content"><button id="modal-close-btn">&times;</button><p id="modal-text"></p></div></div>
-                <div id="proposal-modal"><i id="treasure-chest-icon" class="fas fa-treasure-chest"></i><div id="scroll-container"><div id="scroll-paper"><h3 id="contract-title">Contrato de Amor Eterno</h3><div class="contract-body"><p>Pelo presente instrumento, as partes abaixo assinadas no coração, celebram o presente <strong>Contrato de Amor Eterno</strong>, sob as seguintes cláusulas:</p><p><strong>Cláusula 1ª:</strong> Fica acordado que o amor, o carinho, o respeito e a cumplicidade aqui celebrados são, por natureza, renováveis a cada amanhecer.</p><p><strong>Cláusula 2ª:</strong> O prazo de validade deste contrato é <strong>Para Sempre</strong>, com renovação automática a cada beijo, abraço ou sorriso.</p><p><strong>Cláusula 3ª:</strong> A assinatura deste contrato implica na concordância em construir novas memórias, superar desafios juntos e nunca esquecer o brilho que um encontrou no outro.</p><p><strong>Data da Assinatura:</strong> Hoje e todos os dias.</p><p><strong>Data de Expiração:</strong> Nunca.</p></div><div class="contract-stamp">ACEITO</div><button id="contract-close-btn">Fechar e Celebrar</button></div></div></div>
-                <div id="final-celebration"><div id="confetti-container"></div><h1 id="final-love-message">Eu te Amo</h1><button id="celebration-close-btn" style="display: none;">X</button></div>
-            </main>
+            </section>
         </div>
     </div>
     
+    <!-- Scripts essenciais para animações e interatividade -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         // --- VARIÁVEIS GLOBAIS DO SCRIPT ---
         const welcomeModal = document.getElementById('welcome-modal');
-        const nameStep = document.getElementById('name-step');
-        const identityStep = document.getElementById('identity-selection');
         const nameForm = document.getElementById('name-form');
         const nameInput = document.getElementById('name-input');
         const mainContent = document.getElementById('main-content');
-        const interactiveDemoContainer = document.getElementById('interactive-demo-container');
+        const namePlaceholder = document.getElementById('welcome-name-placeholder');
+        const starBackground = document.getElementById('star-background');
         
+        // Substitua pelo seu número de WhatsApp
         const seuNumeroWhatsApp = '5571999011447';
         let userName = '';
-        let userTheme = 'female';
 
-        // --- BANCO DE DADOS DE COPY ---
-        const copyDatabase = {
-            male: { 'hero-title': 'A Jogada de Mestre Existe.', 'hero-subtitle': 'Esqueça os presentes. Entregue uma experiência. Crie o momento que ela vai contar para todas as amigas.', 'jornada-title': 'O Jogo do Amor: Amador ou Profissional, <strong>{name}</strong>?', 'historia-p1': `<strong>{name}</strong>, vamos ser honestos. Chega a data especial e a mesma pergunta surge na sua cabeça: "O que eu dou dessa vez?". A pressão para não errar, para superar as expectativas, é real. Você não quer ser o cara do presente óbvio, quer?`, 'historia-p2': 'O erro que 99% dos homens cometem é pensar em "o que comprar". O 1% que vence, pensa em "qual sentimento provocar". Um objeto é esquecido. Uma emoção forte, um momento em que ela se sente a mulher mais especial do mundo... isso fica para sempre.', 'historia-p3': 'Agora, visualize a jogada de mestre. Em vez de uma caixa, você entrega um QR Code. Ela escaneia, cética. E de repente, o universo de vocês se abre. A música, as fotos, a sua voz... uma declaração de amor em formato de experiência.', 'historia-p4': 'Nesse instante, você não deu um presente. Você entregou uma prova. Uma prova de que você se importa, de que você presta atenção, de que você investiu seu tempo e sua alma nisso. Você se tornou o cara que acertou em cheio. E essa, <strong>{name}</strong>, é uma vitória que presente nenhum pode comprar.', 'portal-title': 'Chega de Teoria. Sinta o Poder de Fogo.', 'portal-subtitle': 'Ver as funcionalidades é uma coisa, sentir o impacto em ação é outra. Entre no nosso universo de demonstração e veja exatamente a arma de emoção que você está prestes a ter em mãos.', 'portal-btn-text': 'Veja um exemplo prático', 'social-proof-title': 'Homens que Entenderam o Jogo', 'planos-title': 'Qual a sua Estratégia, <strong>{name}</strong>?', 'planos-subtitle': 'Cada plano é um arsenal diferente para garantir o "UAU!". Escolha a jogada que vai garantir a sua vitória.', 'faq-title': 'Decodificando suas últimas dúvidas.', 'garantia-title': 'Meu Compromisso com o Seu Sucesso.', 'garantia-desc': `<strong>{name}</strong>, meu objetivo aqui é o seu sucesso. É simples: se, ao ver o projeto, você não tiver 100% de certeza de que ela vai ter a melhor reação da vida dela, eu refaço junto com você até que a sua estratégia seja infalível. É a sua vitória ou o seu dinheiro de volta.` },
-            female: { 'hero-title': 'Transforme Memórias em Magia.', 'hero-subtitle': 'Porque os sentimentos mais profundos merecem ser sentidos, não apenas guardados.', 'jornada-title': 'Qual Melodia seu Coração quer Tocar, <strong>{name}</strong>?', 'jornada-inesquecivel-title': 'A Sinfonia da História de Vocês', 'jornada-inesquecivel-item1-icon': '<i class="fa-solid fa-wand-magic-sparkles"></i>', 'jornada-inesquecivel-item1-title': 'O Despertar da Magia', 'jornada-inesquecivel-item1-desc': 'A surpresa nos olhos dele ao descobrir um portal para as memórias mais preciosas de vocês.', 'jornada-inesquecivel-item2-icon': '<i class="fa-solid fa-heart-pulse"></i>', 'jornada-inesquecivel-item2-title': 'A Conexão da Alma', 'jornada-inesquecivel-item2-desc': 'A emoção genuína ao ouvir a música de vocês e reviver momentos que só pertencem a vocês.', 'jornada-inesquecivel-item3-icon': '<i class="fa-solid fa-book-open-reader"></i>', 'jornada-inesquecivel-item3-title': 'O Legado de Amor', 'jornada-inesquecivel-item3-desc': 'Um monumento digital para a história de vocês, fortalecendo a conexão de uma forma única e eterna.', 'historia-p1': `<strong>{name}</strong>, a gente sabe como é... Uma data especial se aproxima e a alma busca uma forma de transformar todo esse sentimento que transborda em algo real, algo que ele possa sentir na pele. Você procura algo com significado, que conte a história de vocês, mas as opções parecem tão... comuns.`, 'historia-p2': 'O que a gente busca de verdade é criar uma ponte direto para o coração dele. É poder dizer, sem palavras: "Eu vejo você. Eu celebro nossa jornada. Cada segundo dela é precioso para mim."', 'historia-p3': `Agora, <strong>{name}</strong>, feche os olhos e visualize. Imagine a emoção nos olhos dele ao receber não uma caixa, mas a chave para um santuário. Um portal sagrado para o universo particular de vocês.`, 'historia-p4': 'A melodia de vocês preenche o ar. As fotos que guardam as risadas mais gostosas dançam na tela. Uma carta, com a sua alma em palavras, surge como um abraço. Nesse momento, você não deu um presente. Você honrou e eternizou a história de amor de vocês.', 'portal-title': 'Chega de Imaginar. Sinta a Emoção.', 'portal-subtitle': 'As palavras tentam, mas só o coração sente. Entre no nosso universo de demonstração para se teletransportar para dentro da experiência e sentir a emoção em primeira mão.', 'portal-btn-text': 'Veja um exemplo prático', 'social-proof-title': 'Corações que já foram Tocados...', 'planos-title': 'Como você vai celebrar sua história, <strong>{name}</strong>?', 'planos-subtitle': 'Cada plano é um jeito diferente de sussurrar "eu te amo". Escolha o que mais ressoa com a melodia do seu coração.', 'faq-title': 'Seu coração tem dúvidas? A gente responde.', 'garantia-title': 'Meu Compromisso com a Sua Emoção.', 'garantia-desc': `<strong>{name}</strong>, eu entendo a profundidade e a importância deste gesto. Por isso, coloco minha alma em cada projeto. Se, ao ver o resultado, seu coração não se encher de alegria e certeza de que ele vai se emocionar profundamente, eu trabalho com você até que cada detalhe cante a canção do seu amor. A sua felicidade é a minha.` },
-            lgbt: { 'hero-title': 'Nosso Amor, Nossas Cores.', 'hero-subtitle': 'Crie um universo que pertence só a vocês, livre de rótulos e cheio de orgulho.', 'jornada-title': `Qual caminho celebra a história de vocês, <strong>{name}</strong>?`, 'jornada-inesquecivel-title': 'A Celebração da Autenticidade', 'jornada-inesquecivel-item1-icon': '<i class="fa-solid fa-hand-holding-heart"></i>', 'jornada-inesquecivel-item1-title': 'Nossa História, Nosso Orgulho 🏳️‍🌈', 'jornada-inesquecivel-item1-desc': 'A surpresa de receber uma experiência que celebra a história de vocês com as cores e a verdade que ela merece.', 'jornada-inesquecivel-item2-icon': '<i class="fa-solid fa-user-group"></i>', 'jornada-inesquecivel-item2-title': 'A Explosão de Sentimentos', 'jornada-inesquecivel-item2-desc': 'A emoção de se sentir completamente visto e celebrado, em um espaço que é só de vocês, livre de qualquer padrão.', 'jornada-inesquecivel-item3-icon': '<i class="fa-solid fa-infinity"></i>', 'jornada-inesquecivel-item3-title': 'Um Monumento para o Amor', 'jornada-inesquecivel-item3-desc': 'Um marco eterno para a jornada de vocês, um lugar seguro que pode ser revisitado para sempre.', 'historia-p1': `<strong>{name}</strong>, a gente sabe bem como é. Datas especiais chegam e a vontade de dar algo que represente de verdade a nossa conexão bate forte. Algo que fuja do óbvio, que celebre nosso amor de um jeito que só a gente entende.`, 'historia-p2': 'O mundo tenta colocar o amor em caixas, com presentes padronizados. Mas a nossa história é um arco-íris, é única, é maior que isso. Ela merece ser contada com todas as suas cores, sem filtros e com a autenticidade que só a gente tem.', 'historia-p3': `Agora, imagine a cena. A reação da pessoa que você ama ao escanear um QR Code e ser transportada para... <strong>um universo particular, um espaço seguro e sagrado que conta a história de vocês, nos seus termos.</strong> Com orgulho.`, 'historia-p4': 'A playlist de vocês começa. As fotos que só fazem sentido para vocês brilham. Uma declaração que reflete a verdade da sua conexão. Você não está dando um presente, está construindo um monumento. Um marco para a SUA história.', 'portal-title': 'Padrões são para os outros.', 'portal-subtitle': 'Clique aqui para explorar uma experiência que celebra o que é único, verdadeiro e só de vocês, e veja todas as ferramentas que você pode usar.', 'portal-btn-text': 'Veja um exemplo prático', 'social-proof-title': 'Histórias Reais, Amores Únicos.', 'planos-title': 'Com quais cores vamos pintar sua história, <strong>{name}</strong>?', 'planos-subtitle': 'Cada plano é uma paleta para construir o universo de vocês. Escolha os elementos que melhor representam a sua conexão autêntica.', 'faq-title': 'Dúvidas? Vamos colorir todas as respostas.', 'garantia-title': 'Meu Compromisso com a Sua História.', 'garantia-desc': `Eu celebro e honro todas as formas de amor. Meu compromisso é criar um espaço que represente a sua história com perfeição, orgulho e autenticidade. Se você não sentir que o resultado final é um reflexo vibrante da sua conexão, eu trabalho com você até que cada pixel respire a essência de vocês.` }
-        };
+        // --- FUNÇÃO PARA CRIAR FUNDO DE ESTRELAS ---
+        function createStars() {
+            if (!starBackground) return;
+            const starCount = 60; // Reduzido para melhor performance mobile
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const size = Math.random() * 1.5 + 0.5; // Estrelas ligeiramente menores
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.animationDelay = `${Math.random() * 4}s`;
+                starBackground.appendChild(star);
+            }
+        }
+        createStars();
 
-        const dynamicData = {
-            giftObjections: { male: [ { icon: "fa-solid fa-leaf", color: "#FFC0CB", title: "Flores?", text: "Lindas, mas a beleza que representa seu amor murcha e morre em poucos dias." }, { icon: "fa-solid fa-gem", color: "#E0E7EF", title: "Uma Joia?", text: "Um clássico, mas que pode parecer impessoal. Corre o risco de ser 'só mais uma'." }, { icon: "fa-solid fa-bottle-droplet", color: "#F0E68C", title: "Um Perfume?", text: "Um risco enorme. Se não acertar na fragrância, vira um enfeite caro na estante." }, { icon: "fa-solid fa-utensils", color: "#D3D3D3", title: "Um Jantar?", text: "Uma ótima noite, que se torna apenas uma lembrança distante, sem algo para se agarrar." }, { icon: "fa-solid fa-cookie-bite", color: "#8B4513", title: "Chocolates?", text: "Uma delícia que dura minutos. E bem, você sabe onde ele vai parar depois, né?" } ], female: [ { icon: "fa-solid fa-shirt", color: "#ADD8E6", title: "Uma Camisa de Time?", text: "A intenção é boa, mas a chance de você comprar a do time rival é perigosamente alta." }, { icon: "fa-solid fa-clock", color: "#C0C0C0", title: "Um Relógio?", text: "Elegante, mas será que é o estilo dele? É um investimento alto para arriscar." }, { icon: "fa-solid fa-gamepad", color: "#333333", title: "Um Jogo?", text: "Pode ser um tiro no pé se não for exatamente o que ele queria, virando poeira na prateleira." }, { icon: "fa-solid fa-briefcase", color: "#A0522D", title: "Uma Carteira?", text: "Prático, mas é o presente que se dá quando a criatividade tira férias." }, { icon: "fa-solid fa-socks", color: "#808080", title: 'Meias?', text: "Sério? A não ser que venham com um PS5 dentro, melhor repensar a estratégia." } ], lgbt: [ { icon: "fa-solid fa-leaf", color: "#FFC0CB", title: "Flores?", text: "Bonitas, mas a beleza que representa o amor de vocês murcha em poucos dias." }, { icon: "fa-solid fa-bottle-droplet", color: "#F0E68C", title: "Um Perfume?", text: "Um risco enorme. Se não acertar na fragrância, vira um enfeite caro na estante." }, { icon: "fa-solid fa-utensils", color: "#D3D3D3", title: "Um Jantar?", text: "Uma ótima noite, que se torna apenas uma lembrança distante, sem algo para se agarrar." }, { icon: "fa-solid fa-cookie-bite", color: "#8B4513", title: "Chocolates?", text: "Uma delícia que dura minutos. E bem, vocês sabem onde ele vai parar depois, né?" }, { icon: "fa-solid fa-shirt", color: "#ADD8E6", title: "Uma Camisa?", text: "Prático, mas é o presente que se dá quando a criatividade tira férias." }, { icon: "fa-solid fa-socks", color: "#808080", title: 'Meias?', text: "Sério? A não ser que venham com um PS5 dentro, melhor repensar a estratégia." } ] },
-            testimonials: { male: [ { quote: `Eu queria pedir minha namorada em casamento e não sabia como ser original. Usei o plano 'Universo Particular'. A reação dela no pedido interativo... não tem preço. Ela disse SIM! Foi cinematográfico.`, author: `- Carlos M., noivo.` }, { quote: `Aniversário de 5 anos de casado. Eu já tinha dado de tudo. Isso aqui salvou a data. Minha esposa chorou vendo nossas fotos e ouvindo a música. Reconquistada com sucesso.`, author: `- Roberto P., casado.` }, { quote: `Era minha amiga há anos, o clima sempre existiu. Mandei o 'Laço de Amor' no aniversário dela. Uma semana depois, estamos namorando. Funcionou melhor que qualquer cantada.`, author: `- Lucas V., agora namorando.` }, { quote: `Um ano de namoro. Queria mostrar que não era só um rolo. O site que o Igor fez mostrou meu comprometimento. Ela me olhou diferente depois de ver. Nível pro!`, author: `- Fernando A., namorando.` }, { quote: `A gente tava meio distante, rotina, sabe? Fiz de surpresa. Foi como uma terapia de casal. Relembramos tudo e nos reconectamos na hora. Salvou o mês.`, author: `- Diogo S., relacionamento sério.` } ], female: [ { quote: `Eu nunca vi meu namorado chorar de alegria daquele jeito. Ele ficou sem palavras. Olhar o site virou o nosso passatempo preferido. Melhor presente da vida, sem exageros.`, author: `- Juliana M., namorando.` }, { quote: `Queria fazer o pedido de namoro de um jeito inesquecível. Entreguei um cartão com o QR Code pra ele. Quando ele abriu no celular e a nossa música tocou... a cara de surpresa dele foi TUDO! A resposta veio na hora: "É óbvio que eu aceito!".`, author: `- Beatriz L., iniciando um namoro.` }, { quote: `Aniversário de casamento e a criatividade some. O 'Presente Eterno' foi minha salvação. Meu marido ficou genuinamente surpreso e emocionado. Foi como renovar nossos votos.`, author: `- Patrícia C., casada.` }, { quote: `Estava com medo de ser complicado, mas o Igor me guiou em tudo. Foi super fácil e o resultado ficou mil vezes melhor do que eu imaginava. A reação dele não teve preço!`, author: `- Fernanda S., surpreendendo.` }, { quote: `Fiz para nosso aniversário de 2 anos. Ele é mais fechado, não demonstra muito. Mas quando viu a galeria de fotos com a nossa música, vi os olhos dele brilhando. Atingi o coração!`, author: `- Livia G., celebrando o amor.` } ], lgbt: [ { quote: `Finalmente um presente que entende a gente. Minha namorada e eu nos sentimos tão representadas. Cada detalhe, as cores... foi perfeito. Choramos juntas.`, author: `- Bia & Carol` }, { quote: `Eu queria algo especial para nosso aniversário e isso superou tudo. Foi mais que um presente, foi uma afirmação do nosso amor. Lindo, respeitoso e emocionante.`, author: `- Leo R.` }, { quote: `Como um casal de homens, é difícil achar coisas que não sejam clichê. Isso aqui foi autêntico. Foi a NOSSA história, do nosso jeito. Meu marido amou.`, author: `- André & Tiago` }, { quote: `Eu usei para pedir a pessoa que amo em namoro. Ela ficou chocada com o cuidado e a personalização. Foi um SIM com muitas lágrimas de felicidade. Recomendo demais!`, author: `- Alex P.` }, { quote: `Presentear outra mulher pode ser um desafio. Mas com isso, não teve erro. Minha esposa disse que foi a coisa mais romântica que já recebeu na vida. Ponto pra mim!`, author: `- Renata F.` } ] },
-            plans: { shared: [ 
-                { popular: false, id: 1, nome: "Laço de Amor", desc: "A forma essencial e emocionante de eternizar seus sentimentos.", preco: "67", features: ["<i class='fa-solid fa-ribbon icon icon-laco'></i>Carta com a sua declaração", "<i class='fa-solid fa-ribbon icon icon-laco'></i>Galeria com 5 momentos", "<i class='fa-solid fa-ribbon icon icon-laco'></i>A música que marcou vocês", "<i class='fa-solid fa-ribbon icon icon-laco'></i>Contador de Tempo Juntos", "<i class='fa-solid fa-ribbon icon icon-laco'></i>Paleta de Cores do casal", "<i class='fa-solid fa-ribbon icon icon-laco'></i>QR Code para acesso rápido", "<i class='fa-solid fa-ribbon icon icon-laco'></i>Site no ar para Sempre"], cta_class: "secundario", cta_text: "Criar Emoção" }, 
-                { popular: true, id: 2, nome: "Nossa Sinfonia", desc: "A experiência completa para celebrar cada detalhe com mais interação e emoção.", preco: "97", features: ["<strong>Tudo do plano Laço de Amor</strong>", "<i class='fa-solid fa-music icon icon-sinfonia'></i><strong>Galeria com 10 momentos</strong>", "<i class='fa-solid fa-music icon icon-sinfonia'></i><strong>Sua voz declarando seu amor</strong>", "<i class='fa-solid fa-music icon icon-sinfonia'></i>Animação de <strong>Chuva de Corações</strong>", "<i class='fa-solid fa-music icon icon-sinfonia'></i><strong>Corações com Mensagens</strong> secretas", "<i class='fa-solid fa-music icon icon-sinfonia'></i><strong>Jogo Interativo dos Corações</strong>"], cta_class: "principal", cta_text: "Criar Sinfonia" }, 
-                { popular: false, id: 3, nome: "Universo Particular", desc: "A declaração definitiva. Uma experiência totalmente imersiva com todos os recursos.", preco: "147", features: ["<strong>Tudo do plano Nossa Sinfonia</strong>", "<i class='fa-solid fa-meteor icon icon-universo'></i><strong>Contrato de Amor Eterno (Pedido Interativo)</strong>", "<i class='fa-solid fa-meteor icon icon-universo'></i><strong>Mensagem secreta com Senha</strong>", "<i class='fa-solid fa-meteor icon icon-universo'></i><strong>Playlist com 5 músicas</strong>", "<i class='fa-solid fa-meteor icon icon-universo'></i><strong>Mapa Astral do Casal</strong>"], cta_class: "secundario", cta_text: "Criar Universo" } 
-            ] },
-            faq: { questions: [ "Como funciona o processo após eu escolher o plano?", "Em quanto tempo meu 'Presente Eterno' fica pronto?", "O valor parece um pouco alto. Vale mesmo a pena?", "A pessoa que vou presentear não entende de tecnologia. Vai funcionar?", "É seguro? Meus dados e fotos estarão protegidos?" ], answers: { male: [ "Simples e direto. Após escolher o plano, você é direcionado ao meu WhatsApp. Assim que o pagamento for confirmado, eu vou te pedir os materiais (fotos, textos, etc). Eu cuido de toda a parte técnica e te entrego o link e o QR Code. Sua única missão é executar a jogada final e surpreendê-la.", "Sua estratégia precisa do tempo certo. O prazo padrão é de até 3 dias úteis após o envio de todo o material. Se tiver uma urgência, me avise no WhatsApp que faremos o possível para acelerar e garantir sua vitória na data certa.", "Pense nisto como um Retorno Sobre Investimento Emocional. Um jantar caro, um perfume... a emoção dura uma noite. Isso aqui é um ativo. Uma prova do seu esforço que se valoriza e reforça sua posição a cada vez que ela revisita o site e mostra para as amigas. O custo é baixo, o status que gera é altíssimo.", "Foi feito para ser à prova de falhas. Se ela sabe usar o Instagram ou o WhatsApp, ela sabe ver o presente. A tecnologia aqui é só a ferramenta para você entregar o impacto. Zero chance de erro técnico da parte dela.", "Totalmente. A segurança da sua operação é minha prioridade. O site é hospedado em uma plataforma privada, e apenas quem tiver o link poderá acessar. Sua privacidade e a dela são invioláveis." ], female: [ "É super simples e eu te guio com todo carinho! Após escolher seu plano, você me chama no WhatsApp. Confirmado o pagamento, vamos conversar sobre a história de vocês e você me envia os materiais (fotos, a música, os textos). Eu cuido de toda a mágica, montando um santuário para o amor de vocês e te entrego o link e o QR Code prontinhos para emocionar.", "A mágica leva um tempinho para ser criada com perfeição. O prazo é de até 3 dias úteis depois que você me enviar todo o material. Assim, eu garanto que cada detalhe vai estar perfeito para tocar o coração dele.", "Pense no valor de um sentimento... Um presente comum, mesmo que caro, muitas vezes não consegue expressar a profundidade do que você sente. Este presente é um investimento na vossa história. É criar um monumento que dura para sempre. A emoção que ele vai sentir ao se ver homenageado assim... isso não tem preço.", "Com certeza! Foi pensado para ser incrivelmente intuitivo. É só clicar em um link ou apontar a câmera. A tecnologia é só o palco, a emoção que ele vai sentir é a verdadeira estrela do show.", "Absolutamente. A história de vocês é sagrada. O site é privado e só quem tiver o link pode ver. A segurança e a privacidade dos seus momentos mais preciosos são minha prioridade número um." ], lgbt: [ "É um processo colaborativo e super tranquilo. Após escolher seu plano, você vem para o meu WhatsApp. Depois do pagamento, vamos bater um papo sobre a história de vocês. Você me manda as fotos, textos, músicas... e eu construo esse universo com todo respeito e cuidado. Te entrego o link e QR Code prontos para celebrar!", "Para criar algo tão único, preciso de um tempinho. O prazo é de até 3 dias úteis após você me enviar tudo que precisamos. Assim, garantimos que cada cor e cada palavra represente perfeitamente o amor de vocês.", "Presentes comuns raramente capturam a essência de um amor que foge aos padrões. Este é um investimento para construir um marco, um monumento para a história de vocês. É a chance de dar algo que diz: 'Eu vejo e celebro exatamente quem nós somos'.", "Sim! Foi desenhado para ser universalmente acessível. Se a pessoa sabe abrir um link, ela vai conseguir ver o presente sem nenhuma dificuldade. A tecnologia é apenas a tela onde vamos pintar a história de vocês.", "Totalmente. Este é um espaço seguro. A história, as fotos e os sentimentos de vocês são tratados com a máxima confidencialidade e respeito. O site é privado e apenas quem tiver o link de acesso poderá entrar neste universo particular." ] } }
-        };
 
-        function generateGiftObjections(identity) {
-             const container = document.getElementById('gift-objections-container');
-             if (!container) return;
-             const objections = dynamicData.giftObjections[identity];
-             const column = document.createElement('div');
-             column.className = 'jornada-coluna comum';
-             column.style.padding = '1.5rem';
-             let itemsHTML = '';
-             objections.forEach(item => {
-                 itemsHTML += `<div class="jornada-item comum"><div class="icon"><i class="${item.icon}" style="color:${item.color};"></i></div><div class="texto"><strong>${item.title}</strong><span>${item.text}</span></div></div>`;
-             });
-             column.innerHTML = itemsHTML;
-             container.innerHTML = '';
-             container.appendChild(column);
-        }
-        function generateTestimonials(identity) { 
-            const container = document.querySelector('.testimonial-grid');
-            container.innerHTML = '';
-            const testimonials = dynamicData.testimonials[identity];
-            testimonials.forEach((item, index) => {
-                container.innerHTML += `<div class="testimonial-card" data-aos="fade-up" data-aos-delay="${(index + 1) * 100}"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="quote">"${item.quote}"</p><p class="author">${item.author}</p></div>`;
-            });
-        }
-        function generatePlans() { 
-            const container = document.querySelector('.planos-container');
-            container.innerHTML = '';
-            const plans = dynamicData.plans.shared;
-            plans.forEach((plano, index) => {
-                const featuresHTML = plano.features.map(feature => `<li>${feature}</li>`).join('');
-                container.innerHTML += `<div class="plano-card plano-card-${plano.id} ${plano.popular ? 'popular' : ''}" data-aos="zoom-in-up" data-aos-delay="${(index + 2) * 100}">${plano.popular ? '<div class="popular-badge">Mais Popular</div>' : ''}<h3 class="plano-nome">${plano.nome}</h3><p class="plano-descricao">${plano.desc}</p><div class="plano-preco plano-preco-${plano.id}"><span class="valor">R$${plano.preco}</span><span class="periodo">Pagamento único</span></div><ul class="plano-features">${featuresHTML}</ul><button class="plano-cta-btn ${plano.cta_class}" data-plano="${plano.nome}" data-preco="${plano.preco}">${plano.cta_text}</button></div>`;
-            });
-        }
-        function generateFaq(identity) { 
-            const container = document.querySelector('.faq-container');
-            container.innerHTML = '';
-            const questions = dynamicData.faq.questions;
-            const answers = dynamicData.faq.answers[identity];
-            questions.forEach((q, index) => {
-                container.innerHTML += `<div class="faq-item" data-aos="fade-up"><div class="faq-question">${q}</div><div class="faq-answer"><p>${answers[index]}</p></div></div>`;
-            });
-        }
-
-        function personalizePage(identity) {
-            userTheme = identity;
-            document.body.className = `theme-${identity}`;
-            const copy = copyDatabase[identity];
-            document.querySelectorAll('[data-copy-id]').forEach(el => {
-                const id = el.dataset.copyId;
-                if (copy[id]) {
-                    const iconEl = el.querySelector('i');
-                    if (id.includes('icon') && iconEl) {
-                        el.innerHTML = copy[id];
-                    } else {
-                        el.innerHTML = copy[id].replace(/{name}/g, `<strong>${userName}</strong>`);
-                    }
-                }
-            });
-            generateGiftObjections(identity);
-            generateTestimonials(identity);
-            generatePlans();
-            generateFaq(identity);
-        }
-        
+        // --- LÓGICA DO MODAL DE NOME ---
         nameForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const rawName = nameInput.value.trim();
             if (rawName) {
                 userName = rawName.charAt(0).toUpperCase() + rawName.slice(1).toLowerCase().split(' ')[0];
-                nameStep.style.display = 'none';
-                identityStep.style.display = 'block';
-                document.querySelector('[data-copy-id="identity-title"]').innerHTML = `Olá, <strong>${userName}</strong>!`;
-                if (typeof fbq === 'function') {
-                    fbq('set', 'user_data', { fn: userName });
-                    fbq('track', 'Lead', {content_name: 'Formulário de Nome'});
-                }
-            }
-        });
-
-        identityStep.addEventListener('click', (e) => {
-            const button = e.target.closest('.identity-btn');
-            if (button) {
-                const identity = button.dataset.identity;
-                personalizePage(identity);
-                if (typeof fbq === 'function') {
-                    fbq('track', 'CustomizeProduct', {
-                        content_name: 'Seleção de Identidade',
-                        value: identity
-                    });
+                if (namePlaceholder) {
+                    namePlaceholder.textContent = `Olá, ${userName}! `;
                 }
                 welcomeModal.style.opacity = '0';
                 setTimeout(() => {
@@ -1087,433 +409,46 @@
                     mainContent.style.display = 'block';
                     setTimeout(() => {
                         mainContent.style.opacity = '1';
-                        AOS.init({ duration: 700, once: true, offset: 50 });
+                        AOS.init({ duration: 800, once: true, offset: 50 });
                     }, 50);
                 }, 500);
             }
         });
+        
+        // --- LÓGICA DO FAQ (ACCORDION) ---
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const answer = item.querySelector('.faq-answer');
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                       otherItem.classList.remove('active');
+                       otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                    }
+                });
+                if (!isActive) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    item.classList.remove('active');
+                    answer.style.maxHeight = null;
+                }
+            });
+        });
 
-        document.addEventListener('click', (e) => {
-            if (e.target.matches('.plano-cta-btn')) {
+        // --- LÓGICA DOS BOTÕES DE CTA (CHAMADA PARA AÇÃO) ---
+        const ctaButtons = document.querySelectorAll('.plano-cta-btn');
+        ctaButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
                 e.preventDefault();
                 const plano = e.target.dataset.plano;
                 const preco = e.target.dataset.preco;
-                const eventId = "PE-" + Date.now(); // Prefixo para parecer mais oficial
-                if (typeof fbq === 'function') {
-                    fbq('track', 'InitiateCheckout', {
-                        content_name: plano,
-                        value: parseFloat(preco),
-                        currency: 'BRL'
-                    }, {
-                        eventID: eventId
-                    });
-                }
-                let msg = `Olá! Meu nome é ${userName} e quero criar o *Plano ${plano}* (R$ ${preco},00) para o meu Presente Eterno.`;
-                if(userTheme === 'lgbt') msg += ' 🏳️‍🌈';
-                msg += '\n\nEstou pronto(a) para começar a emocionar! ✨';
-                msg += `\n\n\n*Nº do Pedido:* ${eventId}`;
+                let msg = `Olá! Meu nome é ${userName || 'visitante'} e tenho interesse em criar o *Plano ${plano}* (R$ ${preco},00) do Presente Eterno. Gostaria de saber os próximos passos! ✨`;
                 window.open(`https://wa.me/${seuNumeroWhatsApp}?text=${encodeURIComponent(msg)}`, '_blank');
-            }
-
-            if (e.target.matches('.faq-question')) {
-                const item = e.target.closest('.faq-item');
-                const answer = item.querySelector('.faq-answer');
-                const questionText = e.target.textContent.trim();
-                
-                if (!item.classList.contains('active')) {
-                     if (typeof fbq === 'function') {
-                        fbq('track', 'ViewContent', {
-                            content_name: 'FAQ',
-                            content_ids: [questionText]
-                        });
-                    }
-                }
-                
-                if (item.classList.contains('active')) {
-                    item.classList.remove('active');
-                    answer.style.maxHeight = null;
-                } else {
-                    document.querySelectorAll('.faq-item.active').forEach(activeItem => {
-                        activeItem.classList.remove('active');
-                        activeItem.querySelector('.faq-answer').style.maxHeight = null;
-                    });
-                    item.classList.add('active');
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                }
-            }
-            
-            if (e.target.closest('#open-example-btn')) {
-                if (typeof fbq === 'function') {
-                    fbq('track', 'ViewContent', {
-                        content_name: 'Demonstração Interativa',
-                        content_category: 'Engajamento'
-                    });
-                }
-                interactiveDemoContainer.scrollTop = 0;
-                interactiveDemoContainer.classList.add('visible');
-                document.body.style.overflow = 'hidden';
-                iniciarDemo();
-            }
-            if (e.target.matches('.demo-close-btn')) { fecharDemo(); }
-        });
-        
-        let scrollEventFired = false;
-        window.addEventListener('scroll', () => {
-            if (!scrollEventFired && (window.scrollY / (document.body.scrollHeight - window.innerHeight)) > 0.5) {
-                if (typeof fbq === 'function') {
-                    fbq('trackCustom', 'Scroll50Percent');
-                }
-                scrollEventFired = true;
-            }
-        });
-
-        // --- LÓGICA DA DEMONSTRAÇÃO INTERATIVA ---
-        const telaEntrada = document.getElementById('tela-entrada');
-        const cadeadoContainer = document.getElementById('cadeado-container');
-        const botaoDesbloquear = document.getElementById('botao-desbloquear');
-        const conteudoPrincipalDemo = document.getElementById('conteudo-principal-demo');
-        const conteudoEntrada = document.querySelector('.conteudo-entrada');
-        const efeitoFlash = document.querySelector('.efeito-flash');
-        
-        let isUnlocking = false;
-        let demoIniciada = false;
-        let contadorIntervalo, gameIntervalId, gameLoopId;
-
-        function fecharDemo(){
-            interactiveDemoContainer.classList.remove('visible');
-            document.body.style.overflow = 'auto';
-            setTimeout(resetarDemo, 700);
-        }
-
-        function iniciarDemo() {
-            resetarDemo(); 
-            if (!demoIniciada) {
-                createStars(50);
-                iniciarChuvaDeCoracoes();
-                demoIniciada = true;
-            };
-        }
-        
-        function resetarDemo() {
-            if (contadorIntervalo) clearInterval(contadorIntervalo);
-            if (gameIntervalId) clearInterval(gameIntervalId);
-            if (gameLoopId) cancelAnimationFrame(gameLoopId);
-            const audio = document.getElementById('player-audio-principal');
-            if (audio) { audio.pause(); audio.currentTime = 0; }
-            
-            telaEntrada.style.visibility = 'visible';
-            telaEntrada.style.opacity = '1';
-            conteudoPrincipalDemo.classList.remove('visivel');
-            conteudoEntrada.style.opacity = '1';
-            cadeadoContainer.classList.remove('aberto');
-            cadeadoContainer.style.pointerEvents = 'auto';
-            botaoDesbloquear.style.pointerEvents = 'auto';
-            
-            cadeadoContainer.style.animation = 'none';
-            void cadeadoContainer.offsetWidth;
-            cadeadoContainer.style.animation = 'pulsarCadeado 4s infinite ease-in-out';
-            efeitoFlash.style.animation = 'none';
-            
-            document.getElementById('password-input').value = '';
-            document.getElementById('secret-form').style.display = 'flex';
-            document.getElementById('secret-form').style.opacity = '1';
-            document.getElementById('secret-letter-container').classList.remove('visible');
-            document.getElementById('secret-lock-icon').classList.remove('unlocked');
-            
-            document.getElementById('doubt-btn').classList.remove('hidden');
-            document.getElementById('doubt-message').classList.remove('visible');
-            
-            isUnlocking = false;
-        }
-
-        function desbloquearSite() {
-            if (isUnlocking) return;
-            isUnlocking = true;
-            cadeadoContainer.style.pointerEvents = 'none';
-            botaoDesbloquear.style.pointerEvents = 'none';
-            cadeadoContainer.style.animation = 'none';
-            cadeadoContainer.classList.add('aberto');
-
-            setTimeout(() => { efeitoFlash.style.animation = 'explosaoFlash 1.2s forwards'; }, 600);
-            setTimeout(() => { conteudoEntrada.style.opacity = '0'; }, 800);
-            
-            setTimeout(() => {
-                telaEntrada.style.opacity = '0';
-                telaEntrada.style.visibility = 'hidden';
-            }, 1200);
-
-            setTimeout(() => {
-                conteudoPrincipalDemo.classList.add('visivel');
-                iniciarCarrossel();
-                iniciarContador();
-                iniciarAudioPlayer();
-                iniciarJogo();
-                iniciarMensagemSecreta();
-                iniciarCoracoesEspeciais();
-                iniciarPedido();
-            }, 1500);
-        }
-
-        botaoDesbloquear.addEventListener('click', desbloquearSite);
-        cadeadoContainer.addEventListener('click', desbloquearSite);
-        
-        function createStars(count) {
-            const container = document.getElementById('galaxy-background');
-            if (!container || container.childElementCount > 0) return;
-            for (let i = 0; i < count; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                const size = Math.random() * 2 + 1;
-                star.style.width = `${size}px`;
-                star.style.height = `${size}px`;
-                star.style.top = `${Math.random() * 100}%`;
-                star.style.left = `${Math.random() * 100}%`;
-                star.style.animationDelay = `${Math.random() * 2}s`;
-                container.appendChild(star);
-            }
-        }
-
-        function iniciarChuvaDeCoracoes() {
-            const container = document.querySelector('#interactive-demo-container #heart-rain-container');
-            if(!container || container.childElementCount > 0) return;
-            const hearts = 30;
-            for (let i = 0; i < hearts; i++) {
-                const heart = document.createElement('i');
-                heart.className = 'fas fa-heart background-heart';
-                heart.style.left = Math.random() * 100 + 'vw';
-                heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
-                heart.style.animationDelay = Math.random() * 5 + 's';
-                heart.style.opacity = Math.random() * 0.5 + 0.3;
-                heart.style.fontSize = (Math.random() * 1 + 0.5) + 'rem';
-                container.appendChild(heart);
-            }
-        }
-
-        const fotos = document.querySelectorAll('.carrossel-foto');
-        const botaoAnterior = document.getElementById('botao-anterior');
-        const botaoProximo = document.getElementById('botao-proximo');
-        const efeitoPiscar = document.getElementById('efeito-piscar');
-        let fotoAtualIndex = 0;
-        let trocandoFoto = false;
-
-        function mostrarFoto(index) {
-            if (trocandoFoto || fotos.length === 0) return;
-            trocandoFoto = true;
-            efeitoPiscar.classList.add('ativo');
-            setTimeout(() => {
-                fotos.forEach(foto => foto.classList.remove('ativa'));
-                fotos[index].classList.add('ativa');
-                setTimeout(() => {
-                    efeitoPiscar.classList.remove('ativo');
-                    trocandoFoto = false;
-                }, 100);
-            }, 300);
-        }
-
-        function iniciarCarrossel() {
-            if (fotos.length > 0 && !fotos[fotoAtualIndex].classList.contains('ativa')) {
-                fotos[fotoAtualIndex].classList.add('ativa');
-            }
-        }
-        botaoProximo.addEventListener('click', () => { fotoAtualIndex = (fotoAtualIndex + 1) % fotos.length; mostrarFoto(fotoAtualIndex); });
-        botaoAnterior.addEventListener('click', () => { fotoAtualIndex = (fotoAtualIndex - 1 + fotos.length) % fotos.length; mostrarFoto(fotoAtualIndex); });
-        
-        function iniciarContador() {
-            const diasEl = document.getElementById('dias'), horasEl = document.getElementById('horas'), minutosEl = document.getElementById('minutos'), segundosEl = document.getElementById('segundos');
-            if (!diasEl) return;
-            if(contadorIntervalo) clearInterval(contadorIntervalo);
-            const dataInicio = new Date(2023, 0, 1, 0, 0, 0);
-            function atualizarContador() {
-                const agora = new Date(); const diferenca = agora - dataInicio;
-                const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-                const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
-                const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
-                diasEl.innerText = formatarTempo(dias); horasEl.innerText = formatarTempo(horas); minutosEl.innerText = formatarTempo(minutos); segundosEl.innerText = formatarTempo(segundos);
-            }
-            function formatarTempo(t) { return t < 10 ? `0${t}` : t; }
-            atualizarContador();
-            contadorIntervalo = setInterval(atualizarContador, 1000);
-        }
-        
-        function iniciarAudioPlayer() {
-            const audio = document.getElementById('player-audio-principal');
-            const playPauseBtn = document.getElementById('audio-play-pause');
-            const progressContainer = document.querySelector('.audio-progress-container');
-            const progressBar = document.getElementById('audio-progress-bar');
-            const timeEl = document.getElementById('audio-time');
-            if(!audio || !playPauseBtn) return;
-            
-            audio.currentTime = 0;
-            progressBar.style.width = '0%';
-            playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
-
-            function togglePlayPause() {
-                if (audio.paused) { audio.play(); playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>'; } 
-                else { audio.pause(); playPauseBtn.innerHTML = '<i class="fas fa-play"></i>'; }
-            }
-            function updateProgress() {
-                if(!audio.duration || !isFinite(audio.duration)) return;
-                const { duration, currentTime } = audio;
-                progressBar.style.width = `${(currentTime / duration) * 100}%`;
-                timeEl.textContent = `${formatAudioTime(currentTime)} / ${formatAudioTime(duration)}`;
-            }
-            function setProgress(e) {
-                const width = this.clientWidth;
-                const clickX = e.offsetX;
-                audio.currentTime = (clickX / width) * audio.duration;
-            }
-            function formatAudioTime(seconds) {
-                const minutes = Math.floor(seconds / 60);
-                const secs = Math.floor(seconds % 60);
-                return `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-            }
-            playPauseBtn.onclick = togglePlayPause;
-            audio.ontimeupdate = updateProgress;
-            audio.onloadedmetadata = updateProgress;
-            progressContainer.onclick = setProgress;
-        }
-
-        function iniciarJogo() {
-            const gameArea = document.getElementById('game-area'), scoreDisplay = document.getElementById('game-score'), timerDisplay = document.getElementById('game-timer'), startBtn = document.getElementById('game-start-btn'), overlay = document.getElementById('game-overlay'), instructions = document.getElementById('game-instructions'), heartRainContainer = document.querySelector('#interactive-demo-container #heart-rain-container');
-            let score = 0, timeLeft = 30, hearts = [], isGameRunning = false;
-            
-            if(!gameArea) return;
-            overlay.classList.remove('hidden');
-            instructions.innerHTML = `Capture os corações antes que eles sumam!`;
-            startBtn.textContent = 'Começar';
-
-            function createHeart() {
-                if(!gameArea || !isGameRunning) return;
-                const heartElement = document.createElement('i');
-                heartElement.className = 'fas fa-heart game-heart';
-                const heart = { element: heartElement, x: Math.random() * (gameArea.clientWidth - 40), y: -50, speed: 1.5 + Math.random() * 2.5 };
-                heartElement.style.fontSize = `${20 + Math.random() * 25}px`;
-                heartElement.style.left = `${heart.x}px`; heartElement.style.top = `${heart.y}px`; heartElement.style.color = `hsl(${340 + Math.random() * 20}, 100%, 65%)`;
-                heartElement.onclick = () => {
-                    score++; scoreDisplay.textContent = `Corações: ${score}`; heartElement.classList.add('captured');
-                    hearts = hearts.filter(h => h !== heart);
-                    setTimeout(() => { if(heartElement.parentElement) heartElement.remove(); }, 300);
-                };
-                hearts.push(heart); gameArea.appendChild(heartElement);
-            }
-            
-            function gameLoop() {
-                if (!isGameRunning) return;
-                for (let i = hearts.length - 1; i >= 0; i--) {
-                    const heart = hearts[i]; heart.y += heart.speed; heart.element.style.top = `${heart.y}px`;
-                    if (heart.y > gameArea.clientHeight) { heart.element.remove(); hearts.splice(i, 1); }
-                }
-                gameLoopId = requestAnimationFrame(gameLoop);
-            }
-
-            function startGame() {
-                score = 0; timeLeft = 30; isGameRunning = true;
-                scoreDisplay.textContent = 'Corações: 0'; timerDisplay.textContent = 'Tempo: 30s';
-                hearts.forEach(h => h.element.remove()); hearts = [];
-                overlay.classList.add('hidden'); 
-                if (heartRainContainer) heartRainContainer.style.animationPlayState = 'paused';
-                if (gameIntervalId) clearInterval(gameIntervalId);
-                if (gameLoopId) cancelAnimationFrame(gameLoopId);
-                gameIntervalId = setInterval(() => { 
-                    if (!isGameRunning) return clearInterval(gameIntervalId);
-                    timeLeft--; 
-                    timerDisplay.textContent = `Tempo: ${timeLeft}s`; 
-                    if (timeLeft <= 0) endGame(); 
-                }, 1000);
-                const heartSpawner = setInterval(() => {
-                    if (!isGameRunning) clearInterval(heartSpawner);
-                    else createHeart();
-                }, 400);
-                requestAnimationFrame(gameLoop);
-            }
-
-            function endGame() {
-                isGameRunning = false;
-                clearInterval(gameIntervalId); cancelAnimationFrame(gameLoopId); 
-                if (heartRainContainer) heartRainContainer.style.animationPlayState = 'running';
-                instructions.innerHTML = `Fim de jogo!<br><span id="game-final-score">Você capturou ${score} corações!</span>`;
-                startBtn.textContent = 'Jogar Novamente'; overlay.classList.remove('hidden');
-                setTimeout(() => { hearts.forEach(h => h.element.remove()); hearts = []; }, 500);
-
-                if (typeof fbq === 'function' && score > 0) {
-                     fbq('track', 'CompleteRegistration', {
-                        content_name: 'Jogo Interativo de Corações',
-                        status: 'concluído',
-                        value: score
-                     });
-                }
-            }
-            startBtn.onclick = startGame;
-        }
-        
-        function iniciarMensagemSecreta() {
-            const secretForm = document.getElementById('secret-form'), passwordInput = document.getElementById('password-input'), secretLockIcon = document.getElementById('secret-lock-icon'), secretLetterContainer = document.getElementById('secret-letter-container'), closeSecretLetterBtn = document.getElementById('secret-letter-close-btn');
-            const SENHA_SECRETA = "amor";
-            secretForm.onsubmit = (e) => {
-                e.preventDefault(); const inputVal = passwordInput.value.trim().toLowerCase();
-                if (inputVal === SENHA_SECRETA) {
-                    secretLockIcon.classList.add('unlocked'); secretForm.style.opacity = '0';
-                    setTimeout(() => { secretForm.style.display = 'none'; secretLetterContainer.classList.add('visible'); }, 500);
-                } else {
-                    passwordInput.classList.add('shake'); passwordInput.value = ''; passwordInput.placeholder = 'Senha incorreta, tente de novo.';
-                    setTimeout(() => passwordInput.classList.remove('shake'), 500);
-                }
-            };
-            closeSecretLetterBtn.onclick = () => {
-                secretLetterContainer.classList.remove('visible');
-                setTimeout(() => {
-                    secretForm.style.display = 'flex'; secretForm.style.opacity = '1';
-                    secretLockIcon.classList.remove('unlocked'); passwordInput.value = ''; passwordInput.placeholder = 'Digite a senha secreta';
-                }, 500);
-            };
-        }
-        
-        function iniciarCoracoesEspeciais() {
-            const specialHearts = document.querySelectorAll('.special-heart'), modal = document.getElementById('heart-message-modal'), modalText = document.getElementById('modal-text'), closeModalBtn = document.getElementById('modal-close-btn');
-            specialHearts.forEach(heart => {
-                heart.onclick = () => { modalText.textContent = heart.dataset.message; modal.classList.add('visible'); };
             });
-            function closeModal() { modal.classList.remove('visible'); }
-            closeModalBtn.onclick = closeModal;
-            modal.onclick = (e) => { if (e.target === modal) closeModal(); };
-        }
-        
-        function iniciarPedido() {
-            const yesBtn = document.getElementById('yes-btn'), doubtBtn = document.getElementById('doubt-btn'), doubtMessage = document.getElementById('doubt-message'), proposalModal = document.getElementById('proposal-modal'), treasureChest = document.getElementById('treasure-chest-icon'), scrollContainer = document.getElementById('scroll-container'), scrollPaper = document.getElementById('scroll-paper'), contractCloseBtn = document.getElementById('contract-close-btn'), finalCelebration = document.getElementById('final-celebration');
-
-            doubtBtn.onclick = () => { doubtMessage.classList.add('visible'); doubtBtn.classList.add('hidden'); };
-
-            yesBtn.onclick = () => {
-                proposalModal.classList.add('visible');
-                setTimeout(() => treasureChest.classList.add('open'), 500);
-                setTimeout(() => treasureChest.style.opacity = '0', 1500);
-                setTimeout(() => { treasureChest.style.display = 'none'; scrollContainer.style.display = 'block'; void scrollPaper.offsetWidth; scrollPaper.classList.add('unrolling'); }, 2000);
-            };
-
-            contractCloseBtn.onclick = () => {
-                proposalModal.classList.remove('visible'); 
-                finalCelebration.classList.add('visible'); 
-                lancarConfetes();
-                setTimeout(() => {
-                    fecharDemo();
-                }, 4000); 
-            };
-            
-            function lancarConfetes() {
-                const confettiContainer = document.getElementById('confetti-container');
-                if (!confettiContainer) return; confettiContainer.innerHTML = '';
-                const colors = ['#ff4757', '#e6d8ff', '#feca57', '#48dbfb', '#1dd1a1'];
-                for (let i = 0; i < 100; i++) {
-                    const confetti = document.createElement('div'); confetti.className = 'confetti';
-                    confetti.style.left = Math.random() * 100 + 'vw';
-                    confetti.style.animation = `fall-and-fade ${Math.random() * 2 + 3}s linear forwards ${Math.random() * 2}s`;
-                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                    confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
-                    confettiContainer.appendChild(confetti);
-                }
-            }
-        }
+        });
     });
     </script>
 </body>
